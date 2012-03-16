@@ -9,8 +9,13 @@ package
 	
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
+	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import flash.geom.Rectangle;
+	import flash.sampler.getSampleCount;
+	import flash.sampler.startSampling;
+	
+	import net.hires.debug.Stats;
 	
 	/**
 	 * @author Macro
@@ -35,6 +40,8 @@ package
 		
 		public function TestPanel()
 		{
+			stage.scaleMode = StageScaleMode.NO_SCALE;
+			
 			GameUI.init();
 			GameUI.skinManager.registerSkin(SkinDef.PANEL_BG, Bitmap(new screen()).bitmapData, new Rectangle(8, 30, 560, 461));
 			GameUI.skinManager.registerSkin(SkinDef.PANEL_COVER, Bitmap(new top()).bitmapData, new Rectangle(40, 40, 320, 320));
@@ -61,6 +68,21 @@ package
 			e.y = 550;
 			addChild(e);
 			
+			onresize(null);
+			
+			addChild(new Stats());
+			this.addEventListener(Event.ENTER_FRAME, onenterframe);
+			
+		}
+		
+		private function onenterframe(evt:Event):void
+		{
+			e.x++;
+			e.y++;
+			if (e.x > 1200)
+				e.x = 950;
+			if (e.y > 800)
+				e.y = 550;
 			onresize(null);
 		}
 		
