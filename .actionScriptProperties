@@ -30,15 +30,21 @@
   </compiler>
   <applications>
     <application path="TestVScrollBar.as"/>
+    <application path="TestImageBox.as"/>
     <application path="TestHScrollBar.as"/>
-    <application path="TestTitleBar.as"/>
-    <application path="TestIconButton.as"/>
     <application path="TestToggleButton.as"/>
-    <application path="TestButton.as"/>
-    <application path="TestLinkButton.as"/>
-    <application path="TestLabel.as"/>
-    <application path="TestPanel.as"/>
     <application path="TestTextInput.as"/>
+    <application path="TestPanel.as"/>
+    <application path="TestVSlider.as"/>
+    <application path="TestProgressBar.as"/>
+    <application path="TestIconButton.as"/>
+    <application path="TestCheckBox.as"/>
+    <application path="TestHSlider.as"/>
+    <application path="TestRadioButton.as"/>
+    <application path="TestLinkButton.as"/>
+    <application path="TestTitleBar.as"/>
+    <application path="TestButton.as"/>
+    <application path="TestLabel.as"/>
   </applications>
   <modules/>
   <buildCSSFiles/>
