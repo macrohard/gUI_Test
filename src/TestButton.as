@@ -2,6 +2,7 @@ package
 {
 	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.DragMode;
+	import com.macro.gUI.assist.LayoutAlign;
 	import com.macro.gUI.assist.TextStyle;
 	import com.macro.gUI.base.IControl;
 	import com.macro.gUI.base.feature.IButton;
@@ -77,10 +78,10 @@ package
 
 			//var l:Label = new Label("test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它", ts);
 			control = new Button("");
-//			control.autoSize = false;
-//			control.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
-//			control.backgroundColor = 0xFF00FF00;
-//			control.text = "test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它";
+			control.autoSize = false;
+			control.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
+			control.backgroundColor = 0xFF00FF00;
+			control.text = "test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它";
 //			control.enabled = false;
 
 

@@ -5,8 +5,8 @@ package
 	import com.macro.gUI.assist.TextStyle;
 	import com.macro.gUI.base.AbstractControl;
 	import com.macro.gUI.controls.Label;
-	import com.macro.gUI.controls.Slice;
-	import com.macro.gUI.controls.TitleBar;
+	import com.macro.gUI.controls.Canvas;
+	import com.macro.gUI.controls.Cell;
 	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
@@ -18,22 +18,22 @@ package
 	import flash.utils.getTimer;
 
 	[SWF(width="1000", height="600", frameRate="60")]
-	public class TestTitleBar extends Sprite
+	public class TestCell extends Sprite
 	{
 		[Embed(source="assets/TitleBar_defaultImage.png")]
 		private var normal:Class;
 		
-		private var c:AbstractControl;
+		private var c:Cell;
 
 		private var b:Bitmap;
 		
 		private var d:Sprite;
 		private var e:Sprite;
 
-		public function TestTitleBar()
+		public function TestCell()
 		{
 			GameUI.init();
-			GameUI.skinManager.registerSkin(SkinDef.TITLE_BG, Bitmap(new normal()).bitmapData, new Rectangle(35, 0, 133 - 35, 0));
+			GameUI.skinManager.registerSkin(SkinDef.CELL_BG, Bitmap(new normal()).bitmapData, new Rectangle(35, 0, 133 - 35, 0));
 			
 			var ts:TextStyle = new TextStyle();
 			ts.bold = true;
@@ -41,13 +41,13 @@ package
 			ts.wordWrap = true;
 //			ts.displayAsPassword = true;
 			
-			var l:TitleBar = new TitleBar("测试一下看看效果如何");
+			var l:Cell = new Cell("测试一下看看效果如何");
 //			var l:Label = new Label("");
 			l.autoSize = false;
 //			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
 			l.backgroundColor = 0xFFFF0000;
 //			l.text = "test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它";
-			l.margin = new Rectangle(10, 10);
+//			l.margin = new Rectangle(10, 10);
 //			var l:Slice = new Slice(100, 100, GameUI.skinManager.getSkin(SkinDef.TITLE_BG));
 			c = l;
 			

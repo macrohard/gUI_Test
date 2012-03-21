@@ -30,20 +30,20 @@ package
 			GameUI.init();
 			
 			var ts:TextStyle = new TextStyle();
-			ts.align = TextFormatAlign.CENTER;
+//			ts.align = TextFormatAlign.CENTER;
 			ts.bold = true;
 			ts.multiline = true;
 			ts.wordWrap = true;
+			ts.color = 0xffffff;
 //			ts.leftMargin = 20;
 //			ts.displayAsPassword = true;
 			
-			var l:Label = new Label("测试一下看看效果如何", ts);
+			var l:Label = new Label("test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它", ts);
 //			var l:Label = new Label("");
-			l.autoSize = false;
-			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
-			l.backgroundColor = 0xFFFF0000;
-//			l.text = "test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它";
-//			l.margin = new Rectangle(10, 10);
+//			l.autoSize = false;
+//			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
+			l.backgroundColor = 0xFF666666;
+			l.margin = new Rectangle(10, 10, -10);
 			c = l;
 			
 			b = new Bitmap(c.bitmapData);

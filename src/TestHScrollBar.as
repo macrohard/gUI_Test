@@ -2,10 +2,12 @@ package
 {
 	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.DragMode;
+	import com.macro.gUI.assist.Viewport;
 	import com.macro.gUI.base.IControl;
 	import com.macro.gUI.base.feature.IButton;
 	import com.macro.gUI.base.feature.IDrag;
 	import com.macro.gUI.base.feature.IFocus;
+	import com.macro.gUI.controls.Label;
 	import com.macro.gUI.controls.composite.HScrollBar;
 	import com.macro.gUI.skin.SkinDef;
 	
@@ -70,8 +72,7 @@ package
 		[Embed(source = "assets/ScrollBar_horizontalBGImage.png")]
 		private var bg:Class;
 
-
-
+		
 		private var control:HScrollBar;
 
 		private var sprite:Sprite;
@@ -83,6 +84,9 @@ package
 		private var CP1:Sprite;
 
 		private var CP2:Sprite;
+		
+		
+		private var content:Label;
 
 
 
@@ -122,7 +126,7 @@ package
 
 			//var l:Label = new Label("test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它", ts);
 			control = new HScrollBar();
-			control.autoSize = false;
+//			control.autoSize = false;
 //			c.minimum = 10;
 //			c.stepSize = 2;
 //			c.maximum = 99;
@@ -180,9 +184,24 @@ package
 
 			onresize(null);
 
+			
+			
+			var rect:Rectangle = new Rectangle(150, 200, 200, 200);
+			this.graphics.lineStyle(1, 0);
+			this.graphics.drawRect(rect.x, rect.y, rect.width, rect.height);
+			
+			
+			content = new Label("test aaa 看直fdafdafdsa dsa fdsajfdkjf  kajdksa lkdsa djdksja klfdjsak jkdsj dja kjfdksj klfdj j;aja;");
+			content.backgroundColor = 0xFF666666;
+			content.y = 300;
+			b = new Bitmap(content.bitmapData);
+			addChild(b);
+			map[content] = b;
 
-
-
+			control.viewport = new Viewport(rect, content, new Rectangle(5));
+			
+			
+			
 			stage.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			stage.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
 			stage.addEventListener(MouseEvent.MOUSE_UP, onMouseUp);
@@ -199,6 +218,11 @@ package
 				b.x = ic.rect.x;
 				b.y = ic.rect.y;
 			}
+			
+			b = map[content];
+			b.bitmapData = content.bitmapData;
+			b.x = content.x;
+			b.y = content.y;
 		}
 		
 		protected function onKeyDown(event:KeyboardEvent):void

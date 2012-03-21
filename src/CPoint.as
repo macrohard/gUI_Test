@@ -10,7 +10,7 @@ package
 		public function CPoint()
 		{
 			graphics.beginFill(0);
-			graphics.drawCircle(0, 0, 10);
+			graphics.drawCircle(0, 0, 5);
 			graphics.endFill();
 			
 			this.useHandCursor = true;

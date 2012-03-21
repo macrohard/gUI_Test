@@ -77,8 +77,8 @@ package
 			control = new VSlider();
 			control.autoSize = false;
 			control.minimum = 10;
-			control.stepSize = 2;
-			control.maximum = 99;
+			control.stepSize = 1;
+			control.maximum = 20;
 //			control.align = LayoutAlign.CENTER | LayoutAlign.TOP;
 			control.backgroundColor = 0xFF00FF00;
 //			control.margin = new Rectangle(30, 15);

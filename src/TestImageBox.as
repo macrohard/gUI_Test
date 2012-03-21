@@ -15,6 +15,8 @@ package
 	import flash.geom.Rectangle;
 	import flash.text.TextFormat;
 	import flash.utils.getTimer;
+	
+	import net.hires.debug.Stats;
 
 	[SWF(width="1000", height="600", frameRate="60")]
 	public class TestImageBox extends Sprite
@@ -25,8 +27,10 @@ package
 		[Embed(source="assets/IconButton_defaultImage.png")]
 		private var normal:Class;
 		
+		[Embed(source="assets/sprite_100001.swf")]
+		private var movie:Class;
 		
-		private var c:AbstractControl;
+		private var c:ImageBox;
 
 		private var b:Bitmap;
 		
@@ -44,13 +48,12 @@ package
 //			trace(s.getBounds(null));
 //			return;
 			
-			var l:ImageBox = new ImageBox(Bitmap(new image()).bitmapData);
-			l.autoSize = false;
+			var l:ImageBox = new ImageBox(new movie());
 //			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
 			l.backgroundColor = 0x66FF0000;
 //			l.margin = new Rectangle(10, 10);
 //			l.setDefaultSize();
-			l.setSource(new ShapeExample());
+//			l.setSource(new ShapeExample());
 			c = l;
 			
 			b = new Bitmap(c.bitmapData);
@@ -69,6 +72,9 @@ package
 			addChild(e);
 			
 			onresize(null);
+			
+			this.addEventListener(Event.ENTER_FRAME, onEnterFrameHandler);
+			addChild(new Stats());
 		}
 		
 		private function onresize(evt:Event):void
@@ -76,6 +82,10 @@ package
 			b.x = Math.min(d.x, e.x);
 			b.y = Math.min(d.y, e.y);
 			c.resize(Math.abs(e.x - d.x), Math.abs(e.y - d.y));
+		}
+		
+		private function onEnterFrameHandler(e:Event):void
+		{
 			b.bitmapData = c.bitmapData;
 		}
 	}

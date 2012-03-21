@@ -81,7 +81,7 @@ package
 //			control.maximum = 99;
 //			control.align = LayoutAlign.CENTER | LayoutAlign.TOP;
 			control.backgroundColor = 0xFF00FF00;
-			control.margin = new Rectangle(30, 15);
+			control.padding = new Rectangle(20, 15);
 //			control.enabled = false;
 
 			

@@ -27,7 +27,7 @@ package
 
 
 
-		private var c:AbstractComposite;
+		private var c:ProgressBar;
 
 		private var s:Sprite;
 
@@ -105,22 +105,16 @@ package
 
 			onresize(null);
 
-//			stage.addEventListener(Event.ENTER_FRAME, onEnterFrame);
-			stage.addEventListener(MouseEvent.MOUSE_DOWN, onmousedown);
-		}
-		
-		protected function onmousedown(event:MouseEvent):void
-		{
-			var b:ProgressBar = ProgressBar(c);
-//			b.percent = 0;
-			b.percent++;
+			stage.addEventListener(Event.ENTER_FRAME, onEnterFrame);
 		}
 		
 		protected function onEnterFrame(event:Event):void
 		{
-			var b:ProgressBar = ProgressBar(c);
-			b.percent++;
-			onresize(null);
+			c.percent++;
+			if (c.percent >= 100)
+			{
+				c.percent = 0;
+			}
 		}
 
 		private function onresize(evt:Event):void

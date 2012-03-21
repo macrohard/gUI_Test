@@ -3,6 +3,7 @@ package
 	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.LayoutAlign;
 	import com.macro.gUI.base.AbstractContainer;
+	import com.macro.gUI.base.AbstractControl;
 	import com.macro.gUI.containers.Container;
 	import com.macro.gUI.containers.Panel;
 	import com.macro.gUI.skin.SkinDef;
@@ -14,6 +15,7 @@ package
 	import flash.geom.Rectangle;
 	import flash.sampler.getSampleCount;
 	import flash.sampler.startSampling;
+	import flash.utils.getTimer;
 	
 	import net.hires.debug.Stats;
 	
@@ -71,19 +73,7 @@ package
 			onresize(null);
 			
 			addChild(new Stats());
-			this.addEventListener(Event.ENTER_FRAME, onenterframe);
 			
-		}
-		
-		private function onenterframe(evt:Event):void
-		{
-			e.x++;
-			e.y++;
-			if (e.x > 1200)
-				e.x = 950;
-			if (e.y > 800)
-				e.y = 550;
-			onresize(null);
 		}
 		
 		private function onresize(evt:Event):void

@@ -3,10 +3,13 @@ package
 	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.DragMode;
 	import com.macro.gUI.assist.LayoutAlign;
+	import com.macro.gUI.assist.TextStyle;
+	import com.macro.gUI.assist.Viewport;
 	import com.macro.gUI.base.IControl;
 	import com.macro.gUI.base.feature.IButton;
 	import com.macro.gUI.base.feature.IDrag;
 	import com.macro.gUI.base.feature.IFocus;
+	import com.macro.gUI.controls.Label;
 	import com.macro.gUI.controls.composite.VScrollBar;
 	import com.macro.gUI.skin.SkinDef;
 	
@@ -85,6 +88,8 @@ package
 
 		private var CP2:Sprite;
 
+		
+		private var content:Label;
 
 
 		public function TestVScrollBar()
@@ -129,7 +134,7 @@ package
 			control.maximum = 99;
 			control.align = LayoutAlign.CENTER | LayoutAlign.TOP;
 			control.backgroundColor = 0xFF999999;
-			control.margin = new Rectangle(30, 15);
+			control.padding = new Rectangle(20, 15);
 //			control.enabled = false;
 
 
@@ -182,6 +187,24 @@ package
 			onresize(null);
 
 
+			var rect:Rectangle = new Rectangle(150, 200, 200, 100);
+			this.graphics.lineStyle(1, 0);
+			this.graphics.drawRect(rect.x, rect.y, rect.width, rect.height);
+			
+			
+			content = new Label("test aaa \n看直fdaf\ndafdsa d\nsa fdsaj\nfdkjf  ka\njdksa\n lkdsa\n djdks\nja klfd\n\njsak jkdsj dja kjfdksj klfdj j;aja;");
+			content.backgroundColor = 0xFF666666;
+			content.x = 180;
+			var st:TextStyle = content.normalStyle;
+			st.multiline = true;
+			content.normalStyle = st;
+			
+			b = new Bitmap(content.bitmapData);
+			addChild(b);
+			map[content] = b;
+			
+			control.viewport = new Viewport(rect, content, new Rectangle(0, 5));
+			
 
 
 			stage.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
@@ -200,6 +223,11 @@ package
 				b.x = ic.rect.x;
 				b.y = ic.rect.y;
 			}
+			
+			b = map[content];
+			b.bitmapData = content.bitmapData;
+			b.x = content.x;
+			b.y = content.y;
 		}
 		
 		protected function onKeyDown(event:KeyboardEvent):void

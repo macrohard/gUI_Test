@@ -79,7 +79,7 @@ package
 			control.backgroundColor = 0xFF000000;
 //			control.text = "010";
 
-//			control.icon = Bitmap(new icon()).bitmapData;
+			control.icon = Bitmap(new icon()).bitmapData;
 //			control.enabled = false;
 
 

@@ -50,7 +50,7 @@ package
 //			ts.displayAsPassword = true;
 			ts.maxChars = 50;
 
-			var l:TextInput = new TextInput("必须使用英文字体名称，才能正确支持中文！直接使用中文字体名称是不行的");
+			var l:TextInput = new TextInput("必须使用英文字体名称，才能正确支持中文！直接使用中文字体名称是不行的", ts);
 			l.autoSize = false;
 //			var ts:TextStyle = l.normalStyle;
 //			ts.color = 0xFFFFFF;
@@ -64,8 +64,9 @@ package
 //			ts.indent = 20;
 //			l.normalStyle = ts;
 			
-//			l.align = LayoutAlign.RIGHT | LayoutAlign.BOTTOM;
+//			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
 			l.backgroundColor = 0xFF666666;
+			l.margin = null;
 //			l.enabled = false;
 //			l.editable = false;
 			c = l;
