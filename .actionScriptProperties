@@ -29,22 +29,23 @@
     <sourceAttachmentPath/>
   </compiler>
   <applications>
-    <application path="TestRadioButton.as"/>
-    <application path="TestLinkButton.as"/>
     <application path="TestPanel.as"/>
-    <application path="TestButton.as"/>
     <application path="TestIconButton.as"/>
     <application path="TestVSlider.as"/>
     <application path="TestProgressBar.as"/>
     <application path="TestImageBox.as"/>
     <application path="TestTextInput.as"/>
-    <application path="TestCell.as"/>
     <application path="TestToggleButton.as"/>
     <application path="TestCheckBox.as"/>
     <application path="TestVScrollBar.as"/>
-    <application path="TestLabel.as"/>
     <application path="TestHSlider.as"/>
+    <application path="TestList.as"/>
     <application path="TestHScrollBar.as"/>
+    <application path="TestRadioButton.as"/>
+    <application path="TestLinkButton.as"/>
+    <application path="TestLabel.as"/>
+    <application path="TestButton.as"/>
+    <application path="TestCell.as"/>
   </applications>
   <modules/>
   <buildCSSFiles/>

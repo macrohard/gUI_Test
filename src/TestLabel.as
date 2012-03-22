@@ -42,7 +42,6 @@ package
 //			var l:Label = new Label("");
 //			l.autoSize = false;
 //			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
-			l.backgroundColor = 0xFF666666;
 			l.margin = new Rectangle(10, 10, -10);
 			c = l;
 			

@@ -80,7 +80,6 @@ package
 //			control.stepSize = 2;
 //			control.maximum = 99;
 //			control.align = LayoutAlign.CENTER | LayoutAlign.TOP;
-			control.backgroundColor = 0xFF00FF00;
 			control.padding = new Rectangle(20, 15);
 //			control.enabled = false;
 

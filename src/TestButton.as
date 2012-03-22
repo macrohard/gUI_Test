@@ -83,7 +83,7 @@ package
 			control.backgroundColor = 0xFF00FF00;
 			control.text = "test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它";
 //			control.enabled = false;
-
+			
 
 
 
@@ -131,7 +131,6 @@ package
 			addChild(CP2);
 
 			onresize(null);
-
 
 
 

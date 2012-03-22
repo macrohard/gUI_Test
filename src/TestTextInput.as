@@ -66,7 +66,7 @@ package
 			
 //			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
 			l.backgroundColor = 0xFF666666;
-			l.margin = null;
+			l.padding = null;
 //			l.enabled = false;
 //			l.editable = false;
 			c = l;

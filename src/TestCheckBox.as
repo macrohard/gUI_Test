@@ -69,7 +69,6 @@ package
 			control = new CheckBox("测试一下看看效果如何");
 //			control.autoSize = false;
 			control.align = LayoutAlign.CENTER | LayoutAlign.MIDDLE;
-			control.backgroundColor = 0xFF00FF00;
 			var ts:TextStyle = control.labelStyle;
 			ts.size = 18;
 			ts.bold = true;

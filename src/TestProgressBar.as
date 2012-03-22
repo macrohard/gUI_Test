@@ -58,7 +58,6 @@ package
 //			l.stepSize = 2;
 //			l.maximum = 99;
 //			l.align = LayoutAlign.CENTER | LayoutAlign.TOP;
-			l.backgroundColor = 0xFF00FF00;
 //			l.percent = 50;
 //			l.enabled = false;
 			c = l;

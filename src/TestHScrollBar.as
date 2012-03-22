@@ -131,7 +131,6 @@ package
 //			c.stepSize = 2;
 //			c.maximum = 99;
 //			c.align = LayoutAlign.CENTER | LayoutAlign.TOP;
-			control.backgroundColor = 0xFF999999;
 //			c.margin = new Rectangle(30, 15);
 //			c.enabled = false;
 
