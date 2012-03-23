@@ -77,7 +77,7 @@ package
 //			control.align = LayoutAlign.RIGHT | LayoutAlign.BOTTOM;
 //			control.alignIcon = LayoutAlign.RIGHT | LayoutAlign.BOTTOM;
 			control.backgroundColor = 0xFF000000;
-//			control.text = "010";
+			control.text = "010";
 
 			control.icon = Bitmap(new icon()).bitmapData;
 //			control.enabled = false;
