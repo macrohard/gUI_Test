@@ -11,6 +11,7 @@ package
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import flash.utils.Dictionary;
 
@@ -65,24 +66,18 @@ package
 			bd = new Dictionary();
 			s = new Sprite();
 
-			var b:Bitmap = new Bitmap(c.bitmapData);
-			b.x = c.x;
-			b.y = c.y;
-			bd[c] = b;
-			s.addChild(b);
+			var b:Bitmap;
 
-			for each (var ic:IControl in c.children)
+			for each (var ic:IControl in c.container.children)
 			{
 				b = new Bitmap(ic.bitmapData);
-				b.x = ic.rect.x;
-				b.y = ic.rect.y;
 				bd[ic] = b;
 				s.addChild(b);
 			}
 
 			m = new Shape();
 			m.graphics.beginFill(0);
-			m.graphics.drawRect(0, 0, c.width, c.height);
+			m.graphics.drawRect(c.x, c.y, c.width, c.height);
 			m.graphics.endFill();
 			s.mask = m;
 			s.addChild(m);
@@ -118,22 +113,22 @@ package
 
 		private function onresize(evt:Event):void
 		{
-			c.x = s.x = Math.min(d.x, e.x);
-			c.y = s.y = Math.min(d.y, e.y);
+			c.x = Math.min(d.x, e.x);
+			c.y = Math.min(d.y, e.y);
 			c.resize(Math.abs(e.x - d.x), Math.abs(e.y - d.y));
 
 			m.graphics.clear();
 			m.graphics.beginFill(0);
-			m.graphics.drawRect(0, 0, c.width, c.height);
+			m.graphics.drawRect(c.x, c.y, c.width, c.height);
 			m.graphics.endFill();
 
-			bd[c].bitmapData = c.bitmapData;
-			for each (var ic:IControl in c.children)
+			for each (var ic:IControl in c.container.children)
 			{
 				var b:Bitmap = bd[ic];
 				b.bitmapData = ic.bitmapData;
-				b.x = ic.rect.x;
-				b.y = ic.rect.y;
+				var p:Point = ic.globalCoord();
+				b.x = p.x;
+				b.y = p.y;
 			}
 		}
 	}

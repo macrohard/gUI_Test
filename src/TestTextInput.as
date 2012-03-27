@@ -26,6 +26,9 @@ package
 		[Embed(source="assets/TextInput_defaultImage.png")]
 		private var normal:Class;
 		
+		[Embed(source="assets/TextInput_disableImage.png")]
+		private var disable:Class;
+		
 		private var c:AbstractControl;
 
 		private var b:Bitmap;
@@ -40,6 +43,7 @@ package
 			
 			GameUI.init();
 			GameUI.skinManager.registerSkin(SkinDef.TEXTINPUT_NORMAL, Bitmap(new normal()).bitmapData, new Rectangle(14, 0, 7, 0), 0x21);
+			GameUI.skinManager.registerSkin(SkinDef.TEXTINPUT_DISABLE, Bitmap(new disable()).bitmapData, new Rectangle(14, 0, 7, 0), 0x21);
 			
 			var ts:TextStyle = new TextStyle();
 			ts.bold = true;
@@ -67,7 +71,7 @@ package
 //			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
 			l.backgroundColor = 0xFF666666;
 			l.padding = new Rectangle(15);
-//			l.enabled = false;
+			l.enabled = false;
 //			l.editable = false;
 			c = l;
 

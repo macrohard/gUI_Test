@@ -17,6 +17,7 @@ package
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
 	import flash.events.MouseEvent;
+	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
@@ -67,8 +68,8 @@ package
 			
 			//var l:Label = new Label("test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它", ts);
 			control = new CheckBox("测试一下看看效果如何");
-//			control.autoSize = false;
-			control.align = LayoutAlign.CENTER | LayoutAlign.MIDDLE;
+			control.autoSize = false;
+			control.align = LayoutAlign.LEFT | LayoutAlign.MIDDLE;
 			var ts:TextStyle = control.labelStyle;
 			ts.size = 18;
 			ts.bold = true;
@@ -81,24 +82,17 @@ package
 			map = new Dictionary();
 			sprite = new Sprite();
 			
-			var b:Bitmap = new Bitmap(control.bitmapData);
-			b.x = control.x;
-			b.y = control.y;
-			map[control] = b;
-			sprite.addChild(b);
-			
-			for each (var ic:IControl in control.children)
+			var b:Bitmap;
+			for each (var ic:IControl in control.container.children)
 			{
 				b = new Bitmap(ic.bitmapData);
-				b.x = ic.rect.x;
-				b.y = ic.rect.y;
 				map[ic] = b;
 				sprite.addChild(b);
 			}
 			
 			spriteMask = new Shape();
 			spriteMask.graphics.beginFill(0);
-			spriteMask.graphics.drawRect(0, 0, control.width, control.height);
+			spriteMask.graphics.drawRect(control.x, control.y, control.width, control.height);
 			spriteMask.graphics.endFill();
 			sprite.mask = spriteMask;
 			sprite.addChild(spriteMask);
@@ -135,12 +129,13 @@ package
 		
 		protected function onEnerFrame(event:Event):void
 		{
-			for each (var ic:IControl in control.children)
+			for each (var ic:IControl in control.container.children)
 			{
 				var b:Bitmap = map[ic];
 				b.bitmapData = ic.bitmapData;
-				b.x = ic.rect.x;
-				b.y = ic.rect.y;
+				var p:Point = ic.globalCoord();
+				b.x = p.x;
+				b.y = p.y;
 			}
 		}
 		
@@ -152,14 +147,13 @@ package
 		
 		private function onresize(evt:Event):void
 		{
-			control.x = sprite.x = Math.min(CP1.x, CP2.x);
-			control.y = sprite.y = Math.min(CP1.y, CP2.y);
+			control.x = Math.min(CP1.x, CP2.x);
+			control.y = Math.min(CP1.y, CP2.y);
 			control.resize(Math.abs(CP2.x - CP1.x), Math.abs(CP2.y - CP1.y));
-			map[control].bitmapData = control.bitmapData;
 			
 			spriteMask.graphics.clear();
 			spriteMask.graphics.beginFill(0);
-			spriteMask.graphics.drawRect(0, 0, control.width, control.height);
+			spriteMask.graphics.drawRect(control.x, control.y, control.width, control.height);
 			spriteMask.graphics.endFill();
 			
 		}

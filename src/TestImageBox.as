@@ -48,8 +48,8 @@ package
 //			trace(s.getBounds(null));
 //			return;
 			
-			var l:ImageBox = new ImageBox(new movie());
-//			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
+			var l:ImageBox = new ImageBox(new movie(), false);
+			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
 			l.backgroundColor = 0x66FF0000;
 //			l.margin = new Rectangle(10, 10);
 //			l.setDefaultSize();
