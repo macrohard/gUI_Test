@@ -8,7 +8,7 @@ package
 	import com.macro.gUI.base.feature.IButton;
 	import com.macro.gUI.base.feature.IDrag;
 	import com.macro.gUI.base.feature.IFocus;
-	import com.macro.gUI.controls.composite.RadioButton;
+	import com.macro.gUI.composite.RadioButton;
 	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;

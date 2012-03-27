@@ -6,7 +6,7 @@ package
 	import com.macro.gUI.base.feature.IButton;
 	import com.macro.gUI.base.feature.IDrag;
 	import com.macro.gUI.base.feature.IFocus;
-	import com.macro.gUI.controls.composite.VSlider;
+	import com.macro.gUI.composite.VSlider;
 	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;

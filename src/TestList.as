@@ -7,10 +7,10 @@ package
 	import com.macro.gUI.base.IComposite;
 	import com.macro.gUI.base.IContainer;
 	import com.macro.gUI.base.IControl;
+	import com.macro.gUI.composite.List;
 	import com.macro.gUI.controls.Canvas;
 	import com.macro.gUI.controls.Cell;
 	import com.macro.gUI.controls.Label;
-	import com.macro.gUI.controls.composite.List;
 	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
@@ -19,6 +19,7 @@ package
 	import flash.display.Sprite;
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
+	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import flash.text.TextFormat;
 	import flash.utils.Dictionary;
@@ -184,19 +185,27 @@ package
 			canvas.lock();
 			canvas.fillRect(canvas.rect, 0xff333333);
 			
-			drawControl(list, list.rect);
+			drawControl(list, canvas.rect);
 			
 			canvas.unlock();
 		}
 		
 		
-		private function drawControl(control:IControl, rect:Rectangle):void
+		private function drawControl(control:IControl, stageRect:Rectangle):void
 		{
-			var drawR:Rectangle = rect.intersection(control.rect);
+			var controlRect:Rectangle = control.rect;
+			var p:Point = control.globalCoord();
+			controlRect.x = p.x;
+			controlRect.y = p.y;
+			
+			stageRect = stageRect.intersection(controlRect);
+			 
+			var drawR:Rectangle = stageRect.clone();
+			drawR.offset(-p.x, -p.y);
 			
 			if (control.bitmapData != null)
 			{
-				canvas.copyPixels(control.bitmapData, new Rectangle(0, 0, drawR.width, drawR.height), control.globalCoord(), null, null, true);
+				canvas.copyPixels(control.bitmapData, drawR, stageRect.topLeft, null, null, true);
 			}
 			
 			var container:IContainer;
@@ -204,35 +213,32 @@ package
 			{
 				container = control as IContainer;
 				
-				drawR = rect.clone();
 				var m:Rectangle = container.margin;
-				drawR.left += m.left;
-				drawR.top += m.top;
-				drawR.right -= m.right;
-				drawR.bottom -= m.bottom; 
+				stageRect.left += m.left;
+				stageRect.top += m.top;
+				stageRect.right -= m.right;
+				stageRect.bottom -= m.bottom; 
 				
 				for each (var ic:IControl in container.children)
 				{
 					if (ic is IComposite)
 					{
-						drawControl((ic as IComposite).container, drawR);
+						drawControl((ic as IComposite).container, stageRect);
 					}
 					else
 					{
-						drawControl(ic, drawR);
+						drawControl(ic, stageRect);
 					}
 				}
 				
 				if (container.bitmapDataCover != null)
 				{
-					drawR = rect.clone();
-					drawR.left = drawR.top = 0;
-					canvas.copyPixels(container.bitmapDataCover, drawR, container.globalCoord(), null, null, true);
+					canvas.copyPixels(container.bitmapDataCover, drawR, stageRect.topLeft, null, null, true);
 				}
 			}
 			else if (control is IComposite)
 			{
-				drawControl((control as IComposite).container, drawR);
+				drawControl((control as IComposite).container, stageRect);
 			}
 		}
 		

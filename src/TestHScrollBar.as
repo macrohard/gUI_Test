@@ -8,7 +8,7 @@ package
 	import com.macro.gUI.base.feature.IDrag;
 	import com.macro.gUI.base.feature.IFocus;
 	import com.macro.gUI.controls.Label;
-	import com.macro.gUI.controls.composite.HScrollBar;
+	import com.macro.gUI.composite.HScrollBar;
 	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;

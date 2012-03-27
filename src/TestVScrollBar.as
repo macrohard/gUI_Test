@@ -10,7 +10,7 @@ package
 	import com.macro.gUI.base.feature.IDrag;
 	import com.macro.gUI.base.feature.IFocus;
 	import com.macro.gUI.controls.Label;
-	import com.macro.gUI.controls.composite.VScrollBar;
+	import com.macro.gUI.composite.VScrollBar;
 	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;

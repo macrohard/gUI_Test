@@ -3,7 +3,7 @@ package
 	import com.macro.gUI.GameUI;
 	import com.macro.gUI.base.AbstractComposite;
 	import com.macro.gUI.base.IControl;
-	import com.macro.gUI.controls.composite.ProgressBar;
+	import com.macro.gUI.composite.ProgressBar;
 	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
