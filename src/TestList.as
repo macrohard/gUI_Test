@@ -17,6 +17,7 @@ package
 	import flash.display.BitmapData;
 	import flash.display.Shape;
 	import flash.display.Sprite;
+	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import flash.geom.Rectangle;
 	import flash.text.TextFormat;
@@ -94,6 +95,8 @@ package
 
 		public function TestList()
 		{
+			stage.scaleMode = StageScaleMode.NO_SCALE;
+			
 			GameUI.init();
 			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_VERTICAL_BLOCK_NORMAL,
 				Bitmap(new block_normal()).bitmapData, new Rectangle(8, 6, 0, 14));
@@ -135,6 +138,7 @@ package
 			addChild(new Bitmap(canvas));
 			
 			
+			
 			list = new List();
 			list.addItem("first");
 			list.addItem("second");
@@ -163,36 +167,36 @@ package
 			
 			onresize(null);
 			
-			
-			stage.addEventListener(Event.ENTER_FRAME, onEnerFrame);
+//			onEnterFrame(null);
+			stage.addEventListener(Event.ENTER_FRAME, onEnterFrame);
 			addChild(new Stats());
 		}
 		
-		protected function onEnerFrame(event:Event):void
+		private function onresize(evt:Event):void
+		{
+			list.x = Math.min(CP1.x, CP2.x);
+			list.y = Math.min(CP1.y, CP2.y);
+			list.resize(Math.abs(CP2.x - CP1.x), Math.abs(CP2.y - CP1.y));
+		}
+		
+		private function onEnterFrame(event:Event):void
 		{
 			canvas.lock();
-			canvas.fillRect(canvas.rect, 0);
+			canvas.fillRect(canvas.rect, 0xff333333);
 			
-			drawControl(list);
+			drawControl(list, list.rect);
 			
 			canvas.unlock();
 		}
 		
 		
-		private function drawControl(control:IControl, r:Rectangle = null):void
+		private function drawControl(control:IControl, rect:Rectangle):void
 		{
-			if (r == null)
-			{
-				r = control.rect;
-			}
-			
-			var drawR:Rectangle;
+			var drawR:Rectangle = rect.intersection(control.rect);
 			
 			if (control.bitmapData != null)
 			{
-				drawR = r.clone();
-				drawR.offset(-control.rect.x, -control.rect.y);
-				canvas.copyPixels(control.bitmapData, drawR, control.globalCoord(), null, null, true);
+				canvas.copyPixels(control.bitmapData, new Rectangle(0, 0, drawR.width, drawR.height), control.globalCoord(), null, null, true);
 			}
 			
 			var container:IContainer;
@@ -200,7 +204,7 @@ package
 			{
 				container = control as IContainer;
 				
-				drawR = r.clone();
+				drawR = rect.clone();
 				var m:Rectangle = container.margin;
 				drawR.left += m.left;
 				drawR.top += m.top;
@@ -221,22 +225,16 @@ package
 				
 				if (container.bitmapDataCover != null)
 				{
-					drawR = r.clone();
-					drawR.offset(-control.rect.x, -control.rect.y);
+					drawR = rect.clone();
+					drawR.left = drawR.top = 0;
 					canvas.copyPixels(container.bitmapDataCover, drawR, container.globalCoord(), null, null, true);
 				}
 			}
 			else if (control is IComposite)
 			{
-				drawControl((control as IComposite).container, r);
+				drawControl((control as IComposite).container, drawR);
 			}
 		}
 		
-		private function onresize(evt:Event):void
-		{
-			list.x = Math.min(CP1.x, CP2.x);
-			list.y = Math.min(CP1.y, CP2.y);
-			list.resize(Math.abs(CP2.x - CP1.x), Math.abs(CP2.y - CP1.y));
-		}
 	}
 }
