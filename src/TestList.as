@@ -155,33 +155,38 @@ package
 			
 			
 			CP1 = new CPoint();
-			CP1.addEventListener(Event.RESIZE, onresize);
+			CP1.addEventListener(Event.RESIZE, onmove);
 			CP1.x = 150;
 			CP1.y = 150;
 			addChild(CP1);
 			
 			CP2 = new CPoint();
 			CP2.addEventListener(Event.RESIZE, onresize);
-			CP2.x = 950;
-			CP2.y = 550;
 			addChild(CP2);
 			
-			onresize(null);
+			onmove(null);
 			
 //			onEnterFrame(null);
 			stage.addEventListener(Event.ENTER_FRAME, onEnterFrame);
 			addChild(new Stats());
 		}
 		
-		private function onresize(evt:Event):void
+		private function onmove(e:Event):void
 		{
-			list.x = Math.min(CP1.x, CP2.x);
-			list.y = Math.min(CP1.y, CP2.y);
+			CP2.x = CP1.x + list.width;
+			CP2.y = CP1.y + list.height;
+		}
+		
+		private function onresize(e:Event):void
+		{
 			list.resize(Math.abs(CP2.x - CP1.x), Math.abs(CP2.y - CP1.y));
 		}
 		
-		private function onEnterFrame(event:Event):void
+		private function onEnterFrame(e:Event):void
 		{
+			list.x = CP1.x;
+			list.y = CP1.y;
+			
 			canvas.lock();
 			canvas.fillRect(canvas.rect, 0xff333333);
 			
