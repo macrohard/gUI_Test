@@ -185,7 +185,7 @@ package
 
 		protected function onMouseDown(event:MouseEvent):void
 		{
-			_mouseObj = control.hitTest(stage.mouseX - control.x, stage.mouseY - control.y);
+			_mouseObj = control.hitTest(stage.mouseX, stage.mouseY);
 			if (_mouseObj)
 			{
 				_mouseCon = control;
@@ -215,7 +215,7 @@ package
 				return;
 			}
 
-			_mouseObj = control.hitTest(stage.mouseX - control.x, stage.mouseY - control.y);
+			_mouseObj = control.hitTest(stage.mouseX, stage.mouseY);
 			if (_mouseObj)
 			{
 				_mouseCon = control;
@@ -236,12 +236,12 @@ package
 		{
 			if (_dragCon)
 			{
-				IDrag(_dragCon).setDragPos(stage.mouseX - _dragCon.rect.x, stage.mouseY - _dragCon.rect.y);
+				IDrag(_dragCon).setDragPos(stage.mouseX, stage.mouseY);
 				return;
 			}
 
 
-			var t:IControl = control.hitTest(stage.mouseX - control.x, stage.mouseY - control.y);
+			var t:IControl = control.hitTest(stage.mouseX, stage.mouseY);
 			if (t == _mouseObj)
 				return;
 

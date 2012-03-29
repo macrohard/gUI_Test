@@ -106,7 +106,7 @@ package
 		protected function onmouseclick(event:MouseEvent):void
 		{
 			var b:TextInput = TextInput(c);
-			if (b.rect.contains(stage.mouseX, stage.mouseY) && b.hitTest(stage.mouseX - b.x, stage.mouseY - b.y))
+			if (b.rect.contains(stage.mouseX, stage.mouseY) && b.hitTest(stage.mouseX, stage.mouseY))
 				startEdit();
 			else
 				endEdit();
