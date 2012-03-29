@@ -1,29 +1,21 @@
 package
 {
 	import com.macro.gUI.GameUI;
-	import com.macro.gUI.assist.LayoutAlign;
-	import com.macro.gUI.assist.TextStyle;
-	import com.macro.gUI.base.AbstractControl;
 	import com.macro.gUI.base.IComposite;
 	import com.macro.gUI.base.IContainer;
 	import com.macro.gUI.base.IControl;
+	import com.macro.gUI.base.feature.IFocus;
 	import com.macro.gUI.composite.List;
-	import com.macro.gUI.controls.Canvas;
-	import com.macro.gUI.controls.Cell;
-	import com.macro.gUI.controls.Label;
 	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
-	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
+	import flash.events.MouseEvent;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
-	import flash.text.TextFormat;
-	import flash.utils.Dictionary;
-	import flash.utils.getTimer;
 	
 	import net.hires.debug.Stats;
 
@@ -152,8 +144,6 @@ package
 			list.addItem("ninth");
 			
 			
-			
-			
 			CP1 = new CPoint();
 			CP1.addEventListener(Event.RESIZE, onmove);
 			CP1.x = 150;
@@ -168,6 +158,9 @@ package
 			
 //			onEnterFrame(null);
 			stage.addEventListener(Event.ENTER_FRAME, onEnterFrame);
+			stage.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
+			stage.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
+			stage.addEventListener(MouseEvent.MOUSE_UP, onMouseUp);
 			addChild(new Stats());
 		}
 		
@@ -196,6 +189,13 @@ package
 		}
 		
 		
+		
+		/**
+		 * 合并渲染
+		 * @param control
+		 * @param stageRect
+		 * 
+		 */
 		private function drawControl(control:IControl, stageRect:Rectangle):void
 		{
 			var controlRect:Rectangle = control.rect;
@@ -247,5 +247,77 @@ package
 			}
 		}
 		
+		
+		
+		
+		
+		
+		/**
+		 * 鼠标所在位置的控件，基本控件或复合控件
+		 */
+		private var _mouseControl:IControl;
+		
+		/**
+		 * 鼠标点击的目标控件，基本控件或复合式控件内的控件
+		 */
+		private var _mouseTarget:IControl;
+		
+		/**
+		 * 拖拽控件
+		 */
+		private var _dragControl:IControl;
+		
+		protected function onMouseDown(e:MouseEvent):void
+		{
+			_mouseTarget = findTargetControl(list);
+			trace(_mouseTarget);
+		}
+		
+		protected function onMouseUp(e:MouseEvent):void
+		{
+			
+		}
+		
+		protected function onMouseMove(e:MouseEvent):void
+		{
+			_mouseTarget = findTargetControl(list);
+			trace(_mouseTarget);
+		}
+		
+		/**
+		 * 遍历查找鼠标所在的控件
+		 * @param control
+		 * @return 
+		 * 
+		 */
+		private function findTargetControl(control:IControl):IControl
+		{
+			var target:IControl;
+			
+			if (control is IFocus)
+			{
+				var f:IFocus = control as IFocus;
+				target = f.hitTest(stage.mouseX, stage.mouseY);
+				if (target != null)
+				{
+					return target;
+				}
+			}
+			
+			if (control is IContainer)
+			{
+				var container:IContainer = control as IContainer;
+				for each (var child:IControl in container)
+				{
+					target = findTargetControl(child);
+					if (target != null)
+					{
+						return target;
+					}
+				}
+			}
+			
+			return null;
+		}
 	}
 }
