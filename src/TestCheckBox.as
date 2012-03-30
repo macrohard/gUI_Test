@@ -180,7 +180,7 @@ package
 					{
 						IButton(_mouseCon).mouseDown();
 					}
-					if (_mouseCon is IDrag && IDrag(_mouseCon).dragMode != DragMode.NONE)
+					if (_mouseCon is IDrag && IDrag(_mouseCon).getDragMode() != DragMode.NONE)
 						_dragCon = control;
 				}
 			}
@@ -221,7 +221,7 @@ package
 		{
 			if (_dragCon)
 			{
-				IDrag(_dragCon).setDragPos(stage.mouseX, stage.mouseY);
+				IDrag(_dragCon).setDragCoord(stage.mouseX, stage.mouseY);
 				return;
 			}
 			
