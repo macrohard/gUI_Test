@@ -34,7 +34,7 @@ package
 			ts.bold = true;
 			ts.multiline = true;
 			ts.wordWrap = true;
-//			ts.color = 0xffffff;
+			ts.color = 0xffffff;
 //			ts.leftMargin = 20;
 //			ts.displayAsPassword = true;
 			
@@ -42,6 +42,7 @@ package
 //			var l:Label = new Label("");
 //			l.autoSize = false;
 //			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
+			l.backgroundColor = 0xff333333;
 			l.padding = new Rectangle(10, 10, -10);
 			c = l;
 			

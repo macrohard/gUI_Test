@@ -255,7 +255,7 @@ package
 			if (_mouseObj)
 			{
 				_mouseCon = control;
-				if (_mouseCon is IFocus && IFocus(_mouseCon).enabled)
+				if (_mouseCon is IFocus && _mouseCon.enabled)
 				{
 					if (_mouseCon is IButton)
 					{
@@ -285,7 +285,7 @@ package
 			if (_mouseObj)
 			{
 				_mouseCon = control;
-				if (_mouseCon is IFocus && IFocus(_mouseCon).enabled)
+				if (_mouseCon is IFocus && _mouseCon.enabled)
 				{
 					if (_mouseCon is IButton)
 					{
@@ -322,7 +322,7 @@ package
 			if (_mouseObj)
 			{
 				_mouseCon = control;
-				if (_mouseCon is IFocus && IFocus(_mouseCon).enabled)
+				if (_mouseCon is IFocus && _mouseCon.enabled)
 				{
 					if (_mouseCon is IButton)
 					{

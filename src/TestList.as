@@ -6,6 +6,7 @@ package
 	import com.macro.gUI.base.IControl;
 	import com.macro.gUI.base.feature.IFocus;
 	import com.macro.gUI.composite.List;
+	import com.macro.gUI.containers.Container;
 	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
@@ -236,10 +237,6 @@ package
 					}
 				}
 				
-				if (container.bitmapDataCover != null)
-				{
-					canvas.copyPixels(container.bitmapDataCover, drawR, stageRect.topLeft, null, null, true);
-				}
 			}
 			else if (control is IComposite)
 			{
@@ -269,7 +266,7 @@ package
 		
 		protected function onMouseDown(e:MouseEvent):void
 		{
-			_mouseTarget = findTargetControl(list);
+			findTargetControl(list);
 			trace(_mouseTarget);
 		}
 		
@@ -280,7 +277,7 @@ package
 		
 		protected function onMouseMove(e:MouseEvent):void
 		{
-			_mouseTarget = findTargetControl(list);
+			findTargetControl(list);
 			trace(_mouseTarget);
 		}
 		
@@ -290,34 +287,27 @@ package
 		 * @return 
 		 * 
 		 */
-		private function findTargetControl(control:IControl):IControl
+		private function findTargetControl(container:IContainer):IControl
 		{
 			var target:IControl;
+			var child:IControl;
 			
-			if (control is IFocus)
+			for (var i:int = container.numChildren - 1; i >= 0; i--)
 			{
-				var f:IFocus = control as IFocus;
-				target = f.hitTest(stage.mouseX, stage.mouseY);
+				child = container.getChildAt(i);
+				target = child.hitTest(stage.mouseX, stage.mouseY);
 				if (target != null)
 				{
-					return target;
-				}
-			}
-			
-			if (control is IContainer)
-			{
-				var container:IContainer = control as IContainer;
-				for each (var child:IControl in container)
-				{
-					target = findTargetControl(child);
-					if (target != null)
+					if (child is IContainer)
 					{
-						return target;
+						return findTargetControl(child as IContainer);
 					}
+					
+					break;
 				}
 			}
 			
-			return null;
+			return target;
 		}
 	}
 }

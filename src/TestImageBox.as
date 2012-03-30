@@ -10,6 +10,7 @@ package
 	
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
+	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.geom.Rectangle;
@@ -48,7 +49,7 @@ package
 //			trace(s.getBounds(null));
 //			return;
 			
-			var l:ImageBox = new ImageBox(new movie(), false);
+			var l:ImageBox = new ImageBox(new ShapeExample(), false);
 			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
 			l.backgroundColor = 0x66FF0000;
 //			l.margin = new Rectangle(10, 10);
@@ -59,10 +60,17 @@ package
 			b = new Bitmap(c.bitmapData);
 			addChild(b);
 			
+//			var s:Shape = new Shape();
+//			s.graphics.beginFill(0);
+//			s.graphics.drawRect(0, 0, 100, 100);
+//			s.x = 400;
+//			s.y = 300;
+//			b.mask = s;
+			
 			d = new CPoint();
 			d.addEventListener(Event.RESIZE, onresize);
-			d.x = 50;
-			d.y = 50;
+			d.x = 150;
+			d.y = 150;
 			addChild(d);
 			
 			e = new CPoint();
