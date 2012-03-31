@@ -48,8 +48,8 @@ package
 			
 			var ts:TextStyle = new TextStyle();
 			ts.bold = true;
-			ts.multiline = true;
-			ts.wordWrap = true;
+			ts.multiline = false;
+			ts.wordWrap = false;
 			ts.color = 0xffffff;
 //			ts.align = TextFormatAlign.RIGHT;
 //			ts.displayAsPassword = true;

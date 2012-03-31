@@ -33,7 +33,7 @@ package
 		public function TestCell()
 		{
 			GameUI.init();
-			GameUI.skinManager.registerSkin(SkinDef.CELL_BG, Bitmap(new normal()).bitmapData, new Rectangle(35, 0, 133 - 35, 0));
+			GameUI.skinManager.registerSkin(SkinDef.CELL_BG, Bitmap(new normal()).bitmapData, new Rectangle(35, 0, 133 - 35, 0), 0x22);
 			
 			var ts:TextStyle = new TextStyle();
 			ts.bold = true;
@@ -43,7 +43,7 @@ package
 			
 			c = new Cell("测试一下看看效果如何");
 //			var c:Label = new Label("");
-//			c.autoSize = false;
+			c.autoSize = false;
 //			c.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
 			c.backgroundColor = 0xFFFF0000;
 //			c.text = "test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它";

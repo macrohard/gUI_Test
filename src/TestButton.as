@@ -69,15 +69,16 @@ package
 
 			var ts:TextStyle = new TextStyle();
 			ts.bold = true;
-			ts.multiline = true;
+			ts.color = 0xffffff;
+			ts.multiline = false;
 			ts.wordWrap = false;
 
-			//var l:Label = new Label("test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它", ts);
 			control = new Button("");
 			control.autoSize = false;
-			control.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
+//			control.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
 			control.backgroundColor = 0xFF00FFFF;
 			control.text = "test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它";
+			control.normalStyle = ts;
 //			control.enabled = false;
 			
 
