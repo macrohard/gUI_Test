@@ -14,6 +14,8 @@ package
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import flash.utils.Dictionary;
+	
+	import net.hires.debug.Stats;
 
 
 	[SWF(width = "1000", height = "600", frameRate = "30")]
@@ -30,12 +32,6 @@ package
 
 		private var c:ProgressBar;
 
-		private var s:Sprite;
-
-		private var bd:Dictionary;
-
-		private var m:Shape;
-
 		private var d:Sprite;
 
 		private var e:Sprite;
@@ -45,50 +41,38 @@ package
 		public function TestProgressBar()
 		{
 			GameUI.init();
-			GameUI.skinManager.registerSkin(SkinDef.PROGRESSBAR_INFILL, Bitmap(new normal()).bitmapData,
-											new Rectangle(1, 0, 5));
 //			GameUI.skinManager.registerSkin(SkinDef.PROGRESSBAR_INFILL, Bitmap(new normal()).bitmapData,
-//											new Rectangle());
+//											new Rectangle(1, 0, 5));
+			GameUI.skinManager.registerSkin(SkinDef.PROGRESSBAR_INFILL, Bitmap(new normal()).bitmapData,
+											new Rectangle());
 			GameUI.skinManager.registerSkin(SkinDef.PROGRESSBAR_BG, Bitmap(new bg()).bitmapData,
 											new Rectangle(10, 1, 4));
 
+			
+			
 			//var l:Label = new Label("test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它", ts);
-			var l:ProgressBar = new ProgressBar();
-			l.autoSize = false;
-//			l.minimum = 10;
-//			l.stepSize = 2;
-//			l.maximum = 99;
-//			l.align = LayoutAlign.CENTER | LayoutAlign.TOP;
-//			l.percent = 50;
-//			l.enabled = false;
-			c = l;
+			c = new ProgressBar();
+			c.autoSize = false;
+//			c.minimum = 10;
+//			c.stepSize = 2;
+//			c.maximum = 99;
+//			c.align = LayoutAlign.CENTER | LayoutAlign.TOP;
+//			c.percent = 50;
+//			c.enabled = false;
 
-			bd = new Dictionary();
-			s = new Sprite();
+			
 
-			var b:Bitmap;
-
-			for each (var ic:IControl in c.container.children)
-			{
-				b = new Bitmap(ic.bitmapData);
-				bd[ic] = b;
-				s.addChild(b);
-			}
-
-			m = new Shape();
-			m.graphics.beginFill(0);
-			m.graphics.drawRect(c.x, c.y, c.width, c.height);
-			m.graphics.endFill();
-			s.mask = m;
-			s.addChild(m);
-
-			addChild(s);
+			
+			var u:UIImpl = new UIImpl(stage, c);
+			addChild(new Bitmap(u.canvas));
+			
+			
 
 
 			d = new CPoint();
 			d.addEventListener(Event.RESIZE, onresize);
-			d.x = 50;
-			d.y = 50;
+			d.x = 150;
+			d.y = 150;
 			addChild(d);
 
 			e = new CPoint();
@@ -99,6 +83,7 @@ package
 
 			onresize(null);
 
+			addChild(new Stats());
 			stage.addEventListener(Event.ENTER_FRAME, onEnterFrame);
 		}
 		
@@ -116,20 +101,6 @@ package
 			c.x = Math.min(d.x, e.x);
 			c.y = Math.min(d.y, e.y);
 			c.resize(Math.abs(e.x - d.x), Math.abs(e.y - d.y));
-
-			m.graphics.clear();
-			m.graphics.beginFill(0);
-			m.graphics.drawRect(c.x, c.y, c.width, c.height);
-			m.graphics.endFill();
-
-			for each (var ic:IControl in c.container.children)
-			{
-				var b:Bitmap = bd[ic];
-				b.bitmapData = ic.bitmapData;
-				var p:Point = ic.globalCoord();
-				b.x = p.x;
-				b.y = p.y;
-			}
 		}
 	}
 }

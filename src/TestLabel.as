@@ -14,13 +14,14 @@ package
 	import flash.text.TextFormat;
 	import flash.text.TextFormatAlign;
 	import flash.utils.getTimer;
+	
+	import net.hires.debug.Stats;
 
 	[SWF(width="1000", height="600", frameRate="60")]
 	public class TestLabel extends Sprite
 	{
-		private var c:AbstractControl;
 
-		private var b:Bitmap;
+		private var l:Label;
 		
 		private var d:Sprite;
 		private var e:Sprite;
@@ -38,21 +39,25 @@ package
 //			ts.leftMargin = 20;
 //			ts.displayAsPassword = true;
 			
-			var l:Label = new Label("test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它", ts);
-//			var l:Label = new Label("");
+			l = new Label("test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它");
+			l.normalStyle = ts;
 //			l.autoSize = false;
 //			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
-			l.backgroundColor = 0xff333333;
+			l.backgroundColor = 0xff999999;
 			l.padding = new Rectangle(10, 10, -10);
-			c = l;
 			
-			b = new Bitmap(c.bitmapData);
-			addChild(b);
+			
+			
+			var u:UIImpl = new UIImpl(stage, l);
+			addChild(new Bitmap(u.canvas));
+			
+			
+			
 			
 			d = new CPoint();
 			d.addEventListener(Event.RESIZE, onresize);
-			d.x = 50;
-			d.y = 50;
+			d.x = 150;
+			d.y = 150;
 			addChild(d);
 			
 			e = new CPoint();
@@ -62,15 +67,15 @@ package
 			addChild(e);
 			
 			onresize(null);
+			
+			addChild(new Stats());
 		}
 		
 		private function onresize(evt:Event):void
 		{
-//			trace(c.width, c.height);
-			b.x = Math.min(d.x, e.x);
-			b.y = Math.min(d.y, e.y);
-			c.resize(Math.abs(e.x - d.x), Math.abs(e.y - d.y));
-			b.bitmapData = c.bitmapData;
+			l.x = Math.min(d.x, e.x);
+			l.y = Math.min(d.y, e.y);
+			l.resize(Math.abs(e.x - d.x), Math.abs(e.y - d.y));
 		}
 	}
 }

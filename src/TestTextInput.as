@@ -29,18 +29,19 @@ package
 		[Embed(source="assets/TextInput_disableImage.png")]
 		private var disable:Class;
 		
-		private var c:AbstractControl;
-
-		private var b:Bitmap;
+		
+		
+		private var l:TextInput;
 
 		private var d:Sprite;
 
 		private var e:Sprite;
 
+		
+		
+		
 		public function TestTextInput()
 		{
-			stage.color = 0x666666;
-			
 			GameUI.init();
 			GameUI.skinManager.registerSkin(SkinDef.TEXTINPUT_NORMAL, Bitmap(new normal()).bitmapData, new Rectangle(14, 0, 7, 0), 0x21);
 			GameUI.skinManager.registerSkin(SkinDef.TEXTINPUT_DISABLE, Bitmap(new disable()).bitmapData, new Rectangle(14, 0, 7, 0), 0x21);
@@ -54,7 +55,8 @@ package
 //			ts.displayAsPassword = true;
 			ts.maxChars = 50;
 
-			var l:TextInput = new TextInput("必须使用英文字体名称，才能正确支持中文！直接使用中文字体名称是不行的", ts);
+			l = new TextInput("必须使用英文字体名称，才能正确支持中文！直接使用中文字体名称是不行的");
+			l.normalStyle = ts;
 			l.autoSize = false;
 //			var ts:TextStyle = l.normalStyle;
 //			ts.color = 0xFFFFFF;
@@ -73,15 +75,19 @@ package
 			l.padding = new Rectangle(15);
 //			l.enabled = false;
 //			l.editable = false;
-			c = l;
 
-			b = new Bitmap(c.bitmapData);
-			addChild(b);
+			
+
+			
+			var u:UIImpl = new UIImpl(stage, l);
+			addChild(new Bitmap(u.canvas));
+			
+			
 
 			d = new CPoint();
 			d.addEventListener(Event.RESIZE, onresize);
-			d.x = 50;
-			d.y = 50;
+			d.x = 150;
+			d.y = 150;
 			addChild(d);
 
 			e = new CPoint();
@@ -97,16 +103,14 @@ package
 
 		private function onresize(evt:Event):void
 		{
-			c.x = b.x = Math.min(d.x, e.x);
-			c.y = b.y = Math.min(d.y, e.y);
-			c.resize(Math.abs(e.x - d.x), Math.abs(e.y - d.y));
-			b.bitmapData = c.bitmapData;
+			l.x = Math.min(d.x, e.x);
+			l.y = Math.min(d.y, e.y);
+			l.resize(Math.abs(e.x - d.x), Math.abs(e.y - d.y));
 		}
 
 		protected function onmouseclick(event:MouseEvent):void
 		{
-			var b:TextInput = TextInput(c);
-			if (b.rect.contains(stage.mouseX, stage.mouseY) && b.hitTest(stage.mouseX, stage.mouseY))
+			if (l.rect.contains(stage.mouseX, stage.mouseY) && l.hitTest(stage.mouseX, stage.mouseY))
 				startEdit();
 			else
 				endEdit();
@@ -118,7 +122,7 @@ package
 		{
 			if (textField)
 			{
-				IEdit(c).endEdit();
+				IEdit(l).endEdit();
 				textField.removeEventListener(KeyboardEvent.KEY_DOWN, onkeydown);
 				removeChild(textField);
 				stage.focus = null;
@@ -131,7 +135,7 @@ package
 		{
 			if (!textField)
 			{
-				textField = IEdit(c).beginEdit();
+				textField = IEdit(l).beginEdit();
 				if (textField)
 				{
 					textField.addEventListener(KeyboardEvent.KEY_DOWN, onkeydown);

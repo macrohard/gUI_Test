@@ -30,19 +30,13 @@ package
 		[Embed(source="assets/screen.png")]
 		private var screen:Class;
 		
-		[Embed(source="assets/top.png")]
-		private var top:Class;
-		
 		private var c:AbstractContainer;
-		private var b:Bitmap;
 		
 		private var d:Sprite;
 		private var e:Sprite;
 		
 		public function TestPanel()
 		{
-			stage.scaleMode = StageScaleMode.NO_SCALE;
-			
 			GameUI.init();
 			GameUI.skinManager.registerSkin(SkinDef.PANEL_BG, Bitmap(new screen()).bitmapData, new Rectangle(8, 30, 560, 461));
 			
@@ -50,8 +44,11 @@ package
 			c = new Panel();
 //			c.backgroundColor = 0x66ff0000;
 //			c.align = LayoutAlign.CENTER | LayoutAlign.BOTTOM;
-			b = new Bitmap(c.bitmapData);
-			addChild(b);
+			
+
+			
+			var u:UIImpl = new UIImpl(stage, c);
+			addChild(new Bitmap(u.canvas));
 			
 			
 			d = new CPoint();
@@ -74,10 +71,9 @@ package
 		
 		private function onresize(evt:Event):void
 		{
-			b.x = Math.min(d.x, e.x);
-			b.y = Math.min(d.y, e.y);
+			c.x = Math.min(d.x, e.x);
+			c.y = Math.min(d.y, e.y);
 			c.resize(Math.abs(e.x - d.x), Math.abs(e.y - d.y));
-			b.bitmapData = c.bitmapData;
 		}
 	}
 }

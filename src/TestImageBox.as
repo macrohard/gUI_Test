@@ -28,26 +28,19 @@ package
 		[Embed(source="assets/IconButton_defaultImage.png")]
 		private var normal:Class;
 		
-		[Embed(source="assets/sprite_100001.swf")]
-		private var movie:Class;
+		
 		
 		private var c:ImageBox;
 
-		private var b:Bitmap;
-		
 		private var d:Sprite;
 		private var e:Sprite;
 
+		
 		public function TestImageBox()
 		{
 			GameUI.init();
 			GameUI.skinManager.registerSkin(SkinDef.IMAGEBOX_BORDER, Bitmap(new normal()).bitmapData, new Rectangle(6, 6, 22, 22));
 			
-//			var s:Sprite = new ShapeExample();
-//			addChild(s);
-//			trace(s.getRect(null));
-//			trace(s.getBounds(null));
-//			return;
 			
 			var l:ImageBox = new ImageBox(new ShapeExample(), false);
 			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
@@ -57,15 +50,11 @@ package
 //			l.setSource(new ShapeExample());
 			c = l;
 			
-			b = new Bitmap(c.bitmapData);
-			addChild(b);
+			var u:UIImpl = new UIImpl(stage, c);
+			addChild(new Bitmap(u.canvas));
 			
-//			var s:Shape = new Shape();
-//			s.graphics.beginFill(0);
-//			s.graphics.drawRect(0, 0, 100, 100);
-//			s.x = 400;
-//			s.y = 300;
-//			b.mask = s;
+			
+			
 			
 			d = new CPoint();
 			d.addEventListener(Event.RESIZE, onresize);
@@ -81,21 +70,16 @@ package
 			
 			onresize(null);
 			
-			this.addEventListener(Event.ENTER_FRAME, onEnterFrameHandler);
 			addChild(new Stats());
 		}
 		
 		private function onresize(evt:Event):void
 		{
-			b.x = Math.min(d.x, e.x);
-			b.y = Math.min(d.y, e.y);
+			c.x = Math.min(d.x, e.x);
+			c.y = Math.min(d.y, e.y);
 			c.resize(Math.abs(e.x - d.x), Math.abs(e.y - d.y));
 		}
 		
-		private function onEnterFrameHandler(e:Event):void
-		{
-			b.bitmapData = c.bitmapData;
-		}
 	}
 }
 import flash.display.DisplayObject;

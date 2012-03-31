@@ -20,6 +20,8 @@ package
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
 	import flash.utils.Dictionary;
+	
+	import net.hires.debug.Stats;
 
 
 	[SWF(width = "1000", height = "600", frameRate = "60")]
@@ -42,12 +44,6 @@ package
 
 
 		private var control:Button;
-
-		private var sprite:Sprite;
-
-		private var map:Dictionary;
-
-		private var spriteMask:Shape;
 
 		private var CP1:Sprite;
 
@@ -80,39 +76,15 @@ package
 			control = new Button("");
 			control.autoSize = false;
 			control.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
-			control.backgroundColor = 0xFF00FF00;
+			control.backgroundColor = 0xFF00FFFF;
 			control.text = "test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它";
 //			control.enabled = false;
 			
 
 
 
-			map = new Dictionary();
-			sprite = new Sprite();
-
-			var b:Bitmap = new Bitmap(control.bitmapData);
-			b.x = control.x;
-			b.y = control.y;
-			map[control] = b;
-			sprite.addChild(b);
-
-//			for each (var ic:IControl in control.children)
-//			{
-//				b = new Bitmap(ic.bitmapData);
-//				b.x = ic.rect.x;
-//				b.y = ic.rect.y;
-//				map[ic] = b;
-//				sprite.addChild(b);
-//			}
-
-			spriteMask = new Shape();
-			spriteMask.graphics.beginFill(0);
-			spriteMask.graphics.drawRect(0, 0, control.width, control.height);
-			spriteMask.graphics.endFill();
-			sprite.mask = spriteMask;
-			sprite.addChild(spriteMask);
-
-			addChild(sprite);
+			var u:UIImpl = new UIImpl(stage, control);
+			addChild(new Bitmap(u.canvas));
 
 
 
@@ -120,8 +92,8 @@ package
 
 			CP1 = new CPoint();
 			CP1.addEventListener(Event.RESIZE, onresize);
-			CP1.x = 50;
-			CP1.y = 50;
+			CP1.x = 150;
+			CP1.y = 150;
 			addChild(CP1);
 
 			CP2 = new CPoint();
@@ -132,142 +104,15 @@ package
 
 			onresize(null);
 
-
-
-			stage.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
-			stage.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
-			stage.addEventListener(MouseEvent.MOUSE_UP, onMouseUp);
-//			stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
-			stage.addEventListener(Event.ENTER_FRAME, onEnerFrame);
+			addChild(new Stats());
 		}
-
-		protected function onEnerFrame(event:Event):void
-		{
-			map[control].bitmapData = control.bitmapData;
-//			for each (var ic:IControl in control.children)
-//			{
-//				var b:Bitmap = map[ic];
-//				b.bitmapData = ic.bitmapData;
-//				b.x = ic.rect.x;
-//				b.y = ic.rect.y;
-//			}
-		}
-
-//		protected function onKeyDown(event:KeyboardEvent):void
-//		{
-//			control.keyDown(event);
-//		}
-
 
 		private function onresize(evt:Event):void
 		{
-			control.x = sprite.x = Math.min(CP1.x, CP2.x);
-			control.y = sprite.y = Math.min(CP1.y, CP2.y);
+			control.x = Math.min(CP1.x, CP2.x);
+			control.y = Math.min(CP1.y, CP2.y);
 			control.resize(Math.abs(CP2.x - CP1.x), Math.abs(CP2.y - CP1.y));
-			map[control].bitmapData = control.bitmapData;
-
-			spriteMask.graphics.clear();
-			spriteMask.graphics.beginFill(0);
-			spriteMask.graphics.drawRect(0, 0, control.width, control.height);
-			spriteMask.graphics.endFill();
-
 		}
 
-
-
-
-
-		private var _mouseCon:IControl;
-
-		private var _mouseObj:IControl;
-
-		private var _dragCon:IControl;
-
-		protected function onMouseDown(event:MouseEvent):void
-		{
-			_mouseObj = control.hitTest(stage.mouseX, stage.mouseY);
-			if (_mouseObj)
-			{
-				_mouseCon = control;
-				if (_mouseCon is IFocus && _mouseCon.enabled)
-				{
-					if (_mouseCon is IButton)
-					{
-						IButton(_mouseCon).mouseDown();
-					}
-					if (_mouseCon is IDrag && IDrag(_mouseCon).getDragMode() != DragMode.NONE)
-						_dragCon = control;
-				}
-			}
-			else
-			{
-				_mouseCon = null;
-				control.enabled = !control.enabled;
-			}
-		}
-
-		protected function onMouseUp(event:MouseEvent):void
-		{
-			if (_dragCon)
-			{
-				_dragCon = null;
-				onMouseMove(null);
-				return;
-			}
-
-			_mouseObj = control.hitTest(stage.mouseX, stage.mouseY);
-			if (_mouseObj)
-			{
-				_mouseCon = control;
-				if (_mouseCon is IFocus && _mouseCon.enabled)
-				{
-					if (_mouseCon is IButton)
-					{
-						IButton(_mouseCon).mouseUp();
-					}
-				}
-			}
-			else
-				_mouseCon = null;
-
-		}
-
-		protected function onMouseMove(e:MouseEvent):void
-		{
-			if (_dragCon)
-			{
-				IDrag(_dragCon).setDragCoord(stage.mouseX, stage.mouseY);
-				return;
-			}
-
-
-			var t:IControl = control.hitTest(stage.mouseX, stage.mouseY);
-			if (t == _mouseObj)
-				return;
-
-			if (_mouseCon is IButton)
-			{
-				Mouse.cursor = MouseCursor.AUTO;
-				IButton(_mouseCon).mouseOut();
-			}
-
-
-			_mouseObj = t;
-			if (_mouseObj)
-			{
-				_mouseCon = control;
-				if (_mouseCon is IFocus && _mouseCon.enabled)
-				{
-					if (_mouseCon is IButton)
-					{
-						if (_mouseObj is IButton)
-							Mouse.cursor = MouseCursor.BUTTON;
-						IButton(_mouseCon).mouseOver();
-					}
-				}
-			}
-			else
-				_mouseCon = null;
-		}
 	}
 }
