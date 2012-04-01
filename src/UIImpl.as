@@ -194,7 +194,6 @@ package
 				else
 				{
 					endEdit();
-					_editControl = null;
 				}
 			}
 			if (_mouseControl is IEdit)
@@ -411,6 +410,7 @@ package
 				stage.removeChild(_editBox);
 				_editBox.removeEventListener(Event.CHANGE, relocateEditBox);
 				_editBox = null;
+				_editControl = null;
 			}
 		}
 

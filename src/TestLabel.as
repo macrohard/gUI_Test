@@ -32,19 +32,19 @@ package
 			
 			var ts:TextStyle = new TextStyle();
 //			ts.align = TextFormatAlign.CENTER;
-			ts.bold = true;
+//			ts.bold = true;
 			ts.multiline = true;
 			ts.wordWrap = true;
 			ts.color = 0xffffff;
 //			ts.leftMargin = 20;
 //			ts.displayAsPassword = true;
 			
-			l = new Label("test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它");
+			l = new Label("test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它", false);
 			l.normalStyle = ts;
 //			l.autoSize = false;
 //			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
 			l.backgroundColor = 0xff999999;
-			l.padding = new Rectangle(10, 10, -10);
+//			l.padding = new Rectangle(10, 10, -10);
 			
 			
 			
