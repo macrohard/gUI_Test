@@ -118,6 +118,8 @@ package
 				endEdit();
 		}
 
+		
+		// TODO 将输入框的创建过程移入UIImpl
 		private var _editBox:TextField;
 
 		private function endEdit():void
