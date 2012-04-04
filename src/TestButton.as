@@ -78,7 +78,7 @@ package
 //			control.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
 			control.backgroundColor = 0xFF00FFFF;
 			control.text = "test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它";
-			control.normalStyle = ts;
+			control.style = ts;
 //			control.enabled = false;
 			
 

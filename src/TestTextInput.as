@@ -57,7 +57,7 @@ package
 			l = new TextInput();
 //			l.normalStyle = ts;
 //			l.autoSize = false;
-			var ts:TextStyle = l.normalStyle;
+			var ts:TextStyle = l.style;
 			ts.color = 0xFFFFFF;
 			ts.font = "Microsoft YaHei";
 			ts.size = 24;
@@ -66,7 +66,7 @@ package
 //			ts.rightMargin = 15;
 //			ts.blockIndent = 10;
 //			ts.indent = 20;
-			l.normalStyle = ts;
+			l.style = ts;
 
 //			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
 //			l.backgroundColor = 0xFF666666;

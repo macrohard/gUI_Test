@@ -421,7 +421,7 @@ package
 				if (_editControl is TextInput)
 				{
 					var textInput:TextInput = _editControl as TextInput;
-					var ts:TextStyle = textInput.normalStyle;
+					var ts:TextStyle = textInput.style;
 
 					_editBox = new TextField();
 					_editBox.autoSize = TextFieldAutoSize.LEFT;
@@ -474,7 +474,7 @@ package
 			if (_editControl is TextInput)
 			{
 				var textInput:TextInput = _editControl as TextInput;
-				var ts:TextStyle = textInput.normalStyle;
+				var ts:TextStyle = textInput.style;
 				var padding:Rectangle = textInput.padding;
 
 				var txtW:int = _editBox.textWidth + 4 + ts.leftMargin + ts.rightMargin + ts.indent + ts.blockIndent;

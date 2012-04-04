@@ -145,9 +145,9 @@ package
 			var content:Label = new Label("test aaa \n看直fdaf\ndafdsa d\nsa fdsaj\nfdkjf  ka\njdksa\n lkdsa\n djdks\nja klfd\n\njsak jkdsj dja kjfdksj klfdj j;aja;");
 			content.backgroundColor = 0xFF666666;
 			content.x = 180;
-			var st:TextStyle = content.normalStyle;
+			var st:TextStyle = content.style;
 			st.multiline = true;
-			content.normalStyle = st;
+			content.style = st;
 			
 			control.viewport = new Viewport(rect, content, new Rectangle(0, 5));
 			
