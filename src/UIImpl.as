@@ -12,7 +12,7 @@ package
 	import com.macro.gUI.base.feature.IFocus;
 	import com.macro.gUI.base.feature.IKeyboard;
 	import com.macro.gUI.controls.TextInput;
-
+	
 	import flash.display.BitmapData;
 	import flash.display.Stage;
 	import flash.display.StageScaleMode;
@@ -287,7 +287,7 @@ package
 				var tempC:IControl = _mouseControl;
 				var tempT:IControl = _mouseTarget;
 				findTargetControl(root);
-trace(_mouseControl, _mouseTarget);
+
 				// 在同一个控件范围内移动时不作处理
 				if (tempT == _mouseTarget)
 				{
@@ -341,7 +341,7 @@ trace(_mouseControl, _mouseTarget);
 			var target:IControl = control.hitTest(stage.mouseX, stage.mouseY);
 			if (target != null)
 			{
-				if (control is IContainer)
+				if (control is IContainer && target is IContainer)
 				{
 					var container:IContainer = control as IContainer;
 					for (var i:int = container.numChildren - 1; i >= 0; i--)
