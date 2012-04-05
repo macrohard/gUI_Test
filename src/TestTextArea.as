@@ -209,7 +209,8 @@ package
 			list = new TextArea();
 //			list.wordWrap = false;
 			list.text = "下例使用 StageExample 类在激活舞台或调整舞台大小时调度事件。执行下列步骤可完成此操作：\n" +
-				"无论 Flash Player 窗口的大小如何，类的构造函数都会首先将 Flash 应用程序设置为固定大小，然后使用 activateHandler() 和 resizeHandler() 方法添加两个事件侦听器。\n" +
+				"无论 Flash Player 窗口的大小如何，类的构造函数都会首先将 Flash 应用程序设置为固定大小，\n" +
+				"然后使用 activateHandler() 和 resizeHandler() 方法添加两个事件侦听器。\n" +
 				"用鼠标左键单击后，便可运行 activateHandler() 方法。\n" +
 				"当调整舞台大小时，便可运行 resizeHandler() 方法。";
 
@@ -244,7 +245,7 @@ package
 			CP2.x = CP1.x + list.width;
 			CP2.y = CP1.y + list.height;
 		}
-
+ 
 		private function onresize(e:Event):void
 		{
 			list.resize(Math.abs(CP2.x - CP1.x), Math.abs(CP2.y - CP1.y));

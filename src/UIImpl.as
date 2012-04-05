@@ -208,7 +208,7 @@ package
 				// 处理鼠标按下
 				if (_mouseControl is IButton)
 				{
-					(_mouseControl as IButton).mouseDown();
+					(_mouseControl as IButton).mouseDown(_mouseTarget);
 				}
 
 				// 处理拖拽
@@ -216,7 +216,7 @@ package
 				{
 					_dragControl = _mouseControl as IDrag;
 					_dragTarget = _mouseTarget;
-					_dragMode = _dragControl.getDragMode();
+					_dragMode = _dragControl.getDragMode(_dragTarget);
 
 					if (_dragMode == DragMode.NONE)
 					{
@@ -250,7 +250,7 @@ package
 				{
 					if (_mouseControl is IButton)
 					{
-						(_mouseControl as IButton).mouseUp();
+						(_mouseControl as IButton).mouseUp(_mouseTarget);
 					}
 				}
 			}
@@ -263,7 +263,7 @@ package
 				{
 					if (_dragControl is IButton)
 					{
-						(_dragControl as IButton).mouseUp();
+						(_dragControl as IButton).mouseUp(_dragTarget);
 					}
 				}
 				else
@@ -271,7 +271,7 @@ package
 					Mouse.cursor = MouseCursor.AUTO;
 					if (_dragControl is IButton)
 					{
-						(_dragControl as IButton).mouseOut();
+						(_dragControl as IButton).mouseOut(_dragTarget);
 					}
 				}
 
@@ -298,7 +298,7 @@ package
 				// 处理鼠标离开
 				if (tempC is IButton)
 				{
-					(tempC as IButton).mouseOut();
+					(tempC as IButton).mouseOut(tempT);
 					Mouse.cursor = MouseCursor.AUTO;
 				}
 
@@ -307,7 +307,7 @@ package
 				{
 					if (_mouseControl is IButton)
 					{
-						(_mouseControl as IButton).mouseOver();
+						(_mouseControl as IButton).mouseOver(_mouseTarget);
 
 						if (_mouseTarget is IButton)
 						{
@@ -322,7 +322,7 @@ package
 				// 拖拽中
 				if (_dragMode == DragMode.DIRECT)
 				{
-					_dragControl.setDragCoord(stage.mouseX, stage.mouseY);
+					_dragControl.setDragCoord(_dragTarget, stage.mouseX, stage.mouseY);
 				}
 				else
 				{
