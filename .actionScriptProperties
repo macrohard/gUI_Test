@@ -41,11 +41,12 @@
     <application path="TestIconButton.as"/>
     <application path="TestCheckBox.as"/>
     <application path="TestHSlider.as"/>
+    <application path="TestScrollPanel.as"/>
     <application path="TestList.as"/>
-    <application path="TestLinkButton.as"/>
     <application path="TestRadioButton.as"/>
-    <application path="TestButton.as"/>
+    <application path="TestLinkButton.as"/>
     <application path="TestLabel.as"/>
+    <application path="TestButton.as"/>
     <application path="TestCell.as"/>
   </applications>
   <modules/>

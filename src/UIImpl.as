@@ -87,10 +87,13 @@ package
 				canvas.copyPixels(control.bitmapData, drawR, stageRect.topLeft, null, null, true);
 			}
 
-			var container:IContainer;
-			if (control is IContainer)
+			if (control is IComposite)
 			{
-				container = control as IContainer;
+				drawControl((control as IComposite).container, stageRect);
+			}
+			else if (control is IContainer)
+			{
+				var container:IContainer = control as IContainer;
 
 				var m:Rectangle = container.margin;
 				stageRect.left += m.left;
@@ -110,10 +113,6 @@ package
 					}
 				}
 
-			}
-			else if (control is IComposite)
-			{
-				drawControl((control as IComposite).container, stageRect);
 			}
 		}
 
@@ -288,7 +287,7 @@ package
 				var tempC:IControl = _mouseControl;
 				var tempT:IControl = _mouseTarget;
 				findTargetControl(root);
-
+trace(_mouseControl, _mouseTarget);
 				// 在同一个控件范围内移动时不作处理
 				if (tempT == _mouseTarget)
 				{
