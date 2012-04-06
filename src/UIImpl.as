@@ -2,6 +2,7 @@ package
 {
 	import com.macro.gUI.assist.DragMode;
 	import com.macro.gUI.assist.LayoutAlign;
+	import com.macro.gUI.assist.NULL;
 	import com.macro.gUI.assist.TextStyle;
 	import com.macro.gUI.base.IComposite;
 	import com.macro.gUI.base.IContainer;
@@ -341,7 +342,7 @@ package
 			var target:IControl = control.hitTest(stage.mouseX, stage.mouseY);
 			if (target != null)
 			{
-				if (control is IContainer && target is IContainer)
+				if (control is IContainer && !(target is NULL))
 				{
 					var container:IContainer = control as IContainer;
 					for (var i:int = container.numChildren - 1; i >= 0; i--)
@@ -442,7 +443,7 @@ package
 				_editBox.addEventListener(Event.CHANGE, relocateEditBox, false, 0, true);
 				_editBox.setSelection(0, _editBox.text.length);
 				stage.addChild(_editBox);
-				
+
 				focusEditBox();
 				_editControl.beginEdit();
 			}
@@ -450,7 +451,7 @@ package
 
 		/**
 		 * 聚焦到编辑框
-		 * 
+		 *
 		 */
 		private function focusEditBox():void
 		{
@@ -469,7 +470,7 @@ package
 		{
 			var ox:int;
 			var oy:int;
-			
+
 			if (_editControl is TextInput)
 			{
 				var textInput:TextInput = _editControl as TextInput;

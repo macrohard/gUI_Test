@@ -215,10 +215,11 @@ package
 			var ts:TextStyle = new TextStyle();
 			ts.multiline = true;
 			ts.wordWrap = false;
-			ts.color = 0xffffff;
+//			ts.color = 0xffffff;
 			
 			var l:Label = new Label();
 			l.style = ts;
+			l.backgroundColor = 0xffffff00;
 			l.text = "下例使用 StageExample 类在激活舞台或调整舞台大小时调度事件。执行下列步骤可完成此操作：\n" +
 				"无论 Flash Player 窗口的大小如何，类的构造函数都会首先将 Flash 应用程序设置为固定大小，\n" +
 				"然后使用 activateHandler() 和 resizeHandler() 方法添加两个事件侦听器。\n" +
@@ -231,6 +232,7 @@ package
 			
 			var b:Label = new Label();
 			b.style = ts;
+			b.backgroundColor = 0xff00ffff;
 			b.text = "下例使用 StageExample 类在激活舞台或调整舞台大小时调度事件。执行下列步骤可完成此操作：\n" +
 				"无论 Flash Player 窗口的大小如何，类的构造函数都会首先将 Flash 应用程序设置为固定大小，\n" +
 				"然后使用 activateHandler() 和 resizeHandler() 方法添加两个事件侦听器。\n" +
@@ -238,8 +240,11 @@ package
 				"当调整舞台大小时，便可运行 resizeHandler() 方法。";
 			
 			b.x = 200;
-			b.y = 200;
+			b.y = 50;
 			list.addChild(b);
+			
+			
+//			list.swapChildren(l, b);
 			
 			
 			var u:UIImpl = new UIImpl(stage, list);
