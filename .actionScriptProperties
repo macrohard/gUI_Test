@@ -32,11 +32,13 @@
     <application path="TestVScrollBar.as"/>
     <application path="TestImageBox.as"/>
     <application path="TestTextArea.as"/>
+    <application path="TestWindowChrome.as"/>
     <application path="TestHScrollBar.as"/>
     <application path="TestToggleButton.as"/>
     <application path="TestTextInput.as"/>
     <application path="TestPanel.as"/>
     <application path="TestVSlider.as"/>
+    <application path="TestWindowXP.as"/>
     <application path="TestProgressBar.as"/>
     <application path="TestIconButton.as"/>
     <application path="TestCheckBox.as"/>

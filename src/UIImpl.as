@@ -203,7 +203,7 @@ package
 				return;
 			}
 
-			if (_mouseTarget != null && _mouseControl.enabled)
+			if (_mouseTarget != null && _mouseControl.enabled && _mouseTarget.enabled)
 			{
 				// 处理鼠标按下
 				if (_mouseControl is IButton)
@@ -246,7 +246,7 @@ package
 			if (_dragControl == null)
 			{
 				// 处理鼠标松开
-				if (_mouseControl != null && _mouseControl.enabled)
+				if (_mouseControl != null && _mouseControl.enabled && _mouseTarget.enabled)
 				{
 					if (_mouseControl is IButton)
 					{
@@ -296,14 +296,14 @@ package
 				}
 
 				// 处理鼠标离开
-				if (tempC is IButton)
+				if (tempC is IButton && tempC.enabled && tempT.enabled)
 				{
 					(tempC as IButton).mouseOut(tempT);
 					Mouse.cursor = MouseCursor.AUTO;
 				}
 
 				// 处理鼠标进入
-				if (_mouseControl != null && _mouseControl.enabled)
+				if (_mouseControl != null && _mouseControl.enabled && _mouseTarget.enabled)
 				{
 					if (_mouseControl is IButton)
 					{
