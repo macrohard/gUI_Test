@@ -33,7 +33,7 @@ package
 		public function TestCell()
 		{
 			GameUI.init();
-			GameUI.skinManager.registerSkin(SkinDef.CELL_BG, Bitmap(new normal()).bitmapData, new Rectangle(35, 0, 133 - 35, 0), 0x22);
+			GameUI.skinManager.setSkin(SkinDef.CELL_BG, Bitmap(new normal()).bitmapData, new Rectangle(35, 0, 133 - 35, 0), 0x22);
 			
 			var ts:TextStyle = new TextStyle();
 			ts.bold = true;

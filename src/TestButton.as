@@ -55,13 +55,13 @@ package
 		public function TestButton()
 		{
 			GameUI.init();
-			GameUI.skinManager.registerSkin(SkinDef.BUTTON_NORMAL, Bitmap(new normal()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.BUTTON_NORMAL, Bitmap(new normal()).bitmapData,
 											new Rectangle(13, 0, 39 - 13, 0), 0x22);
-			GameUI.skinManager.registerSkin(SkinDef.BUTTON_OVER, Bitmap(new over()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.BUTTON_OVER, Bitmap(new over()).bitmapData,
 											new Rectangle(13, 0, 39 - 13, 0), 0x22);
-			GameUI.skinManager.registerSkin(SkinDef.BUTTON_DOWN, Bitmap(new down()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.BUTTON_DOWN, Bitmap(new down()).bitmapData,
 											new Rectangle(13, 0, 39 - 13, 0), 0x22);
-			GameUI.skinManager.registerSkin(SkinDef.BUTTON_DISABLE, Bitmap(new disable()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.BUTTON_DISABLE, Bitmap(new disable()).bitmapData,
 											new Rectangle(13, 0, 39 - 13, 0), 0x22);
 
 

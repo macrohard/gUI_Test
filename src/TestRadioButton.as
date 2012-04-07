@@ -56,10 +56,10 @@ package
 		public function TestRadioButton()
 		{
 			GameUI.init();
-			GameUI.skinManager.registerSkin(SkinDef.RADIOBUTTON_NORMAL, Bitmap(new normal()).bitmapData, new Rectangle());
-			GameUI.skinManager.registerSkin(SkinDef.RADIOBUTTON_DISABLE, Bitmap(new disable()).bitmapData, new Rectangle());
-			GameUI.skinManager.registerSkin(SkinDef.RADIOBUTTON_SELECTED, Bitmap(new selected_normal()).bitmapData, new Rectangle());
-			GameUI.skinManager.registerSkin(SkinDef.RADIOBUTTON_SELECTED_DISABLE, Bitmap(new selected_disable()).bitmapData, new Rectangle());
+			GameUI.skinManager.setSkin(SkinDef.RADIOBUTTON_NORMAL, Bitmap(new normal()).bitmapData, new Rectangle());
+			GameUI.skinManager.setSkin(SkinDef.RADIOBUTTON_DISABLE, Bitmap(new disable()).bitmapData, new Rectangle());
+			GameUI.skinManager.setSkin(SkinDef.RADIOBUTTON_SELECTED, Bitmap(new selected_normal()).bitmapData, new Rectangle());
+			GameUI.skinManager.setSkin(SkinDef.RADIOBUTTON_SELECTED_DISABLE, Bitmap(new selected_disable()).bitmapData, new Rectangle());
 			
 			
 			

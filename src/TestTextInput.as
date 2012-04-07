@@ -49,9 +49,9 @@ package
 		public function TestTextInput()
 		{
 			GameUI.init();
-			GameUI.skinManager.registerSkin(SkinDef.TEXTINPUT_NORMAL, Bitmap(new normal()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.TEXTINPUT_NORMAL, Bitmap(new normal()).bitmapData,
 											new Rectangle(14, 0, 7, 0), 0x21);
-			GameUI.skinManager.registerSkin(SkinDef.TEXTINPUT_DISABLE, Bitmap(new disable()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.TEXTINPUT_DISABLE, Bitmap(new disable()).bitmapData,
 											new Rectangle(14, 0, 7, 0), 0x21);
 
 			l = new TextInput();

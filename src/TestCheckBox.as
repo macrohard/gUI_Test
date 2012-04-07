@@ -55,10 +55,10 @@ package
 		public function TestCheckBox()
 		{
 			GameUI.init();
-			GameUI.skinManager.registerSkin(SkinDef.CHECKBOX_NORMAL, Bitmap(new normal()).bitmapData, new Rectangle());
-			GameUI.skinManager.registerSkin(SkinDef.CHECKBOX_DISABLE, Bitmap(new disable()).bitmapData, new Rectangle());
-			GameUI.skinManager.registerSkin(SkinDef.CHECKBOX_SELECTED, Bitmap(new selected_normal()).bitmapData, new Rectangle());
-			GameUI.skinManager.registerSkin(SkinDef.CHECKBOX_SELECTED_DISABLE, Bitmap(new selected_disable()).bitmapData, new Rectangle());
+			GameUI.skinManager.setSkin(SkinDef.CHECKBOX_NORMAL, Bitmap(new normal()).bitmapData, new Rectangle());
+			GameUI.skinManager.setSkin(SkinDef.CHECKBOX_DISABLE, Bitmap(new disable()).bitmapData, new Rectangle());
+			GameUI.skinManager.setSkin(SkinDef.CHECKBOX_SELECTED, Bitmap(new selected_normal()).bitmapData, new Rectangle());
+			GameUI.skinManager.setSkin(SkinDef.CHECKBOX_SELECTED_DISABLE, Bitmap(new selected_disable()).bitmapData, new Rectangle());
 			
 			
 			

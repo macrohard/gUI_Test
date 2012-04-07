@@ -39,7 +39,7 @@ package
 		public function TestImageBox()
 		{
 			GameUI.init();
-			GameUI.skinManager.registerSkin(SkinDef.IMAGEBOX_BORDER, Bitmap(new normal()).bitmapData, new Rectangle(6, 6, 22, 22));
+			GameUI.skinManager.setSkin(SkinDef.IMAGEBOX_BORDER, Bitmap(new normal()).bitmapData, new Rectangle(6, 6, 22, 22));
 			
 			
 			var l:ImageBox = new ImageBox(new ShapeExample(), false);

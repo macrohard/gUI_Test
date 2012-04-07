@@ -57,13 +57,13 @@ package
 		public function TestIconButton()
 		{
 			GameUI.init();
-			GameUI.skinManager.registerSkin(SkinDef.ICONBUTTON_NORMAL, Bitmap(new normal()).bitmapData, new Rectangle(),
+			GameUI.skinManager.setSkin(SkinDef.ICONBUTTON_NORMAL, Bitmap(new normal()).bitmapData, new Rectangle(),
 											0x22);
-			GameUI.skinManager.registerSkin(SkinDef.ICONBUTTON_OVER, Bitmap(new over()).bitmapData, new Rectangle(),
+			GameUI.skinManager.setSkin(SkinDef.ICONBUTTON_OVER, Bitmap(new over()).bitmapData, new Rectangle(),
 											0x22);
-			GameUI.skinManager.registerSkin(SkinDef.ICONBUTTON_DOWN, Bitmap(new down()).bitmapData, new Rectangle(),
+			GameUI.skinManager.setSkin(SkinDef.ICONBUTTON_DOWN, Bitmap(new down()).bitmapData, new Rectangle(),
 											0x22);
-			GameUI.skinManager.registerSkin(SkinDef.ICONBUTTON_DISABLE, Bitmap(new disable()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.ICONBUTTON_DISABLE, Bitmap(new disable()).bitmapData,
 											new Rectangle(), 0x22);
 
 

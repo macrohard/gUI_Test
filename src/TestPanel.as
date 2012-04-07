@@ -39,7 +39,7 @@ package
 		public function TestPanel()
 		{
 			GameUI.init();
-			GameUI.skinManager.registerSkin(SkinDef.PANEL_BG, Bitmap(new screen()).bitmapData, new Rectangle(8, 30, 560, 461));
+			GameUI.skinManager.setSkin(SkinDef.PANEL_BG, Bitmap(new screen()).bitmapData, new Rectangle(8, 30, 560, 461));
 			
 //			c = new Container();
 			c = new Panel();

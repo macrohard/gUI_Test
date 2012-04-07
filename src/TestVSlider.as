@@ -56,15 +56,15 @@ package
 		public function TestVSlider()
 		{
 			GameUI.init();
-			GameUI.skinManager.registerSkin(SkinDef.SLIDER_BLOCK_NORMAL, Bitmap(new normal()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.SLIDER_BLOCK_NORMAL, Bitmap(new normal()).bitmapData,
 											new Rectangle(8, 7));
-			GameUI.skinManager.registerSkin(SkinDef.SLIDER_BLOCK_OVER, Bitmap(new over()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.SLIDER_BLOCK_OVER, Bitmap(new over()).bitmapData,
 											new Rectangle(8, 7));
-			GameUI.skinManager.registerSkin(SkinDef.SLIDER_BLOCK_DOWN, Bitmap(new down()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.SLIDER_BLOCK_DOWN, Bitmap(new down()).bitmapData,
 											new Rectangle(8, 7));
-			GameUI.skinManager.registerSkin(SkinDef.SLIDER_BLOCK_DISABLE, Bitmap(new disable()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.SLIDER_BLOCK_DISABLE, Bitmap(new disable()).bitmapData,
 											new Rectangle(8, 7));
-			GameUI.skinManager.registerSkin(SkinDef.SLIDER_VERTICAL_BG, Bitmap(new bg()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.SLIDER_VERTICAL_BG, Bitmap(new bg()).bitmapData,
 				new Rectangle(6, 1, 0, 1));
 
 			

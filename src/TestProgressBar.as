@@ -43,9 +43,9 @@ package
 			GameUI.init();
 //			GameUI.skinManager.registerSkin(SkinDef.PROGRESSBAR_INFILL, Bitmap(new normal()).bitmapData,
 //											new Rectangle(1, 0, 5));
-			GameUI.skinManager.registerSkin(SkinDef.PROGRESSBAR_INFILL, Bitmap(new normal()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.PROGRESSBAR_INFILL, Bitmap(new normal()).bitmapData,
 											new Rectangle());
-			GameUI.skinManager.registerSkin(SkinDef.PROGRESSBAR_BG, Bitmap(new bg()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.PROGRESSBAR_BG, Bitmap(new bg()).bitmapData,
 											new Rectangle(10, 1, 4));
 
 			

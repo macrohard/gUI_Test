@@ -65,14 +65,14 @@ package
 		public function TestToggleButton()
 		{
 			GameUI.init();
-			GameUI.skinManager.registerSkin(SkinDef.TOGGLEBUTTON_NORMAL, Bitmap(new normal()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
-			GameUI.skinManager.registerSkin(SkinDef.TOGGLEBUTTON_OVER, Bitmap(new over()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
-			GameUI.skinManager.registerSkin(SkinDef.TOGGLEBUTTON_DOWN, Bitmap(new down()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
-			GameUI.skinManager.registerSkin(SkinDef.TOGGLEBUTTON_DISABLE, Bitmap(new disable()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
-			GameUI.skinManager.registerSkin(SkinDef.TOGGLEBUTTON_SELECTED, Bitmap(new selected_normal()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
-			GameUI.skinManager.registerSkin(SkinDef.TOGGLEBUTTON_SELECTED_OVER, Bitmap(new selected_over()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
-			GameUI.skinManager.registerSkin(SkinDef.TOGGLEBUTTON_SELECTED_DOWN, Bitmap(new selected_down()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
-			GameUI.skinManager.registerSkin(SkinDef.TOGGLEBUTTON_SELECTED_DISABLE, Bitmap(new selected_disable()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
+			GameUI.skinManager.setSkin(SkinDef.TOGGLEBUTTON_NORMAL, Bitmap(new normal()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
+			GameUI.skinManager.setSkin(SkinDef.TOGGLEBUTTON_OVER, Bitmap(new over()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
+			GameUI.skinManager.setSkin(SkinDef.TOGGLEBUTTON_DOWN, Bitmap(new down()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
+			GameUI.skinManager.setSkin(SkinDef.TOGGLEBUTTON_DISABLE, Bitmap(new disable()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
+			GameUI.skinManager.setSkin(SkinDef.TOGGLEBUTTON_SELECTED, Bitmap(new selected_normal()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
+			GameUI.skinManager.setSkin(SkinDef.TOGGLEBUTTON_SELECTED_OVER, Bitmap(new selected_over()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
+			GameUI.skinManager.setSkin(SkinDef.TOGGLEBUTTON_SELECTED_DOWN, Bitmap(new selected_down()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
+			GameUI.skinManager.setSkin(SkinDef.TOGGLEBUTTON_SELECTED_DISABLE, Bitmap(new selected_disable()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
 			
 			
 			

@@ -137,70 +137,70 @@ package
 		public function TestTextArea()
 		{
 			GameUI.init();
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_VERTICAL_BLOCK_NORMAL,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_VERTICAL_BLOCK_NORMAL,
 											Bitmap(new vblock_normal()).bitmapData, new Rectangle(8, 6, 0, 14));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_VERTICAL_BLOCK_OVER, Bitmap(new vblock_over()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_VERTICAL_BLOCK_OVER, Bitmap(new vblock_over()).bitmapData,
 											new Rectangle(8, 6, 0, 14));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_VERTICAL_BLOCK_DOWN, Bitmap(new vblock_down()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_VERTICAL_BLOCK_DOWN, Bitmap(new vblock_down()).bitmapData,
 											new Rectangle(8, 6, 0, 14));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_VERTICAL_BLOCK_DISABLE,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_VERTICAL_BLOCK_DISABLE,
 											Bitmap(new vblock_disable()).bitmapData, new Rectangle(8, 6, 0, 14));
 
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_UP_NORMAL, Bitmap(new up_normal()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_UP_NORMAL, Bitmap(new up_normal()).bitmapData,
 											new Rectangle(7, 0));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_UP_OVER, Bitmap(new up_over()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_UP_OVER, Bitmap(new up_over()).bitmapData,
 											new Rectangle(7, 0));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_UP_DOWN, Bitmap(new up_down()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_UP_DOWN, Bitmap(new up_down()).bitmapData,
 											new Rectangle(7, 0));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_UP_DISABLE, Bitmap(new up_disable()).bitmapData,
-											new Rectangle(7, 0));
-
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_DOWN_NORMAL, Bitmap(new down_normal()).bitmapData,
-											new Rectangle(7, 0));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_DOWN_OVER, Bitmap(new down_over()).bitmapData,
-											new Rectangle(7, 0));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_DOWN_DOWN, Bitmap(new down_down()).bitmapData,
-											new Rectangle(7, 0));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_DOWN_DISABLE, Bitmap(new down_disable()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_UP_DISABLE, Bitmap(new up_disable()).bitmapData,
 											new Rectangle(7, 0));
 
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_VERTICAL_BG, Bitmap(new vbg()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_DOWN_NORMAL, Bitmap(new down_normal()).bitmapData,
+											new Rectangle(7, 0));
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_DOWN_OVER, Bitmap(new down_over()).bitmapData,
+											new Rectangle(7, 0));
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_DOWN_DOWN, Bitmap(new down_down()).bitmapData,
+											new Rectangle(7, 0));
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_DOWN_DISABLE, Bitmap(new down_disable()).bitmapData,
+											new Rectangle(7, 0));
+
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_VERTICAL_BG, Bitmap(new vbg()).bitmapData,
 											new Rectangle(8, 0, 0, 111));
 
 
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_NORMAL,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_NORMAL,
 											Bitmap(new hblock_normal()).bitmapData, new Rectangle(6, 7, 14));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_OVER,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_OVER,
 											Bitmap(new hblock_over()).bitmapData, new Rectangle(6, 7, 14));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_DOWN,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_DOWN,
 											Bitmap(new hblock_down()).bitmapData, new Rectangle(6, 7, 14));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_DISABLE,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_DISABLE,
 											Bitmap(new hblock_disable()).bitmapData, new Rectangle(6, 7, 14));
 
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_LEFT_NORMAL, Bitmap(new left_normal()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_LEFT_NORMAL, Bitmap(new left_normal()).bitmapData,
 											new Rectangle(0, 7));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_LEFT_OVER, Bitmap(new left_over()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_LEFT_OVER, Bitmap(new left_over()).bitmapData,
 											new Rectangle(0, 7));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_LEFT_DOWN, Bitmap(new left_down()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_LEFT_DOWN, Bitmap(new left_down()).bitmapData,
 											new Rectangle(0, 7));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_LEFT_DISABLE, Bitmap(new left_disable()).bitmapData,
-											new Rectangle(0, 7));
-
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_RIGHT_NORMAL, Bitmap(new right_normal()).bitmapData,
-											new Rectangle(0, 7));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_RIGHT_OVER, Bitmap(new right_over()).bitmapData,
-											new Rectangle(0, 7));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_RIGHT_DOWN, Bitmap(new right_down()).bitmapData,
-											new Rectangle(0, 7));
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_RIGHT_DISABLE, Bitmap(new right_disable()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_LEFT_DISABLE, Bitmap(new left_disable()).bitmapData,
 											new Rectangle(0, 7));
 
-			GameUI.skinManager.registerSkin(SkinDef.SCROLLBAR_HORIZONTAL_BG, Bitmap(new hbg()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_RIGHT_NORMAL, Bitmap(new right_normal()).bitmapData,
+											new Rectangle(0, 7));
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_RIGHT_OVER, Bitmap(new right_over()).bitmapData,
+											new Rectangle(0, 7));
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_RIGHT_DOWN, Bitmap(new right_down()).bitmapData,
+											new Rectangle(0, 7));
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_RIGHT_DISABLE, Bitmap(new right_disable()).bitmapData,
+											new Rectangle(0, 7));
+
+			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BG, Bitmap(new hbg()).bitmapData,
 											new Rectangle(0, 7, 111));
 
 
 
-			GameUI.skinManager.registerSkin(SkinDef.TEXTAREA_BG, Bitmap(new normal()).bitmapData,
+			GameUI.skinManager.setSkin(SkinDef.TEXTAREA_BG, Bitmap(new normal()).bitmapData,
 											new Rectangle(6, 6, 22, 22));
 
 
