@@ -345,9 +345,9 @@ package
 				if (control is IContainer && !(target is NULL))
 				{
 					var container:IContainer = control as IContainer;
-					for (var i:int = container.numChildren - 1; i >= 0; i--)
+					for each (var child:IControl in container.children)
 					{
-						if (findTargetControl(container.getChildAt(i)))
+						if (findTargetControl(child))
 						{
 							return true;
 						}
