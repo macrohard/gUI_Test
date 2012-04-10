@@ -26,17 +26,6 @@ package
 	public class TestIconButton extends Sprite
 	{
 
-		[Embed(source = "assets/IconButton_defaultImage.png")]
-		private var normal:Class;
-
-		[Embed(source = "assets/IconButton_rolloverImage.png")]
-		private var over:Class;
-
-		[Embed(source = "assets/IconButton_pressedImage.png")]
-		private var down:Class;
-
-		[Embed(source = "assets/IconButton_disableImage.png")]
-		private var disable:Class;
 
 		[Embed(source = "assets/HIFB0A0002.png")]
 		private var icon:Class;
@@ -56,16 +45,10 @@ package
 
 		public function TestIconButton()
 		{
-			GameUI.init();
-			GameUI.skinManager.setSkin(SkinDef.ICONBUTTON_NORMAL, Bitmap(new normal()).bitmapData, new Rectangle(),
-											0x22);
-			GameUI.skinManager.setSkin(SkinDef.ICONBUTTON_OVER, Bitmap(new over()).bitmapData, new Rectangle(),
-											0x22);
-			GameUI.skinManager.setSkin(SkinDef.ICONBUTTON_DOWN, Bitmap(new down()).bitmapData, new Rectangle(),
-											0x22);
-			GameUI.skinManager.setSkin(SkinDef.ICONBUTTON_DISABLE, Bitmap(new disable()).bitmapData,
-											new Rectangle(), 0x22);
-
+			new UISettings();
+			
+			
+			
 
 			control = new IconButton("");
 //			control.autoSize = false;

@@ -29,7 +29,9 @@ package
 
 		public function TestLabel()
 		{
-			GameUI.init();
+			new UISettings();
+			
+			
 			
 			var ts:TextStyle = new TextStyle();
 //			ts.align = TextFormatAlign.CENTER;

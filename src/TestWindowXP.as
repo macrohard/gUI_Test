@@ -22,44 +22,7 @@ package
 	public class TestWindowXP extends Sprite
 	{
 		
-		[Embed(source="assets/xp/bg.png")]
-		private var bg:Class;
 		
-		
-		[Embed(source="assets/xp/min.png")]
-		private var min:Class;
-		
-		[Embed(source="assets/xp/min_over.png")]
-		private var min_over:Class;
-		
-		[Embed(source="assets/xp/min_down.png")]
-		private var min_down:Class;
-		
-		[Embed(source="assets/xp/min_disable.png")]
-		private var min_disable:Class;
-		
-		
-		[Embed(source="assets/xp/max.png")]
-		private var max:Class;
-		
-		[Embed(source="assets/xp/max_over.png")]
-		private var max_over:Class;
-		
-		[Embed(source="assets/xp/max_down.png")]
-		private var max_down:Class;
-		
-		[Embed(source="assets/xp/max_disable.png")]
-		private var max_disable:Class;
-		
-		
-		[Embed(source="assets/xp/close.png")]
-		private var close:Class;
-		
-		[Embed(source="assets/xp/close_over.png")]
-		private var close_over:Class;
-		
-		[Embed(source="assets/xp/close_down.png")]
-		private var close_down:Class;
 		
 		
 		
@@ -70,22 +33,8 @@ package
 		
 		public function TestWindowXP()
 		{
-			GameUI.init();
-			GameUI.skinManager.setSkin(SkinDef.WINDOW_BG, Bitmap(new bg()).bitmapData, new Rectangle(5, 30, 981, 543));
+			new UISettings();
 			
-			GameUI.skinManager.setSkin(SkinDef.MINIMIZE_BUTTON_NORMAL, Bitmap(new min()).bitmapData);
-			GameUI.skinManager.setSkin(SkinDef.MINIMIZE_BUTTON_OVER, Bitmap(new min_over()).bitmapData);
-			GameUI.skinManager.setSkin(SkinDef.MINIMIZE_BUTTON_DOWN, Bitmap(new min_down()).bitmapData);
-			GameUI.skinManager.setSkin(SkinDef.MINIMIZE_BUTTON_DISABLE, Bitmap(new min_disable()).bitmapData);
-			
-			GameUI.skinManager.setSkin(SkinDef.MAXIMIZE_BUTTON_NORMAL, Bitmap(new max()).bitmapData);
-			GameUI.skinManager.setSkin(SkinDef.MAXIMIZE_BUTTON_OVER, Bitmap(new max_over()).bitmapData);
-			GameUI.skinManager.setSkin(SkinDef.MAXIMIZE_BUTTON_DOWN, Bitmap(new max_down()).bitmapData);
-			GameUI.skinManager.setSkin(SkinDef.MAXIMIZE_BUTTON_DISABLE, Bitmap(new max_disable()).bitmapData);
-			
-			GameUI.skinManager.setSkin(SkinDef.CLOSE_BUTTON_NORMAL, Bitmap(new close()).bitmapData);
-			GameUI.skinManager.setSkin(SkinDef.CLOSE_BUTTON_OVER, Bitmap(new close_over()).bitmapData);
-			GameUI.skinManager.setSkin(SkinDef.CLOSE_BUTTON_DOWN, Bitmap(new close_down()).bitmapData);
 			
 			
 			c = new Window("测试窗口", Window.BUTTON_VISIBLE_MINIMIZE_CLOSE);

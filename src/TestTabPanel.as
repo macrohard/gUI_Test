@@ -25,14 +25,7 @@ package
 	public class TestTabPanel extends Sprite
 	{
 		
-		[Embed(source="assets/TabPanel.png")]
-		private var bg:Class;
 		
-		[Embed(source="assets/Tab.png")]
-		private var tab:Class;
-		
-		[Embed(source="assets/Tab_selected.png")]
-		private var tabSelected:Class;
 		
 		
 		
@@ -43,16 +36,12 @@ package
 		
 		public function TestTabPanel()
 		{
-			GameUI.init();
-			GameUI.skinManager.setSkin(SkinDef.TABPANEL_BG, Bitmap(new bg()).bitmapData, new Rectangle(5, 4, 55, 67));
-			
-			GameUI.skinManager.setSkin(SkinDef.TABPANEL_TAB, Bitmap(new tab()).bitmapData, new Rectangle(11, 0, 2));
-			GameUI.skinManager.setSkin(SkinDef.TABPANEL_TAB_SELECTED, Bitmap(new tabSelected()).bitmapData, new Rectangle(11, 0, 2));
+			new UISettings();
 			
 			
 			
 			
-			t = new TabPanel();
+			t = new TabPanel(TabPanel.TAB_LAYOUT_TOP);
 			var c:Container = t.addTab("测试");
 			
 			var l:Label = new Label();
@@ -94,7 +83,6 @@ package
 			c.addChild(l);
 			
 			
-//			t.tabLayout = TabPanel.TAB_LAYOUT_BOTTOM;
 			
 			
 			

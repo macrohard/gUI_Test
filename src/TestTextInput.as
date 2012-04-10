@@ -29,11 +29,7 @@ package
 	public class TestTextInput extends Sprite
 	{
 
-		[Embed(source = "assets/TextInput_defaultImage.png")]
-		private var normal:Class;
-
-		[Embed(source = "assets/TextInput_disableImage.png")]
-		private var disable:Class;
+		
 
 
 
@@ -48,11 +44,9 @@ package
 
 		public function TestTextInput()
 		{
-			GameUI.init();
-			GameUI.skinManager.setSkin(SkinDef.TEXTINPUT_NORMAL, Bitmap(new normal()).bitmapData,
-											new Rectangle(14, 0, 7, 0), 0x21);
-			GameUI.skinManager.setSkin(SkinDef.TEXTINPUT_DISABLE, Bitmap(new disable()).bitmapData,
-											new Rectangle(14, 0, 7, 0), 0x21);
+			new UISettings();
+			
+			
 
 			l = new TextInput();
 //			l.normalStyle = ts;

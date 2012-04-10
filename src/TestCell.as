@@ -16,8 +16,7 @@ package
 	[SWF(width="1000", height="600", frameRate="60")]
 	public class TestCell extends Sprite
 	{
-		[Embed(source="assets/TitleBar_defaultImage.png")]
-		private var normal:Class;
+		
 		
 		private var c:Cell;
 
@@ -26,8 +25,11 @@ package
 
 		public function TestCell()
 		{
-			GameUI.init();
-			GameUI.skinManager.setSkin(SkinDef.CELL_BG, Bitmap(new normal()).bitmapData, new Rectangle(35, 0, 133 - 35, 0), 0x22);
+			
+			new UISettings();
+			
+			
+			
 			
 			var ts:TextStyle = new TextStyle();
 			ts.bold = true;
@@ -41,7 +43,7 @@ package
 //			c.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
 			c.backgroundColor = 0xFFFF0000;
 //			c.text = "test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它";
-			c.padding = new Margin(20, 20, 20, 20);
+			c.padding = new Margin(20, 0, 20, 0);
 			
 			
 

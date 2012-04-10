@@ -25,9 +25,6 @@ package
 		[Embed(source="assets/top.png")]
 		private var image:Class;
 		
-		[Embed(source="assets/IconButton_defaultImage.png")]
-		private var normal:Class;
-		
 		
 		
 		private var c:ImageBox;
@@ -38,8 +35,8 @@ package
 		
 		public function TestImageBox()
 		{
-			GameUI.init();
-			GameUI.skinManager.setSkin(SkinDef.IMAGEBOX_BORDER, Bitmap(new normal()).bitmapData, new Rectangle(6, 6, 22, 22));
+			new UISettings();
+			
 			
 			
 			var l:ImageBox = new ImageBox(new ShapeExample(), false);

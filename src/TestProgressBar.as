@@ -22,11 +22,7 @@ package
 	public class TestProgressBar extends Sprite
 	{
 
-		[Embed(source = "assets/ProgressBar_horizotalFGImage.png")]
-		private var normal:Class;
-
-		[Embed(source = "assets/ProgressBar_horizotalBGImage.png")]
-		private var bg:Class;
+		
 
 
 
@@ -40,14 +36,9 @@ package
 
 		public function TestProgressBar()
 		{
-			GameUI.init();
-//			GameUI.skinManager.registerSkin(SkinDef.PROGRESSBAR_INFILL, Bitmap(new normal()).bitmapData,
-//											new Rectangle(1, 0, 5));
-			GameUI.skinManager.setSkin(SkinDef.PROGRESSBAR_INFILL, Bitmap(new normal()).bitmapData,
-											new Rectangle());
-			GameUI.skinManager.setSkin(SkinDef.PROGRESSBAR_BG, Bitmap(new bg()).bitmapData,
-											new Rectangle(10, 1, 4));
-
+			new UISettings();
+			
+			
 			
 			
 			//var l:Label = new Label("test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它", ts);

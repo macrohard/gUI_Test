@@ -28,8 +28,7 @@ package
 	public class TestPanel extends Sprite
 	{
 		
-		[Embed(source="assets/screen.png")]
-		private var screen:Class;
+		
 		
 		private var c:AbstractContainer;
 		
@@ -38,8 +37,9 @@ package
 		
 		public function TestPanel()
 		{
-			GameUI.init();
-			GameUI.skinManager.setSkin(SkinDef.PANEL_BG, Bitmap(new screen()).bitmapData, new Rectangle(8, 30, 560, 461));
+			new UISettings();
+			
+			
 			
 //			c = new Container();
 			c = new Panel();
@@ -51,6 +51,7 @@ package
 				"然后使用 activateHandler() 和 resizeHandler() 方法添加两个事件侦听器。\n" +
 				"用鼠标左键单击后，便可运行 activateHandler() 方法。\n" +
 				"当调整舞台大小时，便可运行 resizeHandler() 方法。";
+			l.backgroundColor = 0xffffff00;
 			c.addChild(l);
 
 			

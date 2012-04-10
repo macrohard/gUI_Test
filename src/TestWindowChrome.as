@@ -70,7 +70,9 @@ package
 		
 		public function TestWindowChrome()
 		{
-			GameUI.init();
+			new UISettings();
+			
+			
 			GameUI.skinManager.setSkin(SkinDef.WINDOW_BG, Bitmap(new bg()).bitmapData, new Rectangle(5, 77, 825, 501));
 			
 			GameUI.skinManager.setSkin(SkinDef.MINIMIZE_BUTTON_NORMAL, Bitmap(new min()).bitmapData);

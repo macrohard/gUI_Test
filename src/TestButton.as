@@ -28,17 +28,7 @@ package
 	public class TestButton extends Sprite
 	{
 
-		[Embed(source = "assets/Button_defaultImage.png")]
-		private var normal:Class;
-
-		[Embed(source = "assets/Button_rolloverImage.png")]
-		private var over:Class;
-
-		[Embed(source = "assets/Button_pressedImage.png")]
-		private var down:Class;
-
-		[Embed(source = "assets/Button_disabledImage.png")]
-		private var disable:Class;
+		
 
 
 
@@ -54,15 +44,7 @@ package
 
 		public function TestButton()
 		{
-			GameUI.init();
-			GameUI.skinManager.setSkin(SkinDef.BUTTON_NORMAL, Bitmap(new normal()).bitmapData,
-											new Rectangle(13, 0, 39 - 13, 0), 0x22);
-			GameUI.skinManager.setSkin(SkinDef.BUTTON_OVER, Bitmap(new over()).bitmapData,
-											new Rectangle(13, 0, 39 - 13, 0), 0x22);
-			GameUI.skinManager.setSkin(SkinDef.BUTTON_DOWN, Bitmap(new down()).bitmapData,
-											new Rectangle(13, 0, 39 - 13, 0), 0x22);
-			GameUI.skinManager.setSkin(SkinDef.BUTTON_DISABLE, Bitmap(new disable()).bitmapData,
-											new Rectangle(13, 0, 39 - 13, 0), 0x22);
+			new UISettings();
 
 
 

@@ -37,8 +37,10 @@ package
 
 		public function TestLinkButton()
 		{
-			GameUI.init();
-
+			new UISettings();
+			
+			
+			
 			var ts:TextStyle = new TextStyle();
 			ts.bold = true;
 			ts.multiline = true;

@@ -18,20 +18,7 @@ package
 	public class TestHSlider extends Sprite
 	{
 
-		[Embed(source = "assets/Slider_block_defaultImage.png")]
-		private var normal:Class;
-
-		[Embed(source = "assets/Slider_block_rolloverImage.png")]
-		private var over:Class;
-
-		[Embed(source = "assets/Slider_block_pressedImage.png")]
-		private var down:Class;
-
-		[Embed(source = "assets/Slider_block_disableImage.png")]
-		private var disable:Class;
-
-		[Embed(source = "assets/Slider_horizontal_trackImage.png")]
-		private var bg:Class;
+		
 		
 
 
@@ -45,18 +32,8 @@ package
 
 		public function TestHSlider()
 		{
-			GameUI.init();
-			GameUI.skinManager.setSkin(SkinDef.SLIDER_BLOCK_NORMAL, Bitmap(new normal()).bitmapData,
-											new Rectangle(8, 7));
-			GameUI.skinManager.setSkin(SkinDef.SLIDER_BLOCK_OVER, Bitmap(new over()).bitmapData,
-											new Rectangle(8, 7));
-			GameUI.skinManager.setSkin(SkinDef.SLIDER_BLOCK_DOWN, Bitmap(new down()).bitmapData,
-											new Rectangle(8, 7));
-			GameUI.skinManager.setSkin(SkinDef.SLIDER_BLOCK_DISABLE, Bitmap(new disable()).bitmapData,
-											new Rectangle(8, 7));
-			GameUI.skinManager.setSkin(SkinDef.SLIDER_HORIZONTAL_BG, Bitmap(new bg()).bitmapData,
-											new Rectangle(1, 6, 1));
-
+			new UISettings();
+			
 			
 			
 			

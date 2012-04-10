@@ -1,9 +1,9 @@
 package
 {
+	import com.macro.gUI.assist.CHILD_REGION;
 	import com.macro.gUI.assist.DragMode;
 	import com.macro.gUI.assist.LayoutAlign;
 	import com.macro.gUI.assist.Margin;
-	import com.macro.gUI.assist.NULL;
 	import com.macro.gUI.assist.TextStyle;
 	import com.macro.gUI.base.IComposite;
 	import com.macro.gUI.base.IContainer;
@@ -343,7 +343,7 @@ package
 			var target:IControl = control.hitTest(stage.mouseX, stage.mouseY);
 			if (target != null)
 			{
-				if (control is IContainer && !(target is NULL))
+				if (control is IContainer && target is CHILD_REGION)
 				{
 					var container:IContainer = control as IContainer;
 					for (var i:int = container.numChildren - 1; i >= 0; i--)

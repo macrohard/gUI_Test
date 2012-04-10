@@ -26,29 +26,8 @@ package
 	[SWF(width = "1000", height = "600", frameRate = "60")]
 	public class TestToggleButton extends Sprite
 	{
-		[Embed(source="assets/Button_defaultImage.png")]
-		private var normal:Class;
 		
-		[Embed(source="assets/Button_rolloverImage.png")]
-		private var over:Class;
 		
-		[Embed(source="assets/Button_pressedImage.png")]
-		private var down:Class;
-		
-		[Embed(source="assets/Button_disabledImage.png")]
-		private var disable:Class;
-		
-		[Embed(source="assets/ToggleButton_defaultImage.png")]
-		private var selected_normal:Class;
-		
-		[Embed(source="assets/ToggleButton_rolloverImage.png")]
-		private var selected_over:Class;
-		
-		[Embed(source="assets/ToggleButton_pressedImage.png")]
-		private var selected_down:Class;
-		
-		[Embed(source="assets/ToggleButton_disabledImage.png")]
-		private var selected_disable:Class;
 		
 		
 		
@@ -64,16 +43,7 @@ package
 
 		public function TestToggleButton()
 		{
-			GameUI.init();
-			GameUI.skinManager.setSkin(SkinDef.TOGGLEBUTTON_NORMAL, Bitmap(new normal()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
-			GameUI.skinManager.setSkin(SkinDef.TOGGLEBUTTON_OVER, Bitmap(new over()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
-			GameUI.skinManager.setSkin(SkinDef.TOGGLEBUTTON_DOWN, Bitmap(new down()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
-			GameUI.skinManager.setSkin(SkinDef.TOGGLEBUTTON_DISABLE, Bitmap(new disable()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
-			GameUI.skinManager.setSkin(SkinDef.TOGGLEBUTTON_SELECTED, Bitmap(new selected_normal()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
-			GameUI.skinManager.setSkin(SkinDef.TOGGLEBUTTON_SELECTED_OVER, Bitmap(new selected_over()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
-			GameUI.skinManager.setSkin(SkinDef.TOGGLEBUTTON_SELECTED_DOWN, Bitmap(new selected_down()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
-			GameUI.skinManager.setSkin(SkinDef.TOGGLEBUTTON_SELECTED_DISABLE, Bitmap(new selected_disable()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
-			
+			new UISettings();			
 			
 			
 			

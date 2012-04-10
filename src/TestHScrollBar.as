@@ -33,50 +33,7 @@ package
 	public class TestHScrollBar extends Sprite
 	{
 
-		[Embed(source = "assets/ScrollBar_thumbHorizontal_defaultImage.png")]
-		private var block_normal:Class;
-
-		[Embed(source = "assets/ScrollBar_thumbHorizontal_rolloverImage.png")]
-		private var block_over:Class;
-
-		[Embed(source = "assets/ScrollBar_thumbHorizontal_pressedImage.png")]
-		private var block_down:Class;
-
-		[Embed(source = "assets/ScrollBar_thumbHorizontal_disableImage.png")]
-		private var block_disable:Class;
-
-
-
-		[Embed(source = "assets/ScrollBar_arrowLeft_defaultImage.png")]
-		private var left_normal:Class;
-
-		[Embed(source = "assets/ScrollBar_arrowLeft_rolloverImage.png")]
-		private var left_over:Class;
-
-		[Embed(source = "assets/ScrollBar_arrowLeft_pressedImage.png")]
-		private var left_down:Class;
-
-		[Embed(source = "assets/ScrollBar_arrowLeft_disableImage.png")]
-		private var left_disable:Class;
-
-
-
-		[Embed(source = "assets/ScrollBar_arrowRight_defaultImage.png")]
-		private var right_normal:Class;
-
-		[Embed(source = "assets/ScrollBar_arrowRight_rolloverImage.png")]
-		private var right_over:Class;
-
-		[Embed(source = "assets/ScrollBar_arrowRight_pressedImage.png")]
-		private var right_down:Class;
-
-		[Embed(source = "assets/ScrollBar_arrowRight_disableImage.png")]
-		private var right_disable:Class;
-
-
-
-		[Embed(source = "assets/ScrollBar_horizontalBGImage.png")]
-		private var bg:Class;
+		
 
 		
 		
@@ -90,38 +47,10 @@ package
 
 		public function TestHScrollBar()
 		{
-			GameUI.init();
-			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_NORMAL,
-											Bitmap(new block_normal()).bitmapData, new Rectangle(6, 7, 14));
-			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_OVER,
-											Bitmap(new block_over()).bitmapData, new Rectangle(6, 7, 14));
-			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_DOWN,
-											Bitmap(new block_down()).bitmapData, new Rectangle(6, 7, 14));
-			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_DISABLE,
-											Bitmap(new block_disable()).bitmapData, new Rectangle(6, 7, 14));
-
-			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_LEFT_NORMAL, Bitmap(new left_normal()).bitmapData,
-											new Rectangle(0, 7));
-			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_LEFT_OVER, Bitmap(new left_over()).bitmapData,
-											new Rectangle(0, 7));
-			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_LEFT_DOWN, Bitmap(new left_down()).bitmapData,
-											new Rectangle(0, 7));
-			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_LEFT_DISABLE, Bitmap(new left_disable()).bitmapData,
-											new Rectangle(0, 7));
-
-			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_RIGHT_NORMAL, Bitmap(new right_normal()).bitmapData,
-											new Rectangle(0, 7));
-			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_RIGHT_OVER, Bitmap(new right_over()).bitmapData,
-											new Rectangle(0, 7));
-			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_RIGHT_DOWN, Bitmap(new right_down()).bitmapData,
-											new Rectangle(0, 7));
-			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_RIGHT_DISABLE, Bitmap(new right_disable()).bitmapData,
-											new Rectangle(0, 7));
-
-			GameUI.skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BG, Bitmap(new bg()).bitmapData,
-											new Rectangle(0, 7, 111));
-
-
+			new UISettings();
+			
+			
+			
 			//var l:Label = new Label("test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它", ts);
 			control = new HScrollBar();
 //			control.autoSize = false;
@@ -139,6 +68,7 @@ package
 			shape.graphics.lineStyle(1, 0);
 			shape.graphics.drawRect(rect.x, rect.y, rect.width, rect.height);
 			var image:ImageBox = new ImageBox(shape);
+			image.skin = null;
 			
 			var content:Label = new Label("test aaa 看直fdafdafdsa dsa fdsajfdkjf  kajdksa lkdsa djdksja klfdjsak jkdsj dja kjfdksj klfdj j;aja;");
 			content.backgroundColor = 0xFF666666;
