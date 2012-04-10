@@ -1,21 +1,15 @@
 package
 {
 	import com.macro.gUI.GameUI;
-	import com.macro.gUI.assist.LayoutAlign;
+	import com.macro.gUI.assist.Margin;
 	import com.macro.gUI.assist.TextStyle;
-	import com.macro.gUI.base.AbstractControl;
-	import com.macro.gUI.controls.Canvas;
 	import com.macro.gUI.controls.Cell;
-	import com.macro.gUI.controls.Label;
 	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
-	import flash.display.BitmapData;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.geom.Rectangle;
-	import flash.text.TextFormat;
-	import flash.utils.getTimer;
 	
 	import net.hires.debug.Stats;
 
@@ -47,7 +41,7 @@ package
 //			c.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
 			c.backgroundColor = 0xFFFF0000;
 //			c.text = "test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它";
-			c.padding = new Rectangle(20);
+			c.padding = new Margin(20, 20, 20, 20);
 			
 			
 

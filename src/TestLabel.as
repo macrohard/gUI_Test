@@ -2,6 +2,7 @@ package
 {
 	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.LayoutAlign;
+	import com.macro.gUI.assist.Margin;
 	import com.macro.gUI.assist.TextStyle;
 	import com.macro.gUI.base.AbstractControl;
 	import com.macro.gUI.controls.Label;
@@ -44,7 +45,7 @@ package
 //			l.autoSize = false;
 //			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
 			l.backgroundColor = 0xff999999;
-			l.padding = new Rectangle(10, 10, -10);
+			l.padding = new Margin(10, 10);
 			
 			
 			

@@ -2,6 +2,7 @@ package
 {
 	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.DragMode;
+	import com.macro.gUI.assist.Margin;
 	import com.macro.gUI.assist.Viewport;
 	import com.macro.gUI.base.IControl;
 	import com.macro.gUI.base.feature.IButton;
@@ -143,7 +144,7 @@ package
 			content.backgroundColor = 0xFF666666;
 			content.y = 300;
 			
-			control.viewport = new Viewport(rect, content, new Rectangle(5));
+			control.viewport = new Viewport(rect, content, new Margin(5, 5, 5, 5));
 			
 			var container:Container = new Container(stage.stageWidth, stage.stageHeight);
 			container.addChild(image);

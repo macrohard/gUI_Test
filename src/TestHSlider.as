@@ -1,26 +1,15 @@
 package
 {
 	import com.macro.gUI.GameUI;
-	import com.macro.gUI.assist.DragMode;
 	import com.macro.gUI.assist.LayoutAlign;
-	import com.macro.gUI.base.IControl;
-	import com.macro.gUI.base.feature.IButton;
-	import com.macro.gUI.base.feature.IDrag;
-	import com.macro.gUI.base.feature.IFocus;
+	import com.macro.gUI.assist.Margin;
 	import com.macro.gUI.composite.HSlider;
 	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
-	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import flash.events.KeyboardEvent;
-	import flash.events.MouseEvent;
-	import flash.geom.Point;
 	import flash.geom.Rectangle;
-	import flash.ui.Mouse;
-	import flash.ui.MouseCursor;
-	import flash.utils.Dictionary;
 	
 	import net.hires.debug.Stats;
 
@@ -77,7 +66,7 @@ package
 //			control.stepSize = 2;
 //			control.maximum = 99;
 			control.align = LayoutAlign.CENTER | LayoutAlign.MIDDLE;
-			control.padding = new Rectangle(20, 15);
+			control.padding = new Margin(20, 15, 20, 15);
 //			control.enabled = false;
 
 			

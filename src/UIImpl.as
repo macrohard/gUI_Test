@@ -2,6 +2,7 @@ package
 {
 	import com.macro.gUI.assist.DragMode;
 	import com.macro.gUI.assist.LayoutAlign;
+	import com.macro.gUI.assist.Margin;
 	import com.macro.gUI.assist.NULL;
 	import com.macro.gUI.assist.TextStyle;
 	import com.macro.gUI.base.IComposite;
@@ -96,7 +97,7 @@ package
 			{
 				var container:IContainer = control as IContainer;
 
-				var m:Rectangle = container.margin;
+				var m:Margin = container.margin;
 				stageRect.left += m.left;
 				stageRect.top += m.top;
 				stageRect.right -= m.right;
@@ -345,9 +346,9 @@ package
 				if (control is IContainer && !(target is NULL))
 				{
 					var container:IContainer = control as IContainer;
-					for each (var child:IControl in container.children)
+					for (var i:int = container.numChildren - 1; i >= 0; i--)
 					{
-						if (findTargetControl(child))
+						if (findTargetControl(container.children[i]))
 						{
 							return true;
 						}
@@ -475,7 +476,7 @@ package
 			{
 				var textInput:TextInput = _editControl as TextInput;
 				var ts:TextStyle = textInput.style;
-				var padding:Rectangle = textInput.padding;
+				var padding:Margin = textInput.padding;
 
 				var txtW:int = _editBox.textWidth + 4 + ts.leftMargin + ts.rightMargin + ts.indent + ts.blockIndent;
 				var txtH:int = _editBox.textHeight + 4;
