@@ -1,21 +1,12 @@
 package
 {
-	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.LayoutAlign;
-	import com.macro.gUI.assist.TextStyle;
-	import com.macro.gUI.base.AbstractControl;
 	import com.macro.gUI.controls.ImageBox;
-	import com.macro.gUI.controls.Label;
-	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
-	import flash.display.BitmapData;
 	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import flash.geom.Rectangle;
-	import flash.text.TextFormat;
-	import flash.utils.getTimer;
 	
 	import net.hires.debug.Stats;
 
@@ -35,7 +26,7 @@ package
 		
 		public function TestImageBox()
 		{
-			new UISettings();
+			new UISettings(stage);
 			
 			
 			

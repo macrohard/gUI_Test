@@ -1,30 +1,17 @@
 package
 {
-	import com.macro.gUI.GameUI;
-	import com.macro.gUI.assist.DragMode;
 	import com.macro.gUI.assist.Margin;
 	import com.macro.gUI.assist.Viewport;
-	import com.macro.gUI.base.IControl;
-	import com.macro.gUI.base.feature.IButton;
-	import com.macro.gUI.base.feature.IDrag;
-	import com.macro.gUI.base.feature.IFocus;
 	import com.macro.gUI.composite.HScrollBar;
 	import com.macro.gUI.containers.Container;
 	import com.macro.gUI.controls.ImageBox;
 	import com.macro.gUI.controls.Label;
-	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
 	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import flash.events.KeyboardEvent;
-	import flash.events.MouseEvent;
-	import flash.geom.Point;
 	import flash.geom.Rectangle;
-	import flash.ui.Mouse;
-	import flash.ui.MouseCursor;
-	import flash.utils.Dictionary;
 	
 	import net.hires.debug.Stats;
 
@@ -47,7 +34,7 @@ package
 
 		public function TestHScrollBar()
 		{
-			new UISettings();
+			new UISettings(stage);
 			
 			
 			

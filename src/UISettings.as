@@ -7,6 +7,7 @@ package
     import com.macro.gUI.skin.StyleDef;
     
     import flash.display.Bitmap;
+    import flash.display.Stage;
     import flash.geom.Rectangle;
     import flash.text.TextFormatAlign;
 
@@ -309,9 +310,9 @@ package
 
 
 
-        public function UISettings()
+        public function UISettings(stage:Stage)
         {
-            GameUI.init();
+            GameUI.init(0, stage);
 
 			initSkins(GameUI.skinManager);
             initStyles(GameUI.skinManager);

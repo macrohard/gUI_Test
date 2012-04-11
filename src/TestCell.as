@@ -1,15 +1,12 @@
 package
 {
-	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.Margin;
 	import com.macro.gUI.assist.TextStyle;
 	import com.macro.gUI.controls.Cell;
-	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import flash.geom.Rectangle;
 	
 	import net.hires.debug.Stats;
 
@@ -26,7 +23,7 @@ package
 		public function TestCell()
 		{
 			
-			new UISettings();
+			new UISettings(stage);
 			
 			
 			

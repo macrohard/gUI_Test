@@ -1,24 +1,11 @@
 package
 {
-	import com.macro.gUI.GameUI;
-	import com.macro.gUI.assist.DragMode;
 	import com.macro.gUI.assist.TextStyle;
-	import com.macro.gUI.base.IControl;
-	import com.macro.gUI.base.feature.IButton;
-	import com.macro.gUI.base.feature.IDrag;
-	import com.macro.gUI.base.feature.IFocus;
 	import com.macro.gUI.controls.ToggleButton;
-	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
-	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import flash.events.MouseEvent;
-	import flash.geom.Rectangle;
-	import flash.ui.Mouse;
-	import flash.ui.MouseCursor;
-	import flash.utils.Dictionary;
 	
 	import net.hires.debug.Stats;
 
@@ -26,9 +13,6 @@ package
 	[SWF(width = "1000", height = "600", frameRate = "60")]
 	public class TestToggleButton extends Sprite
 	{
-		
-		
-		
 		
 		
 		
@@ -43,7 +27,7 @@ package
 
 		public function TestToggleButton()
 		{
-			new UISettings();			
+			new UISettings(stage);			
 			
 			
 			

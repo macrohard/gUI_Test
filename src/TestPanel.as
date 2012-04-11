@@ -1,22 +1,12 @@
 package
 {
-	import com.macro.gUI.GameUI;
-	import com.macro.gUI.assist.LayoutAlign;
 	import com.macro.gUI.base.AbstractContainer;
-	import com.macro.gUI.base.AbstractControl;
 	import com.macro.gUI.containers.Container;
-	import com.macro.gUI.containers.Panel;
 	import com.macro.gUI.controls.Label;
-	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
-	import flash.display.StageScaleMode;
 	import flash.events.Event;
-	import flash.geom.Rectangle;
-	import flash.sampler.getSampleCount;
-	import flash.sampler.startSampling;
-	import flash.utils.getTimer;
 	
 	import net.hires.debug.Stats;
 	
@@ -37,13 +27,13 @@ package
 		
 		public function TestPanel()
 		{
-			new UISettings();
+			new UISettings(stage);
 			
 			
 			
-//			c = new Container();
-			c = new Panel();
-//			c.backgroundColor = 0x66ff0000;
+			c = new Container();
+//			c = new Panel();
+			c.backgroundColor = 0x66ff0000;
 //			c.align = LayoutAlign.CENTER | LayoutAlign.BOTTOM;
 			var l:Label = new Label();
 			l.text = "下例使用 StageExample 类在激活舞台或调整舞台大小时调度事件。执行下列步骤可完成此操作：\n" +

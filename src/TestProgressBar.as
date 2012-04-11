@@ -1,19 +1,10 @@
 package
 {
-	import com.macro.gUI.GameUI;
-	import com.macro.gUI.base.AbstractComposite;
-	import com.macro.gUI.base.IControl;
 	import com.macro.gUI.composite.ProgressBar;
-	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
-	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import flash.events.MouseEvent;
-	import flash.geom.Point;
-	import flash.geom.Rectangle;
-	import flash.utils.Dictionary;
 	
 	import net.hires.debug.Stats;
 
@@ -36,7 +27,7 @@ package
 
 		public function TestProgressBar()
 		{
-			new UISettings();
+			new UISettings(stage);
 			
 			
 			

@@ -1,15 +1,12 @@
 package
 {
-	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.LayoutAlign;
 	import com.macro.gUI.assist.Margin;
 	import com.macro.gUI.composite.HSlider;
-	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import flash.geom.Rectangle;
 	
 	import net.hires.debug.Stats;
 
@@ -32,7 +29,7 @@ package
 
 		public function TestHSlider()
 		{
-			new UISettings();
+			new UISettings(stage);
 			
 			
 			

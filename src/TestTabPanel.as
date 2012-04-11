@@ -1,19 +1,13 @@
 package
 {
-	import com.macro.gUI.GameUI;
-	import com.macro.gUI.assist.LayoutAlign;
 	import com.macro.gUI.assist.TextStyle;
 	import com.macro.gUI.containers.Container;
-	import com.macro.gUI.containers.Panel;
 	import com.macro.gUI.containers.TabPanel;
-	import com.macro.gUI.containers.Window;
 	import com.macro.gUI.controls.Label;
-	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import flash.geom.Rectangle;
 	
 	import net.hires.debug.Stats;
 	
@@ -36,7 +30,7 @@ package
 		
 		public function TestTabPanel()
 		{
-			new UISettings();
+			new UISettings(stage);
 			
 			
 			

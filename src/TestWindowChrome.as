@@ -2,7 +2,6 @@ package
 {
 	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.LayoutAlign;
-	import com.macro.gUI.containers.Panel;
 	import com.macro.gUI.containers.Window;
 	import com.macro.gUI.controls.Label;
 	import com.macro.gUI.skin.SkinDef;
@@ -70,7 +69,7 @@ package
 		
 		public function TestWindowChrome()
 		{
-			new UISettings();
+			new UISettings(stage);
 			
 			
 			GameUI.skinManager.setSkin(SkinDef.WINDOW_BG, Bitmap(new bg()).bitmapData, new Rectangle(5, 77, 825, 501));

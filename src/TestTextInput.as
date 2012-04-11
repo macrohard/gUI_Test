@@ -1,37 +1,16 @@
 package
 {
-	import com.macro.gUI.GameUI;
-	import com.macro.gUI.assist.LayoutAlign;
 	import com.macro.gUI.assist.TextStyle;
-	import com.macro.gUI.base.AbstractControl;
-	import com.macro.gUI.base.feature.IEdit;
-	import com.macro.gUI.controls.Label;
 	import com.macro.gUI.controls.TextInput;
-	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import flash.events.KeyboardEvent;
-	import flash.events.MouseEvent;
-	import flash.geom.Point;
-	import flash.geom.Rectangle;
-	import flash.text.TextField;
-	import flash.text.TextFieldAutoSize;
-	import flash.text.TextFieldType;
-	import flash.text.TextFormatAlign;
-	import flash.ui.Keyboard;
-	
-	import mx.controls.Text;
 
 
 	[SWF(width = "1000", height = "600", frameRate = "60")]
 	public class TestTextInput extends Sprite
 	{
-
-		
-
-
 
 		private var l:TextInput;
 
@@ -44,7 +23,7 @@ package
 
 		public function TestTextInput()
 		{
-			new UISettings();
+			new UISettings(stage);
 			
 			
 

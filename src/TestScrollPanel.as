@@ -1,18 +1,12 @@
 package
 {
-	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.TextStyle;
-	import com.macro.gUI.composite.List;
-	import com.macro.gUI.composite.TextArea;
 	import com.macro.gUI.containers.ScrollPanel;
 	import com.macro.gUI.controls.Label;
-	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
-	import flash.display.BitmapData;
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import flash.geom.Rectangle;
 	
 	import net.hires.debug.Stats;
 	
@@ -20,11 +14,6 @@ package
 	[SWF(width = "1000", height = "600", frameRate = "60")]
 	public class TestScrollPanel extends Sprite
 	{
-		
-		
-		
-		
-		
 		
 		
 		
@@ -39,7 +28,7 @@ package
 		
 		public function TestScrollPanel()
 		{
-			new UISettings();
+			new UISettings(stage);
 			
 			
 			

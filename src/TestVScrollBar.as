@@ -1,6 +1,5 @@
 package
 {
-	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.LayoutAlign;
 	import com.macro.gUI.assist.Margin;
 	import com.macro.gUI.assist.TextStyle;
@@ -9,7 +8,6 @@ package
 	import com.macro.gUI.containers.Container;
 	import com.macro.gUI.controls.ImageBox;
 	import com.macro.gUI.controls.Label;
-	import com.macro.gUI.skin.SkinDef;
 	
 	import flash.display.Bitmap;
 	import flash.display.Shape;
@@ -36,7 +34,7 @@ package
 
 		public function TestVScrollBar()
 		{
-			new UISettings();
+			new UISettings(stage);
 			
 			
 

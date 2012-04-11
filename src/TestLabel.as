@@ -1,20 +1,12 @@
 package
 {
-	import com.macro.gUI.GameUI;
-	import com.macro.gUI.assist.LayoutAlign;
 	import com.macro.gUI.assist.Margin;
 	import com.macro.gUI.assist.TextStyle;
-	import com.macro.gUI.base.AbstractControl;
 	import com.macro.gUI.controls.Label;
 	
 	import flash.display.Bitmap;
-	import flash.display.BitmapData;
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import flash.geom.Rectangle;
-	import flash.text.TextFormat;
-	import flash.text.TextFormatAlign;
-	import flash.utils.getTimer;
 	
 	import net.hires.debug.Stats;
 
@@ -29,7 +21,7 @@ package
 
 		public function TestLabel()
 		{
-			new UISettings();
+			new UISettings(stage);
 			
 			
 			
