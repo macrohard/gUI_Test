@@ -23,7 +23,12 @@ package
 
 		public function TestTextInput()
 		{
-			new UISettings(stage);
+			var s:Sprite = new Sprite();
+			s.x = 100;
+			s.y = 100;
+			addChild(s);
+			
+			var ui:UISettings = new UISettings(s, 900, 500);
 			
 			
 
@@ -50,22 +55,21 @@ package
 
 
 
-			var u:UIImpl = new UIImpl(stage, l);
-			addChild(new Bitmap(u.canvas));
+			ui.mainContainer.addChild(l);
 
 
 
 			d = new CPoint();
 			d.addEventListener(Event.RESIZE, onresize);
-			d.x = 150;
-			d.y = 150;
-			addChild(d);
+			d.x = 50;
+			d.y = 50;
+			s.addChild(d);
 
 			e = new CPoint();
 			e.addEventListener(Event.RESIZE, onresize);
-			e.x = 950;
-			e.y = 550;
-			addChild(e);
+			e.x = 650;
+			e.y = 450;
+			s.addChild(e);
 
 			onresize(null);
 

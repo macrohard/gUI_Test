@@ -29,7 +29,7 @@ package
 
 		public function TestHSlider()
 		{
-			new UISettings(stage);
+			var ui:UISettings = new UISettings(stage);
 			
 			
 			
@@ -47,8 +47,7 @@ package
 			
 			
 			
-			var u:UIImpl = new UIImpl(stage, control);
-			addChild(new Bitmap(u.canvas));
+			ui.mainContainer.addChild(control);
 			
 			
 			

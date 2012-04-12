@@ -34,7 +34,7 @@ package
 
 		public function TestHScrollBar()
 		{
-			new UISettings(stage);
+			var ui:UISettings = new UISettings(stage);
 			
 			
 			
@@ -70,8 +70,7 @@ package
 
 
 
-			var u:UIImpl = new UIImpl(stage, container);
-			addChild(new Bitmap(u.canvas));
+			ui.mainContainer.addChild(container);
 
 
 

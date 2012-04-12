@@ -30,7 +30,7 @@ package
 		
 		public function TestTabPanel()
 		{
-			new UISettings(stage);
+			var ui:UISettings = new UISettings(stage);
 			
 			
 			
@@ -81,8 +81,7 @@ package
 			
 			
 			
-			var u:UIImpl = new UIImpl(stage, t);
-			addChild(new Bitmap(u.canvas));
+			ui.mainContainer.addChild(t);
 			
 			
 			d = new CPoint();

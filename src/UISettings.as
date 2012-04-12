@@ -2,11 +2,13 @@ package
 {
     import com.macro.gUI.GameUI;
     import com.macro.gUI.assist.TextStyle;
-    import com.macro.gUI.managers.SkinManager;
+    import com.macro.gUI.core.IContainer;
     import com.macro.gUI.skin.SkinDef;
+    import com.macro.gUI.skin.SkinManager;
     import com.macro.gUI.skin.StyleDef;
     
     import flash.display.Bitmap;
+    import flash.display.DisplayObjectContainer;
     import flash.display.Stage;
     import flash.geom.Rectangle;
     import flash.text.TextFormatAlign;
@@ -310,14 +312,26 @@ package
 
 
 
-        public function UISettings(stage:Stage)
+        public function UISettings(container:DisplayObjectContainer, width:int = 0, height:int = 0)
         {
-            GameUI.init(0, stage);
+			if (container is Stage)
+			{
+				width = (container as Stage).stageWidth;
+				height = (container as Stage).stageHeight;
+			}
+			
+            GameUI.init(container, width, height);
 
 			initSkins(GameUI.skinManager);
             initStyles(GameUI.skinManager);
 
         }
+		
+		
+		public function get mainContainer():IContainer
+		{
+			return GameUI.uiManager.mainContainer;
+		}
 		
 		
 		

@@ -27,7 +27,7 @@ package
 
 		public function TestProgressBar()
 		{
-			new UISettings(stage);
+			var ui:UISettings = new UISettings(stage);
 			
 			
 			
@@ -45,8 +45,7 @@ package
 			
 
 			
-			var u:UIImpl = new UIImpl(stage, c);
-			addChild(new Bitmap(u.canvas));
+			ui.mainContainer.addChild(c);
 			
 			
 

@@ -1,5 +1,6 @@
 package
 {
+	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.Margin;
 	import com.macro.gUI.assist.TextStyle;
 	import com.macro.gUI.controls.Cell;
@@ -23,7 +24,7 @@ package
 		public function TestCell()
 		{
 			
-			new UISettings(stage);
+			var ui:UISettings = new UISettings(stage);
 			
 			
 			
@@ -45,8 +46,7 @@ package
 			
 
 			
-			var u:UIImpl = new UIImpl(stage, c);
-			addChild(new Bitmap(u.canvas));
+			ui.mainContainer.addChild(c);
 			
 			
 			

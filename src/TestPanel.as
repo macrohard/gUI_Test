@@ -1,8 +1,9 @@
 package
 {
-	import com.macro.gUI.base.AbstractContainer;
 	import com.macro.gUI.containers.Container;
+	import com.macro.gUI.containers.Panel;
 	import com.macro.gUI.controls.Label;
+	import com.macro.gUI.core.AbstractContainer;
 	
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
@@ -27,13 +28,13 @@ package
 		
 		public function TestPanel()
 		{
-			new UISettings(stage);
+			var ui:UISettings = new UISettings(stage);
 			
 			
 			
-			c = new Container();
-//			c = new Panel();
-			c.backgroundColor = 0x66ff0000;
+//			c = new Container();
+			c = new Panel();
+//			c.backgroundColor = 0x66ff0000;
 //			c.align = LayoutAlign.CENTER | LayoutAlign.BOTTOM;
 			var l:Label = new Label();
 			l.text = "下例使用 StageExample 类在激活舞台或调整舞台大小时调度事件。执行下列步骤可完成此操作：\n" +
@@ -45,8 +46,7 @@ package
 			c.addChild(l);
 
 			
-			var u:UIImpl = new UIImpl(stage, c);
-			addChild(new Bitmap(u.canvas));
+			ui.mainContainer.addChild(c);
 			
 			
 			d = new CPoint();

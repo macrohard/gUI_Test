@@ -21,7 +21,7 @@ package
 
 		public function TestLabel()
 		{
-			new UISettings(stage);
+			var ui:UISettings = new UISettings(stage);
 			
 			
 			
@@ -43,8 +43,7 @@ package
 			
 			
 			
-			var u:UIImpl = new UIImpl(stage, l);
-			addChild(new Bitmap(u.canvas));
+			ui.mainContainer.addChild(l);
 			
 			
 			

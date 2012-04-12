@@ -26,7 +26,7 @@ package
 		
 		public function TestImageBox()
 		{
-			new UISettings(stage);
+			var ui:UISettings = new UISettings(stage);
 			
 			
 			
@@ -38,8 +38,7 @@ package
 //			l.setSource(new ShapeExample());
 			c = l;
 			
-			var u:UIImpl = new UIImpl(stage, c);
-			addChild(new Bitmap(u.canvas));
+			ui.mainContainer.addChild(c);
 			
 			
 			

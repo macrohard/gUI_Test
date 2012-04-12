@@ -11,7 +11,7 @@ package
 	import net.hires.debug.Stats;
 
 
-	[SWF(width = "1000", height = "600", frameRate = "60")]
+	[SWF(width = "1000", height = "600", frameRate = "60", backgroundColor = "#666666")]
 	public class TestRadioButton extends Sprite
 	{
 
@@ -29,7 +29,7 @@ package
 
 		public function TestRadioButton()
 		{
-			new UISettings(stage);
+			var ui:UISettings = new UISettings(stage);
 
 
 
@@ -63,8 +63,7 @@ package
 
 
 
-			var u:UIImpl = new UIImpl(stage, c);
-			addChild(new Bitmap(u.canvas));
+			ui.mainContainer.addChild(c);
 
 
 

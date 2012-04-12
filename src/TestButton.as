@@ -1,9 +1,9 @@
 package
 {
+	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.TextStyle;
 	import com.macro.gUI.controls.Button;
 	
-	import flash.display.Bitmap;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	
@@ -30,7 +30,7 @@ package
 
 		public function TestButton()
 		{
-			new UISettings(stage);
+			var ui:UISettings = new UISettings(stage);
 
 
 
@@ -52,8 +52,7 @@ package
 
 
 
-			var u:UIImpl = new UIImpl(stage, control);
-			addChild(new Bitmap(u.canvas));
+			ui.mainContainer.addChild(control);
 
 
 

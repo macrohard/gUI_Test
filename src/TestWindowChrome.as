@@ -69,7 +69,7 @@ package
 		
 		public function TestWindowChrome()
 		{
-			new UISettings(stage);
+			var ui:UISettings = new UISettings(stage);
 			
 			
 			GameUI.skinManager.setSkin(SkinDef.WINDOW_BG, Bitmap(new bg()).bitmapData, new Rectangle(5, 77, 825, 501));
@@ -103,8 +103,7 @@ package
 			c.addChild(l);
 			
 			
-			var u:UIImpl = new UIImpl(stage, c);
-			addChild(new Bitmap(u.canvas));
+			ui.mainContainer.addChild(c);
 			
 			
 			d = new CPoint();
