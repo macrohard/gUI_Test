@@ -324,7 +324,7 @@ package
 
 				stage.stageFocusRect = false;
 				stage.tabChildren = false;
-				stage.mouseChildren = false;
+//				stage.mouseChildren = false;
 				stage.scaleMode = StageScaleMode.NO_SCALE;
 			}
 

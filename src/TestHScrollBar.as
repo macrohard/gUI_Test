@@ -55,7 +55,6 @@ package
 			shape.graphics.lineStyle(1, 0);
 			shape.graphics.drawRect(rect.x, rect.y, rect.width, rect.height);
 			var image:ImageBox = new ImageBox(shape);
-			image.skin = null;
 			
 			var content:Label = new Label("test aaa 看直fdafdafdsa dsa fdsajfdkjf  kajdksa lkdsa djdksja klfdjsak jkdsj dja kjfdksj klfdj j;aja;");
 			content.backgroundColor = 0xFF666666;
