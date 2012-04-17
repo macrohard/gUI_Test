@@ -70,13 +70,13 @@ package
 			d.addEventListener(Event.RESIZE, onresize);
 			d.x = 50;
 			d.y = 50;
-//			s.addChild(d);
+			stage.addChild(d);
 
 			e = new CPoint();
 			e.addEventListener(Event.RESIZE, onresize);
 			e.x = 650;
 			e.y = 450;
-//			s.addChild(e);
+			stage.addChild(e);
 
 			onresize(null);
 

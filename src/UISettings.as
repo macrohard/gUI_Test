@@ -653,7 +653,7 @@ package
 			//禁用文本样式
 			s = new TextStyle();
 			s.color = 0x999999;
-			skinManager.setStyle(StyleDef.DISABLE, s);
+			skinManager.setStyle(StyleDef.TEXTINPUT_DISABLE, s);
 
 			//文本块样式
 			s = new TextStyle();
