@@ -2,6 +2,7 @@ package
 {
 	import com.macro.gUI.assist.LayoutAlign;
 	import com.macro.gUI.containers.Window;
+	import com.macro.gUI.controls.Button;
 	import com.macro.gUI.controls.Label;
 	
 	import flash.display.Bitmap;
@@ -44,7 +45,12 @@ package
 			c.addChild(l);
 
 			
-			ui.mainContainer.addChild(c);
+			var b:Button = new Button("test");
+			b.x = 400;
+			b.y = 100;
+			ui.mainContainer.addChild(b);
+			
+			ui.uiManager.addPopupWindow(c, true);
 			
 			
 			d = new CPoint();

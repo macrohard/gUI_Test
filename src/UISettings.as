@@ -3,6 +3,7 @@ package
 	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.TextStyle;
 	import com.macro.gUI.core.IContainer;
+	import com.macro.gUI.core.UIManager;
 	import com.macro.gUI.skin.SkinDef;
 	import com.macro.gUI.skin.SkinManager;
 	import com.macro.gUI.skin.StyleDef;
@@ -335,6 +336,11 @@ package
 
 		}
 
+		
+		public function get uiManager():UIManager
+		{
+			return GameUI.uiManager;
+		}
 
 		public function get mainContainer():IContainer
 		{
