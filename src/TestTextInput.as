@@ -26,7 +26,7 @@ package
 		{
 //			stage.stageFocusRect = false;
 //			stage.tabChildren = false;
-			
+//			
 //			var s:Sprite = new Sprite();
 //			s.x = 100;
 //			s.y = 100;
