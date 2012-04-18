@@ -29,28 +29,28 @@
     <sourceAttachmentPath/>
   </compiler>
   <applications>
-    <application path="TestVScrollBar.as"/>
-    <application path="TestImageBox.as"/>
-    <application path="TestTextArea.as"/>
-    <application path="TestWindowChrome.as"/>
-    <application path="TestHScrollBar.as"/>
-    <application path="TestToggleButton.as"/>
-    <application path="TestTextInput.as"/>
-    <application path="TestTabPanel.as"/>
-    <application path="TestPanel.as"/>
-    <application path="TestVSlider.as"/>
-    <application path="TestWindowXP.as"/>
-    <application path="TestProgressBar.as"/>
-    <application path="TestIconButton.as"/>
-    <application path="TestCheckBox.as"/>
-    <application path="TestHSlider.as"/>
-    <application path="TestScrollPanel.as"/>
-    <application path="TestList.as"/>
-    <application path="TestLinkButton.as"/>
     <application path="TestRadioButton.as"/>
+    <application path="TestWindowXP.as"/>
+    <application path="TestLinkButton.as"/>
+    <application path="TestScrollPanel.as"/>
+    <application path="TestTabPanel.as"/>
+    <application path="TestTextArea.as"/>
     <application path="TestButton.as"/>
+    <application path="TestPanel.as"/>
+    <application path="TestIconButton.as"/>
+    <application path="TestList.as"/>
+    <application path="TestProgressBar.as"/>
+    <application path="TestVSlider.as"/>
+    <application path="TestWindowChrome.as"/>
+    <application path="TestTitleBar.as"/>
+    <application path="TestTextInput.as"/>
+    <application path="TestImageBox.as"/>
+    <application path="TestToggleButton.as"/>
+    <application path="TestCheckBox.as"/>
+    <application path="TestVScrollBar.as"/>
     <application path="TestLabel.as"/>
-    <application path="TestCell.as"/>
+    <application path="TestHSlider.as"/>
+    <application path="TestHScrollBar.as"/>
   </applications>
   <modules/>
   <buildCSSFiles/>

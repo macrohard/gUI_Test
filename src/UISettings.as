@@ -7,7 +7,7 @@ package
 	import com.macro.gUI.skin.SkinDef;
 	import com.macro.gUI.skin.SkinManager;
 	import com.macro.gUI.skin.StyleDef;
-	
+
 	import flash.display.Bitmap;
 	import flash.display.DisplayObjectContainer;
 	import flash.display.Stage;
@@ -210,6 +210,9 @@ package
 		[Embed(source = "assets/TitleBar_defaultImage.png")]
 		private var cell:Class;
 
+		[Embed(source = "assets/TitleBar_overImage.png")]
+		private var cellOver:Class;
+
 		[Embed(source = "assets/TitleBar_selectImage.png")]
 		private var cellSelected:Class;
 
@@ -217,6 +220,9 @@ package
 
 		[Embed(source = "assets/IconButton_disableImage.png")]
 		private var textarea:Class;
+		
+		[Embed(source="assets/TitleBar_defaultImage.png")]
+		private var titlebar:Class;
 
 
 		[Embed(source = "assets/screen.png")]
@@ -314,8 +320,7 @@ package
 
 
 
-		public function UISettings(container:DisplayObjectContainer,
-								   width:int = 0, height:int = 0)
+		public function UISettings(container:DisplayObjectContainer, width:int = 0, height:int = 0)
 		{
 			if (container is Stage)
 			{
@@ -336,7 +341,7 @@ package
 
 		}
 
-		
+
 		public function get uiManager():UIManager
 		{
 			return GameUI.uiManager;
@@ -351,293 +356,151 @@ package
 
 		private function initSkins(skinManager:SkinManager):void
 		{
-			skinManager.setSkin(SkinDef.BUTTON_NORMAL,
-								Bitmap(new button_normal()).bitmapData,
-								new Rectangle(13, 0, 39 - 13, 0), 0x22);
-			skinManager.setSkin(SkinDef.BUTTON_OVER,
-								Bitmap(new button_over()).bitmapData,
-								new Rectangle(13, 0, 39 - 13, 0), 0x22);
-			skinManager.setSkin(SkinDef.BUTTON_DOWN,
-								Bitmap(new button_down()).bitmapData,
-								new Rectangle(13, 0, 39 - 13, 0), 0x22);
-			skinManager.setSkin(SkinDef.BUTTON_DISABLE,
-								Bitmap(new button_disable()).bitmapData,
-								new Rectangle(13, 0, 39 - 13, 0), 0x22);
+			skinManager.setSkin(SkinDef.BUTTON_NORMAL, Bitmap(new button_normal()).bitmapData, new Rectangle(13, 0, 39 - 13, 0), 0x22);
+			skinManager.setSkin(SkinDef.BUTTON_OVER, Bitmap(new button_over()).bitmapData, new Rectangle(13, 0, 39 - 13, 0), 0x22);
+			skinManager.setSkin(SkinDef.BUTTON_DOWN, Bitmap(new button_down()).bitmapData, new Rectangle(13, 0, 39 - 13, 0), 0x22);
+			skinManager.setSkin(SkinDef.BUTTON_DISABLE, Bitmap(new button_disable()).bitmapData, new Rectangle(13, 0, 39 - 13, 0), 0x22);
 
 
 
 
-			skinManager.setSkin(SkinDef.TOGGLEBUTTON_NORMAL,
-								Bitmap(new button_normal()).bitmapData,
-								new Rectangle(13, 0, 39 - 13, 0));
-			skinManager.setSkin(SkinDef.TOGGLEBUTTON_OVER,
-								Bitmap(new button_over()).bitmapData,
-								new Rectangle(13, 0, 39 - 13, 0));
-			skinManager.setSkin(SkinDef.TOGGLEBUTTON_DOWN,
-								Bitmap(new button_down()).bitmapData,
-								new Rectangle(13, 0, 39 - 13, 0));
-			skinManager.setSkin(SkinDef.TOGGLEBUTTON_DISABLE,
-								Bitmap(new button_disable()).bitmapData,
-								new Rectangle(13, 0, 39 - 13, 0));
+			skinManager.setSkin(SkinDef.TOGGLEBUTTON_NORMAL, Bitmap(new button_normal()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
+			skinManager.setSkin(SkinDef.TOGGLEBUTTON_OVER, Bitmap(new button_over()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
+			skinManager.setSkin(SkinDef.TOGGLEBUTTON_DOWN, Bitmap(new button_down()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
+			skinManager.setSkin(SkinDef.TOGGLEBUTTON_DISABLE, Bitmap(new button_disable()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
 
 
 
-			skinManager.setSkin(SkinDef.TOGGLEBUTTON_SELECTED,
-								Bitmap(new selected_normal()).bitmapData,
+			skinManager.setSkin(SkinDef.TOGGLEBUTTON_SELECTED, Bitmap(new selected_normal()).bitmapData, new Rectangle(13, 0, 39 - 13, 0));
+			skinManager.setSkin(SkinDef.TOGGLEBUTTON_SELECTED_OVER, Bitmap(new selected_over()).bitmapData,
 								new Rectangle(13, 0, 39 - 13, 0));
-			skinManager.setSkin(SkinDef.TOGGLEBUTTON_SELECTED_OVER,
-								Bitmap(new selected_over()).bitmapData,
+			skinManager.setSkin(SkinDef.TOGGLEBUTTON_SELECTED_DOWN, Bitmap(new selected_down()).bitmapData,
 								new Rectangle(13, 0, 39 - 13, 0));
-			skinManager.setSkin(SkinDef.TOGGLEBUTTON_SELECTED_DOWN,
-								Bitmap(new selected_down()).bitmapData,
-								new Rectangle(13, 0, 39 - 13, 0));
-			skinManager.setSkin(SkinDef.TOGGLEBUTTON_SELECTED_DISABLE,
-								Bitmap(new selected_disable()).bitmapData,
+			skinManager.setSkin(SkinDef.TOGGLEBUTTON_SELECTED_DISABLE, Bitmap(new selected_disable()).bitmapData,
 								new Rectangle(13, 0, 39 - 13, 0));
 
 
 
 
-			skinManager.setSkin(SkinDef.CHECKBOX_NORMAL,
-								Bitmap(new checkbox()).bitmapData,
-								new Rectangle());
-			skinManager.setSkin(SkinDef.CHECKBOX_DISABLE,
-								Bitmap(new checkbox_disable()).bitmapData,
-								new Rectangle());
-			skinManager.setSkin(SkinDef.CHECKBOX_SELECTED,
-								Bitmap(new checkbox_selected()).bitmapData,
-								new Rectangle());
-			skinManager.setSkin(SkinDef.CHECKBOX_SELECTED_DISABLE,
-								Bitmap(new checkbox_selected_disable()).bitmapData,
-								new Rectangle());
+			skinManager.setSkin(SkinDef.CHECKBOX_NORMAL, Bitmap(new checkbox()).bitmapData, new Rectangle());
+			skinManager.setSkin(SkinDef.CHECKBOX_DISABLE, Bitmap(new checkbox_disable()).bitmapData, new Rectangle());
+			skinManager.setSkin(SkinDef.CHECKBOX_SELECTED, Bitmap(new checkbox_selected()).bitmapData, new Rectangle());
+			skinManager.setSkin(SkinDef.CHECKBOX_SELECTED_DISABLE, Bitmap(new checkbox_selected_disable()).bitmapData, new Rectangle());
 
 
-			skinManager.setSkin(SkinDef.SCROLLBAR_VERTICAL_BLOCK_NORMAL,
-								Bitmap(new vblock()).bitmapData,
-								new Rectangle(8, 6, 0, 14));
-			skinManager.setSkin(SkinDef.SCROLLBAR_VERTICAL_BLOCK_OVER,
-								Bitmap(new vblock_over()).bitmapData,
-								new Rectangle(8, 6, 0, 14));
-			skinManager.setSkin(SkinDef.SCROLLBAR_VERTICAL_BLOCK_DOWN,
-								Bitmap(new vblock_down()).bitmapData,
-								new Rectangle(8, 6, 0, 14));
-			skinManager.setSkin(SkinDef.SCROLLBAR_VERTICAL_BLOCK_DISABLE,
-								Bitmap(new vblock_disable()).bitmapData,
+			skinManager.setSkin(SkinDef.SCROLLBAR_VERTICAL_BLOCK_NORMAL, Bitmap(new vblock()).bitmapData, new Rectangle(8, 6, 0, 14));
+			skinManager.setSkin(SkinDef.SCROLLBAR_VERTICAL_BLOCK_OVER, Bitmap(new vblock_over()).bitmapData, new Rectangle(8, 6, 0, 14));
+			skinManager.setSkin(SkinDef.SCROLLBAR_VERTICAL_BLOCK_DOWN, Bitmap(new vblock_down()).bitmapData, new Rectangle(8, 6, 0, 14));
+			skinManager.setSkin(SkinDef.SCROLLBAR_VERTICAL_BLOCK_DISABLE, Bitmap(new vblock_disable()).bitmapData,
 								new Rectangle(8, 6, 0, 14));
 
-			skinManager.setSkin(SkinDef.SCROLLBAR_UP_NORMAL,
-								Bitmap(new up_normal()).bitmapData,
-								new Rectangle(7, 0));
-			skinManager.setSkin(SkinDef.SCROLLBAR_UP_OVER,
-								Bitmap(new up_over()).bitmapData,
-								new Rectangle(7, 0));
-			skinManager.setSkin(SkinDef.SCROLLBAR_UP_DOWN,
-								Bitmap(new up_down()).bitmapData,
-								new Rectangle(7, 0));
-			skinManager.setSkin(SkinDef.SCROLLBAR_UP_DISABLE,
-								Bitmap(new up_disable()).bitmapData,
-								new Rectangle(7, 0));
+			skinManager.setSkin(SkinDef.SCROLLBAR_UP_NORMAL, Bitmap(new up_normal()).bitmapData, new Rectangle(7, 0));
+			skinManager.setSkin(SkinDef.SCROLLBAR_UP_OVER, Bitmap(new up_over()).bitmapData, new Rectangle(7, 0));
+			skinManager.setSkin(SkinDef.SCROLLBAR_UP_DOWN, Bitmap(new up_down()).bitmapData, new Rectangle(7, 0));
+			skinManager.setSkin(SkinDef.SCROLLBAR_UP_DISABLE, Bitmap(new up_disable()).bitmapData, new Rectangle(7, 0));
 
-			skinManager.setSkin(SkinDef.SCROLLBAR_DOWN_NORMAL,
-								Bitmap(new down_normal()).bitmapData,
-								new Rectangle(7, 0));
-			skinManager.setSkin(SkinDef.SCROLLBAR_DOWN_OVER,
-								Bitmap(new down_over()).bitmapData,
-								new Rectangle(7, 0));
-			skinManager.setSkin(SkinDef.SCROLLBAR_DOWN_DOWN,
-								Bitmap(new down_down()).bitmapData,
-								new Rectangle(7, 0));
-			skinManager.setSkin(SkinDef.SCROLLBAR_DOWN_DISABLE,
-								Bitmap(new down_disable()).bitmapData,
-								new Rectangle(7, 0));
+			skinManager.setSkin(SkinDef.SCROLLBAR_DOWN_NORMAL, Bitmap(new down_normal()).bitmapData, new Rectangle(7, 0));
+			skinManager.setSkin(SkinDef.SCROLLBAR_DOWN_OVER, Bitmap(new down_over()).bitmapData, new Rectangle(7, 0));
+			skinManager.setSkin(SkinDef.SCROLLBAR_DOWN_DOWN, Bitmap(new down_down()).bitmapData, new Rectangle(7, 0));
+			skinManager.setSkin(SkinDef.SCROLLBAR_DOWN_DISABLE, Bitmap(new down_disable()).bitmapData, new Rectangle(7, 0));
 
-			skinManager.setSkin(SkinDef.SCROLLBAR_VERTICAL_BG,
-								Bitmap(new vbg()).bitmapData,
-								new Rectangle(8, 0, 0, 111));
+			skinManager.setSkin(SkinDef.SCROLLBAR_VERTICAL_BG, Bitmap(new vbg()).bitmapData, new Rectangle(8, 0, 0, 111));
 
 
-			skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_NORMAL,
-								Bitmap(new hblock()).bitmapData,
-								new Rectangle(6, 7, 14));
-			skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_OVER,
-								Bitmap(new hblock_over()).bitmapData,
-								new Rectangle(6, 7, 14));
-			skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_DOWN,
-								Bitmap(new hblock_down()).bitmapData,
-								new Rectangle(6, 7, 14));
-			skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_DISABLE,
-								Bitmap(new hblock_disable()).bitmapData,
+			skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_NORMAL, Bitmap(new hblock()).bitmapData, new Rectangle(6, 7, 14));
+			skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_OVER, Bitmap(new hblock_over()).bitmapData, new Rectangle(6, 7, 14));
+			skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_DOWN, Bitmap(new hblock_down()).bitmapData, new Rectangle(6, 7, 14));
+			skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BLOCK_DISABLE, Bitmap(new hblock_disable()).bitmapData,
 								new Rectangle(6, 7, 14));
 
-			skinManager.setSkin(SkinDef.SCROLLBAR_LEFT_NORMAL,
-								Bitmap(new left_normal()).bitmapData,
-								new Rectangle(0, 7));
-			skinManager.setSkin(SkinDef.SCROLLBAR_LEFT_OVER,
-								Bitmap(new left_over()).bitmapData,
-								new Rectangle(0, 7));
-			skinManager.setSkin(SkinDef.SCROLLBAR_LEFT_DOWN,
-								Bitmap(new left_down()).bitmapData,
-								new Rectangle(0, 7));
-			skinManager.setSkin(SkinDef.SCROLLBAR_LEFT_DISABLE,
-								Bitmap(new left_disable()).bitmapData,
-								new Rectangle(0, 7));
+			skinManager.setSkin(SkinDef.SCROLLBAR_LEFT_NORMAL, Bitmap(new left_normal()).bitmapData, new Rectangle(0, 7));
+			skinManager.setSkin(SkinDef.SCROLLBAR_LEFT_OVER, Bitmap(new left_over()).bitmapData, new Rectangle(0, 7));
+			skinManager.setSkin(SkinDef.SCROLLBAR_LEFT_DOWN, Bitmap(new left_down()).bitmapData, new Rectangle(0, 7));
+			skinManager.setSkin(SkinDef.SCROLLBAR_LEFT_DISABLE, Bitmap(new left_disable()).bitmapData, new Rectangle(0, 7));
 
-			skinManager.setSkin(SkinDef.SCROLLBAR_RIGHT_NORMAL,
-								Bitmap(new right_normal()).bitmapData,
-								new Rectangle(0, 7));
-			skinManager.setSkin(SkinDef.SCROLLBAR_RIGHT_OVER,
-								Bitmap(new right_over()).bitmapData,
-								new Rectangle(0, 7));
-			skinManager.setSkin(SkinDef.SCROLLBAR_RIGHT_DOWN,
-								Bitmap(new right_down()).bitmapData,
-								new Rectangle(0, 7));
-			skinManager.setSkin(SkinDef.SCROLLBAR_RIGHT_DISABLE,
-								Bitmap(new right_disable()).bitmapData,
-								new Rectangle(0, 7));
+			skinManager.setSkin(SkinDef.SCROLLBAR_RIGHT_NORMAL, Bitmap(new right_normal()).bitmapData, new Rectangle(0, 7));
+			skinManager.setSkin(SkinDef.SCROLLBAR_RIGHT_OVER, Bitmap(new right_over()).bitmapData, new Rectangle(0, 7));
+			skinManager.setSkin(SkinDef.SCROLLBAR_RIGHT_DOWN, Bitmap(new right_down()).bitmapData, new Rectangle(0, 7));
+			skinManager.setSkin(SkinDef.SCROLLBAR_RIGHT_DISABLE, Bitmap(new right_disable()).bitmapData, new Rectangle(0, 7));
 
-			skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BG,
-								Bitmap(new hbg()).bitmapData,
-								new Rectangle(0, 7, 111));
+			skinManager.setSkin(SkinDef.SCROLLBAR_HORIZONTAL_BG, Bitmap(new hbg()).bitmapData, new Rectangle(0, 7, 111));
 
 
 
-			skinManager.setSkin(SkinDef.TEXTAREA_BG,
-								Bitmap(new textarea()).bitmapData,
-								new Rectangle(6, 6, 22, 22));
+			skinManager.setSkin(SkinDef.TEXTAREA_BG, Bitmap(new textarea()).bitmapData, new Rectangle(6, 6, 22, 22));
+			skinManager.setSkin(SkinDef.TITLEBAR_BG, Bitmap(new titlebar()).bitmapData, new Rectangle(35, 0, 133 - 35, 0));
+
+
+			skinManager.setSkin(SkinDef.SLIDER_BLOCK_NORMAL, Bitmap(new slider_normal()).bitmapData, new Rectangle(8, 7));
+			skinManager.setSkin(SkinDef.SLIDER_BLOCK_OVER, Bitmap(new slider_over()).bitmapData, new Rectangle(8, 7));
+			skinManager.setSkin(SkinDef.SLIDER_BLOCK_DOWN, Bitmap(new slider_down()).bitmapData, new Rectangle(8, 7));
+			skinManager.setSkin(SkinDef.SLIDER_BLOCK_DISABLE, Bitmap(new slider_disable()).bitmapData, new Rectangle(8, 7));
+			skinManager.setSkin(SkinDef.SLIDER_HORIZONTAL_BG, Bitmap(new slider_hbg()).bitmapData, new Rectangle(1, 6, 1));
+
+			skinManager.setSkin(SkinDef.SLIDER_VERTICAL_BG, Bitmap(new slider_vbg()).bitmapData, new Rectangle(6, 1, 0, 1));
+
+
+			skinManager.setSkin(SkinDef.ICONBUTTON_NORMAL, Bitmap(new icon_normal()).bitmapData, new Rectangle(), 0x22);
+			skinManager.setSkin(SkinDef.ICONBUTTON_OVER, Bitmap(new icon_over()).bitmapData, new Rectangle(), 0x22);
+			skinManager.setSkin(SkinDef.ICONBUTTON_DOWN, Bitmap(new icon_down()).bitmapData, new Rectangle(), 0x22);
+			skinManager.setSkin(SkinDef.ICONBUTTON_DISABLE, Bitmap(new icon_disable()).bitmapData, new Rectangle(), 0x22);
 
 
 
-			skinManager.setSkin(SkinDef.SLIDER_BLOCK_NORMAL,
-								Bitmap(new slider_normal()).bitmapData,
-								new Rectangle(8, 7));
-			skinManager.setSkin(SkinDef.SLIDER_BLOCK_OVER,
-								Bitmap(new slider_over()).bitmapData,
-								new Rectangle(8, 7));
-			skinManager.setSkin(SkinDef.SLIDER_BLOCK_DOWN,
-								Bitmap(new slider_down()).bitmapData,
-								new Rectangle(8, 7));
-			skinManager.setSkin(SkinDef.SLIDER_BLOCK_DISABLE,
-								Bitmap(new slider_disable()).bitmapData,
-								new Rectangle(8, 7));
-			skinManager.setSkin(SkinDef.SLIDER_HORIZONTAL_BG,
-								Bitmap(new slider_hbg()).bitmapData,
-								new Rectangle(1, 6, 1));
-
-			skinManager.setSkin(SkinDef.SLIDER_VERTICAL_BG,
-								Bitmap(new slider_vbg()).bitmapData,
-								new Rectangle(6, 1, 0, 1));
+			skinManager.setSkin(SkinDef.LIST_BG, Bitmap(new list()).bitmapData, new Rectangle(6, 6, 22, 22));
+			skinManager.setSkin(SkinDef.LIST_ITEM_BG, Bitmap(new cell()).bitmapData, new Rectangle(35, 0, 133 - 35, 0));
+			skinManager.setSkin(SkinDef.LIST_ITEM_OVER_BG, Bitmap(new cellOver()).bitmapData, new Rectangle(35, 0, 133 - 35, 0));
+			skinManager.setSkin(SkinDef.LIST_ITEM_SELECTED_BG, Bitmap(new cellSelected()).bitmapData, new Rectangle(35, 0, 133 - 35, 0));
 
 
-			skinManager.setSkin(SkinDef.ICONBUTTON_NORMAL,
-								Bitmap(new icon_normal()).bitmapData,
-								new Rectangle(), 0x22);
-			skinManager.setSkin(SkinDef.ICONBUTTON_OVER,
-								Bitmap(new icon_over()).bitmapData,
-								new Rectangle(), 0x22);
-			skinManager.setSkin(SkinDef.ICONBUTTON_DOWN,
-								Bitmap(new icon_down()).bitmapData,
-								new Rectangle(), 0x22);
-			skinManager.setSkin(SkinDef.ICONBUTTON_DISABLE,
-								Bitmap(new icon_disable()).bitmapData,
-								new Rectangle(), 0x22);
+			skinManager.setSkin(SkinDef.PANEL_BG, Bitmap(new panel()).bitmapData, new Rectangle(8, 30, 560, 461));
 
 
 
-			skinManager.setSkin(SkinDef.LIST_BG, Bitmap(new list()).bitmapData,
-								new Rectangle(6, 6, 22, 22));
-			skinManager.setSkin(SkinDef.CELL_BG, Bitmap(new cell()).bitmapData,
-								new Rectangle(35, 0, 133 - 35, 0));
-			skinManager.setSkin(SkinDef.CELL_SELECTED_BG,
-								Bitmap(new cellSelected()).bitmapData,
-								new Rectangle(35, 0, 133 - 35, 0));
-
-
-			skinManager.setSkin(SkinDef.PANEL_BG,
-								Bitmap(new panel()).bitmapData,
-								new Rectangle(8, 30, 560, 461));
+			skinManager.setSkin(SkinDef.PROGRESSBAR_INFILL, Bitmap(new progressbar_filling()).bitmapData, new Rectangle());
+			skinManager.setSkin(SkinDef.PROGRESSBAR_BG, Bitmap(new progressbar()).bitmapData, new Rectangle(10, 1, 4));
 
 
 
-			skinManager.setSkin(SkinDef.PROGRESSBAR_INFILL,
-								Bitmap(new progressbar_filling()).bitmapData,
-								new Rectangle());
-			skinManager.setSkin(SkinDef.PROGRESSBAR_BG,
-								Bitmap(new progressbar()).bitmapData,
-								new Rectangle(10, 1, 4));
+			skinManager.setSkin(SkinDef.RADIOBUTTON_NORMAL, Bitmap(new radio()).bitmapData, new Rectangle());
+			skinManager.setSkin(SkinDef.RADIOBUTTON_DISABLE, Bitmap(new radio_disable()).bitmapData, new Rectangle());
+			skinManager.setSkin(SkinDef.RADIOBUTTON_SELECTED, Bitmap(new radio_selected()).bitmapData, new Rectangle());
+			skinManager.setSkin(SkinDef.RADIOBUTTON_SELECTED_DISABLE, Bitmap(new radio_selected_disable()).bitmapData, new Rectangle());
 
 
 
-			skinManager.setSkin(SkinDef.RADIOBUTTON_NORMAL,
-								Bitmap(new radio()).bitmapData, new Rectangle());
-			skinManager.setSkin(SkinDef.RADIOBUTTON_DISABLE,
-								Bitmap(new radio_disable()).bitmapData,
-								new Rectangle());
-			skinManager.setSkin(SkinDef.RADIOBUTTON_SELECTED,
-								Bitmap(new radio_selected()).bitmapData,
-								new Rectangle());
-			skinManager.setSkin(SkinDef.RADIOBUTTON_SELECTED_DISABLE,
-								Bitmap(new radio_selected_disable()).bitmapData,
-								new Rectangle());
+			skinManager.setSkin(SkinDef.SCROLLPANEL_BG, Bitmap(new scrollpanel()).bitmapData, new Rectangle(6, 6, 22, 22));
 
 
 
-			skinManager.setSkin(SkinDef.SCROLLPANEL_BG,
-								Bitmap(new scrollpanel()).bitmapData,
-								new Rectangle(6, 6, 22, 22));
+			skinManager.setSkin(SkinDef.TABPANEL_BG, Bitmap(new tabpanel()).bitmapData, new Rectangle(4, 4, 55, 67));
 
-
-
-			skinManager.setSkin(SkinDef.TABPANEL_BG,
-								Bitmap(new tabpanel()).bitmapData,
-								new Rectangle(4, 4, 55, 67));
-
-			skinManager.setSkin(SkinDef.TABPANEL_TAB,
-								Bitmap(new tab()).bitmapData,
-								new Rectangle(3, 0, 18));
-			skinManager.setSkin(SkinDef.TABPANEL_TAB_SELECTED,
-								Bitmap(new tabSelected()).bitmapData,
-								new Rectangle(3, 0, 18));
+			skinManager.setSkin(SkinDef.TABPANEL_TAB, Bitmap(new tab()).bitmapData, new Rectangle(3, 0, 18));
+			skinManager.setSkin(SkinDef.TABPANEL_TAB_SELECTED, Bitmap(new tabSelected()).bitmapData, new Rectangle(3, 0, 18));
 
 
 
 
-			skinManager.setSkin(SkinDef.TEXTINPUT_NORMAL,
-								Bitmap(new textinput()).bitmapData,
-								new Rectangle(14, 0, 7, 0), 0x21);
-			skinManager.setSkin(SkinDef.TEXTINPUT_DISABLE,
-								Bitmap(new textinput_disable()).bitmapData,
-								new Rectangle(14, 0, 7, 0), 0x21);
+			skinManager.setSkin(SkinDef.TEXTINPUT_NORMAL, Bitmap(new textinput()).bitmapData, new Rectangle(14, 0, 7, 0), 0x21);
+			skinManager.setSkin(SkinDef.TEXTINPUT_DISABLE, Bitmap(new textinput_disable()).bitmapData, new Rectangle(14, 0, 7, 0), 0x21);
 
 
 
-			skinManager.setSkin(SkinDef.WINDOW_BG,
-								Bitmap(new window()).bitmapData,
-								new Rectangle(5, 30, 981, 543));
+			skinManager.setSkin(SkinDef.WINDOW_BG, Bitmap(new window()).bitmapData, new Rectangle(5, 30, 981, 543));
 
-			skinManager.setSkin(SkinDef.MINIMIZE_BUTTON_NORMAL,
-								Bitmap(new min()).bitmapData);
-			skinManager.setSkin(SkinDef.MINIMIZE_BUTTON_OVER,
-								Bitmap(new min_over()).bitmapData);
-			skinManager.setSkin(SkinDef.MINIMIZE_BUTTON_DOWN,
-								Bitmap(new min_down()).bitmapData);
-			skinManager.setSkin(SkinDef.MINIMIZE_BUTTON_DISABLE,
-								Bitmap(new min_disable()).bitmapData);
+			skinManager.setSkin(SkinDef.MINIMIZE_BUTTON_NORMAL, Bitmap(new min()).bitmapData);
+			skinManager.setSkin(SkinDef.MINIMIZE_BUTTON_OVER, Bitmap(new min_over()).bitmapData);
+			skinManager.setSkin(SkinDef.MINIMIZE_BUTTON_DOWN, Bitmap(new min_down()).bitmapData);
+			skinManager.setSkin(SkinDef.MINIMIZE_BUTTON_DISABLE, Bitmap(new min_disable()).bitmapData);
 
-			skinManager.setSkin(SkinDef.MAXIMIZE_BUTTON_NORMAL,
-								Bitmap(new max()).bitmapData);
-			skinManager.setSkin(SkinDef.MAXIMIZE_BUTTON_OVER,
-								Bitmap(new max_over()).bitmapData);
-			skinManager.setSkin(SkinDef.MAXIMIZE_BUTTON_DOWN,
-								Bitmap(new max_down()).bitmapData);
-			skinManager.setSkin(SkinDef.MAXIMIZE_BUTTON_DISABLE,
-								Bitmap(new max_disable()).bitmapData);
+			skinManager.setSkin(SkinDef.MAXIMIZE_BUTTON_NORMAL, Bitmap(new max()).bitmapData);
+			skinManager.setSkin(SkinDef.MAXIMIZE_BUTTON_OVER, Bitmap(new max_over()).bitmapData);
+			skinManager.setSkin(SkinDef.MAXIMIZE_BUTTON_DOWN, Bitmap(new max_down()).bitmapData);
+			skinManager.setSkin(SkinDef.MAXIMIZE_BUTTON_DISABLE, Bitmap(new max_disable()).bitmapData);
 
-			skinManager.setSkin(SkinDef.CLOSE_BUTTON_NORMAL,
-								Bitmap(new close()).bitmapData);
-			skinManager.setSkin(SkinDef.CLOSE_BUTTON_OVER,
-								Bitmap(new close_over()).bitmapData);
-			skinManager.setSkin(SkinDef.CLOSE_BUTTON_DOWN,
-								Bitmap(new close_down()).bitmapData);
+			skinManager.setSkin(SkinDef.CLOSE_BUTTON_NORMAL, Bitmap(new close()).bitmapData);
+			skinManager.setSkin(SkinDef.CLOSE_BUTTON_OVER, Bitmap(new close_over()).bitmapData);
+			skinManager.setSkin(SkinDef.CLOSE_BUTTON_DOWN, Bitmap(new close_down()).bitmapData);
 
 		}
 
@@ -661,12 +524,24 @@ package
 			s.multiline = true;
 			s.wordWrap = true;
 			skinManager.setStyle(StyleDef.TEXTAREA, s);
+			
+			//单元格文本样式
+			s = new TextStyle();
+			s.bold = true;
+			s.color = 0xFFFFFF;
+			skinManager.setStyle(StyleDef.TITLEBAR, s);
 
 			//单元格文本样式
 			s = new TextStyle();
 			s.bold = true;
 			s.color = 0xFFFFFF;
-			skinManager.setStyle(StyleDef.CELL, s);
+			skinManager.setStyle(StyleDef.LIST_ITEM, s);
+			
+			//单元格文本样式
+			s = new TextStyle();
+			s.bold = true;
+			s.color = 0xFF0000;
+			skinManager.setStyle(StyleDef.LIST_ITEM_SELECTED, s);
 
 			//窗口标题栏文本样式
 			s = new TextStyle();

@@ -3,7 +3,7 @@ package
 	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.Margin;
 	import com.macro.gUI.assist.TextStyle;
-	import com.macro.gUI.controls.Cell;
+	import com.macro.gUI.controls.TitleBar;
 	
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
@@ -12,16 +12,16 @@ package
 	import net.hires.debug.Stats;
 
 	[SWF(width="1000", height="600", frameRate="60")]
-	public class TestCell extends Sprite
+	public class TestTitleBar extends Sprite
 	{
 		
 		
-		private var c:Cell;
+		private var c:TitleBar;
 
 		private var d:Sprite;
 		private var e:Sprite;
 
-		public function TestCell()
+		public function TestTitleBar()
 		{
 			
 			var ui:UISettings = new UISettings(stage);
@@ -35,7 +35,7 @@ package
 			ts.wordWrap = true;
 //			ts.displayAsPassword = true;
 			
-			c = new Cell("测试一下看看效果如何");
+			c = new TitleBar("测试一下看看效果如何");
 //			var c:Label = new Label("");
 			c.autoSize = false;
 //			c.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;

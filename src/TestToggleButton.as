@@ -39,7 +39,7 @@ package
 			
 			
 			control = new ToggleButton();
-			control.autoSize = false;
+//			control.autoSize = false;
 //			control.align = LayoutAlign.CENTER | LayoutAlign.MIDDLE;
 			control.backgroundColor = 0xFF666666;
 			control.text = "test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它";
