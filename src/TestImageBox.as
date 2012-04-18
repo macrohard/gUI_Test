@@ -1,9 +1,11 @@
 package
 {
 	import com.macro.gUI.assist.LayoutAlign;
+	import com.macro.gUI.containers.BackgroundPanel;
 	import com.macro.gUI.controls.ImageBox;
+	import com.macro.gUI.controls.Label;
+	import com.macro.gUI.core.AbstractControl;
 	
-	import flash.display.Bitmap;
 	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.events.Event;
@@ -18,7 +20,7 @@ package
 		
 		
 		
-		private var c:ImageBox;
+		private var c:AbstractControl;
 
 		private var d:Sprite;
 		private var e:Sprite;
@@ -30,14 +32,26 @@ package
 			
 			
 			
-			var l:ImageBox = new ImageBox(new ShapeExample(), false);
-			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
-			l.backgroundColor = 0x66FF0000;
-//			l.margin = new Rectangle(10, 10);
-//			l.setDefaultSize();
-//			l.setSource(new ShapeExample());
-			c = l;
+//			var b:ImageBox = new ImageBox(new ShapeExample(), false);
+			var b:BackgroundPanel = new BackgroundPanel(new ShapeExample(), false);
+			b.align = LayoutAlign.CENTER | LayoutAlign.MIDDLE;
+			b.backgroundColor = 0x66FF0000;
+//			b.margin = new Rectangle(10, 10);
+//			b.setDefaultSize();
+//			b.setSource(new ShapeExample());
 			
+			
+			var l:Label = new Label();
+			l.backgroundColor = 0xffff0000;
+			l.text = "下例使用 StageExample 类在激活舞台或调整舞台大小时调度事件。执行下列步骤可完成此操作：\n" +
+				"无论 Flash Player 窗口的大小如何，类的构造函数都会首先将 Flash 应用程序设置为固定大小，\n" +
+				"然后使用 activateHandler() 和 resizeHandler() 方法添加两个事件侦听器。\n" +
+				"用鼠标左键单击后，便可运行 activateHandler() 方法。\n" +
+				"当调整舞台大小时，便可运行 resizeHandler() 方法。";
+			
+			b.addChild(l);
+			
+			c = b;
 			ui.mainContainer.addChild(c);
 			
 			
