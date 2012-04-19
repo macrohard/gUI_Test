@@ -7,6 +7,10 @@ package
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.events.KeyboardEvent;
+	import flash.text.TextField;
+	import flash.text.TextFieldAutoSize;
+	import flash.text.TextFieldType;
 
 
 	[SWF(width = "1000", height = "600", frameRate = "60")]
@@ -54,8 +58,6 @@ package
 //			l.enabled = false;
 //			l.editable = false;
 
-
-			
 			
 			var t:TextInput = new TextInput();
 			t.x = 50;
@@ -70,16 +72,26 @@ package
 			d.addEventListener(Event.RESIZE, onresize);
 			d.x = 50;
 			d.y = 50;
-			stage.addChild(d);
+			addChild(d);
 
 			e = new CPoint();
 			e.addEventListener(Event.RESIZE, onresize);
 			e.x = 650;
 			e.y = 450;
-			stage.addChild(e);
+			addChild(e);
 
 			onresize(null);
 
+		}
+		
+		private function keyDownHandler(e:KeyboardEvent):void
+		{
+			trace("aaa");
+		}
+		
+		private function keyUpHandler(e:KeyboardEvent):void
+		{
+			trace("bbb");
 		}
 
 		private function onresize(evt:Event):void
