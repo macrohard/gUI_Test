@@ -35,6 +35,7 @@ package
 //			ts.displayAsPassword = true;
 			
 			l = new Label("test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它\ntst");
+//			l = new Label(null);
 			l.style = ts;
 //			l.autoSize = false;
 //			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;

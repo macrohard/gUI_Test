@@ -40,6 +40,7 @@ package
 			//			control.enabled = false;
 			
 //			control.editable = false;
+//			control.enabled = false;
 			
 			
 			ui.mainContainer.addChild(control);
