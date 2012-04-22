@@ -28,7 +28,7 @@ package
 
 			
 			
-            list = new List();
+            list = new List(200);
             list.addItem("first");
             list.addItem("second");
             list.addItem("third", 1);
@@ -39,7 +39,7 @@ package
             list.addItem("eighth");
             list.addItem("ninth");
 			
-			
+			list.setHeightByLines(5);
 			
 			ui.mainContainer.addChild(list);
 			
