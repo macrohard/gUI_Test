@@ -231,13 +231,13 @@ package
 		[Embed(source = "assets/IconButton_disableImage.png")]
 		private var list:Class;
 
-		[Embed(source = "assets/TitleBar_defaultImage.png")]
+		[Embed(source = "assets/List_defaultImage.png")]
 		private var list_item:Class;
 
-		[Embed(source = "assets/TitleBar_overImage.png")]
+		[Embed(source = "assets/List_overImage.png")]
 		private var list_item_over:Class;
 
-		[Embed(source = "assets/TitleBar_selectImage.png")]
+		[Embed(source = "assets/List_selectImage.png")]
 		private var list_item_selected:Class;
 
 
@@ -453,7 +453,7 @@ package
 			skinManager.setSkin(SkinDef.SCROLLBAR_VERTICAL_BG, Bitmap(new vbg()).bitmapData, new Rectangle(8, 0, 0, 111));
 
 
-			skinManager.setSkin(SkinDef.LIST_BG, Bitmap(new list()).bitmapData, new Rectangle(6, 6, 22, 22));
+			skinManager.setSkin(SkinDef.LIST_BG, Bitmap(new list()).bitmapData, new Rectangle(3, 3, 28, 28));
 			skinManager.setSkin(SkinDef.LIST_ITEM_BG, Bitmap(new list_item()).bitmapData, new Rectangle(35, 0, 133 - 35, 0));
 			skinManager.setSkin(SkinDef.LIST_ITEM_OVER_BG, Bitmap(new list_item_over()).bitmapData, new Rectangle(35, 0, 133 - 35, 0));
 			skinManager.setSkin(SkinDef.LIST_ITEM_SELECTED_BG, Bitmap(new list_item_selected()).bitmapData,

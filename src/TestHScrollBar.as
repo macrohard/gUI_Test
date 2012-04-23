@@ -34,6 +34,7 @@ package
 
 		public function TestHScrollBar()
 		{
+			stage.color = 0x444444;
 			var ui:UISettings = new UISettings(stage);
 			
 			
