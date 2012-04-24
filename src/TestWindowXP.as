@@ -1,9 +1,12 @@
 package
 {
 	import com.macro.gUI.assist.LayoutAlign;
+	import com.macro.gUI.containers.Container;
 	import com.macro.gUI.containers.Window;
 	import com.macro.gUI.controls.Button;
 	import com.macro.gUI.controls.Label;
+	import com.macro.gUI.events.ButtonEvent;
+	import com.macro.gUI.events.WindowEvent;
 	
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
@@ -38,6 +41,7 @@ package
 
 			c = new Window("测试窗口", Window.BUTTON_VISIBLE_MINIMIZE_CLOSE);
 			c.align = LayoutAlign.LEFT | LayoutAlign.MIDDLE;
+			c.addEventListener(WindowEvent.CLOSE_BUTTON_CLICK, closeButtonClickHandler);
 
 			var l:Label = new Label();
 			l.backgroundColor = 0xffff0000;
@@ -53,13 +57,25 @@ package
 			var b:Button = new Button("test");
 			b.x = 400;
 			b.y = 100;
+			b.addEventListener(ButtonEvent.MOUSE_UP, mouseUpHandler);
 			ui.mainContainer.addChild(b);
 
-			ui.uiManager.addPopupWindow(c, true, true);
+			
 			
 
 //			addChild(new Stats());
 		}
-
+		
+		protected function closeButtonClickHandler(e:Event):void
+		{
+			ui.popupManager.removePopupWindow(c);
+		}
+		
+		protected function mouseUpHandler(e:Event):void
+		{
+			(e.target as Button).mouseOut(null);
+			ui.popupManager.addPopupWindow(c, true, true);
+		}
+		
 	}
 }

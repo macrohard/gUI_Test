@@ -3,11 +3,11 @@ package
 	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.TextStyle;
 	import com.macro.gUI.core.IContainer;
-	import com.macro.gUI.core.UIManager;
+	import com.macro.gUI.core.PopupManager;
 	import com.macro.gUI.skin.SkinDef;
 	import com.macro.gUI.skin.SkinManager;
 	import com.macro.gUI.skin.StyleDef;
-
+	
 	import flash.display.Bitmap;
 	import flash.display.DisplayObjectContainer;
 	import flash.display.Stage;
@@ -349,9 +349,9 @@ package
 		}
 
 
-		public function get uiManager():UIManager
+		public function get popupManager():PopupManager
 		{
-			return GameUI.uiManager;
+			return GameUI.popupManager;
 		}
 
 		public function get mainContainer():IContainer
