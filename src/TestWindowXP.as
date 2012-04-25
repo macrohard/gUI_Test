@@ -57,7 +57,7 @@ package
 			var b:Button = new Button("test");
 			b.x = 400;
 			b.y = 100;
-			b.addEventListener(ButtonEvent.MOUSE_UP, mouseUpHandler);
+			b.addEventListener(ButtonEvent.MOUSE_DOWN, mouseUpHandler);
 			ui.mainContainer.addChild(b);
 
 			
@@ -73,7 +73,6 @@ package
 		
 		protected function mouseUpHandler(e:Event):void
 		{
-			(e.target as Button).mouseOut(null);
 			ui.popupManager.addPopupWindow(c, true, true);
 		}
 		

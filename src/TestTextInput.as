@@ -39,7 +39,7 @@ package
 			var ui:UISettings = new UISettings(stage, 900, 500);
 			
 			l = new TextInput();
-//			l.normalStyle = ts;
+//			l.upStyle = ts;
 //			l.autoSize = false;
 //			var ts:TextStyle = l.style;
 //			ts.color = 0xFFFFFF;
