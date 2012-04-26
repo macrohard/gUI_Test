@@ -31,7 +31,7 @@ package
 
 
 			list = new TextArea();
-			list.wordWrap = false;
+			list.wordWrap = true;
 			list.text = "下例使用 StageExample 类在激活舞台或调整舞台大小时调度事件。执行下列步骤可完成此操作：\n" +
 				"无论 Flash Player 窗口的大小如何，类的构造函数都会首先将 Flash 应用程序设置为固定大小，\n" +
 				"然后使用 activateHandler() 和 resizeHandler() 方法添加两个事件侦听器。\n" +
