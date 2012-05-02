@@ -342,7 +342,7 @@ package
 				stage.scaleMode = StageScaleMode.NO_SCALE;
 			}
 
-			GameUI.init(container, width, height, RenderMode.RENDER_MODE_MERGE);
+			GameUI.init(container, width, height, RenderMode.RENDER_MODE_LAYER);
 
 			initSkins(GameUI.skinManager);
 			initStyles(GameUI.skinManager);
