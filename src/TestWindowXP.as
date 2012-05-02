@@ -50,7 +50,7 @@ package
 					"然后使用 activateHandler() 和 resizeHandler() 方法添加两个事件侦听器。\n" +
 					"用鼠标左键单击后，便可运行 activateHandler() 方法。\n" +
 					"当调整舞台大小时，便可运行 resizeHandler() 方法。";
-
+			l.alpha = 0.5;
 			c.addChild(l);
 
 
@@ -74,6 +74,7 @@ package
 		protected function mouseUpHandler(e:Event):void
 		{
 			ui.popupManager.addPopupWindow(c, true, true);
+//			c.alpha = 0.5;
 		}
 		
 	}
