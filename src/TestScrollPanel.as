@@ -64,6 +64,7 @@ package
 			
 			b.x = 200;
 			b.y = 50;
+			b.pivotX = -20;
 			list.addChild(b);
 			
 			

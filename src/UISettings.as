@@ -4,6 +4,7 @@ package
 	import com.macro.gUI.assist.TextStyle;
 	import com.macro.gUI.core.IContainer;
 	import com.macro.gUI.core.PopupManager;
+	import com.macro.gUI.renders.RenderMode;
 	import com.macro.gUI.skin.SkinDef;
 	import com.macro.gUI.skin.SkinManager;
 	import com.macro.gUI.skin.StyleDef;
@@ -341,7 +342,7 @@ package
 				stage.scaleMode = StageScaleMode.NO_SCALE;
 			}
 
-			GameUI.init(container, width, height);
+			GameUI.init(container, width, height, RenderMode.RENDER_MODE_MERGE);
 
 			initSkins(GameUI.skinManager);
 			initStyles(GameUI.skinManager);

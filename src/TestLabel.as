@@ -57,8 +57,8 @@ package
 			
 			e = new CPoint();
 			e.addEventListener(Event.RESIZE, onresize);
-			e.x = 950;
-			e.y = 550;
+			e.x = 450;
+			e.y = 250;
 			addChild(e);
 			
 			onresize(null);

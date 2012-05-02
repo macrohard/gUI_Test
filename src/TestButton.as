@@ -49,7 +49,8 @@ package
 			control.style = ts;
 //			control.enabled = false;
 			
-
+			control.pivotX = -50;
+			control.pivotY = -20;
 
 
 			ui.mainContainer.addChild(control);
@@ -62,13 +63,13 @@ package
 			CP1.addEventListener(Event.RESIZE, onresize);
 			CP1.x = 150;
 			CP1.y = 150;
-			addChild(CP1);
+			stage.addChild(CP1);
 
 			CP2 = new CPoint();
 			CP2.addEventListener(Event.RESIZE, onresize);
 			CP2.x = 950;
 			CP2.y = 550;
-			addChild(CP2);
+			stage.addChild(CP2);
 
 			onresize(null);
 

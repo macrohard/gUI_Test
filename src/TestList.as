@@ -48,8 +48,8 @@ package
 
             CP1 = new CPoint();
             CP1.addEventListener(Event.RESIZE, onmove);
-            CP1.x = 150;
-            CP1.y = 150;
+            CP1.x = 250;
+            CP1.y = 250;
             addChild(CP1);
 
             CP2 = new CPoint();
