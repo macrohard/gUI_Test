@@ -39,7 +39,7 @@ package
 			//var l:Label = new Label("test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它", ts);
 			control = new RadioButton("测试一下看看效果如何");
 //			control.autoSize = false;
-			control.radioGroup = 1;
+			control.radioGroup = "1";
 //			control.align = LayoutAlign.CENTER | LayoutAlign.MIDDLE;
 			var ts:TextStyle = new TextStyle();
 			ts.size = 18;
@@ -55,7 +55,7 @@ package
 
 
 			var r:RadioButton = new RadioButton("kkkkk");
-			r.radioGroup = 1;
+			r.radioGroup = "1";
 			r.setLabelStyle(ts);
 			r.x = 50;
 			r.y = 300;
