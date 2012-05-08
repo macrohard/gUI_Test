@@ -476,19 +476,19 @@ package
 
 			skinManager.setSkin(SkinDef.WINDOW_BG, Bitmap(new window()).bitmapData, new Rectangle(5, 30, 981, 543));
 
-			skinManager.setSkin(SkinDef.MINIMIZE_BUTTON, Bitmap(new min()).bitmapData);
-			skinManager.setSkin(SkinDef.MINIMIZE_BUTTON_OVER, Bitmap(new min_over()).bitmapData);
-			skinManager.setSkin(SkinDef.MINIMIZE_BUTTON_DOWN, Bitmap(new min_down()).bitmapData);
-			skinManager.setSkin(SkinDef.MINIMIZE_BUTTON_DISABLE, Bitmap(new min_disable()).bitmapData);
+			skinManager.setSkin(SkinDef.WINDOW_MINIMIZE_BUTTON, Bitmap(new min()).bitmapData);
+			skinManager.setSkin(SkinDef.WINDOW_MINIMIZE_BUTTON_OVER, Bitmap(new min_over()).bitmapData);
+			skinManager.setSkin(SkinDef.WINDOW_MINIMIZE_BUTTON_DOWN, Bitmap(new min_down()).bitmapData);
+			skinManager.setSkin(SkinDef.WINDOW_MINIMIZE_BUTTON_DISABLE, Bitmap(new min_disable()).bitmapData);
 
-			skinManager.setSkin(SkinDef.MAXIMIZE_BUTTON, Bitmap(new max()).bitmapData);
-			skinManager.setSkin(SkinDef.MAXIMIZE_BUTTON_OVER, Bitmap(new max_over()).bitmapData);
-			skinManager.setSkin(SkinDef.MAXIMIZE_BUTTON_DOWN, Bitmap(new max_down()).bitmapData);
-			skinManager.setSkin(SkinDef.MAXIMIZE_BUTTON_DISABLE, Bitmap(new max_disable()).bitmapData);
+			skinManager.setSkin(SkinDef.WINDOW_MAXIMIZE_BUTTON, Bitmap(new max()).bitmapData);
+			skinManager.setSkin(SkinDef.WINDOW_MAXIMIZE_BUTTON_OVER, Bitmap(new max_over()).bitmapData);
+			skinManager.setSkin(SkinDef.WINDOW_MAXIMIZE_BUTTON_DOWN, Bitmap(new max_down()).bitmapData);
+			skinManager.setSkin(SkinDef.WINDOW_MAXIMIZE_BUTTON_DISABLE, Bitmap(new max_disable()).bitmapData);
 
-			skinManager.setSkin(SkinDef.CLOSE_BUTTON, Bitmap(new close()).bitmapData);
-			skinManager.setSkin(SkinDef.CLOSE_BUTTON_OVER, Bitmap(new close_over()).bitmapData);
-			skinManager.setSkin(SkinDef.CLOSE_BUTTON_DOWN, Bitmap(new close_down()).bitmapData);
+			skinManager.setSkin(SkinDef.WINDOW_CLOSE_BUTTON, Bitmap(new close()).bitmapData);
+			skinManager.setSkin(SkinDef.WINDOW_CLOSE_BUTTON_OVER, Bitmap(new close_over()).bitmapData);
+			skinManager.setSkin(SkinDef.WINDOW_CLOSE_BUTTON_DOWN, Bitmap(new close_down()).bitmapData);
 
 
 			skinManager.setSkin(SkinDef.TABPANEL_BG, Bitmap(new tabpanel()).bitmapData, new Rectangle(4, 4, 55, 67));
