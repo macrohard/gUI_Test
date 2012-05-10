@@ -584,7 +584,7 @@ package
 			s = new TextStyle();
 			s.color = 0x0000FF;
 			s.underline = true;
-			skinManager.setStyle(StyleDef.LINKBUTTON_NORMAL, s);
+			skinManager.setStyle(StyleDef.LINKBUTTON, s);
 
 			//链接按钮悬停样式
 			s = new TextStyle();
@@ -606,7 +606,7 @@ package
 			//按钮普通样式
 			s = new TextStyle();
 			s.color = 0xFFFFFF;
-			skinManager.setStyle(StyleDef.BUTTON_NORMAL, s);
+			skinManager.setStyle(StyleDef.BUTTON, s);
 
 			//按钮悬停样式
 			s = new TextStyle();
