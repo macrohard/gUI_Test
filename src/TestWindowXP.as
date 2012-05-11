@@ -1,19 +1,14 @@
 package
 {
 	import com.macro.gUI.assist.LayoutAlign;
-	import com.macro.gUI.containers.Container;
 	import com.macro.gUI.containers.Window;
 	import com.macro.gUI.controls.Button;
 	import com.macro.gUI.controls.Label;
 	import com.macro.gUI.events.ButtonEvent;
 	import com.macro.gUI.events.WindowEvent;
 	
-	import flash.display.Bitmap;
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import flash.events.MouseEvent;
-	
-	import net.hires.debug.Stats;
 
 
 	/**
@@ -39,7 +34,7 @@ package
 
 
 
-			c = new Window("测试窗口", Window.BUTTON_VISIBLE_MINIMIZE_CLOSE);
+			c = new Window(100, 100, "测试窗口", Window.BUTTON_VISIBLE_MINIMIZE_CLOSE);
 			c.align = LayoutAlign.LEFT | LayoutAlign.MIDDLE;
 			c.addEventListener(WindowEvent.CLOSE_BUTTON_CLICK, closeButtonClickHandler);
 

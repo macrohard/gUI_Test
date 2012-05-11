@@ -3,7 +3,7 @@ package
 	import com.macro.gUI.GameUI;
 	import com.macro.gUI.assist.TextStyle;
 	import com.macro.gUI.core.IContainer;
-	import com.macro.gUI.core.PopupManager;
+	import com.macro.gUI.core.PopUpManager;
 	import com.macro.gUI.renders.RenderMode;
 	import com.macro.gUI.skin.SkinDef;
 	import com.macro.gUI.skin.SkinManager;
@@ -350,14 +350,14 @@ package
 		}
 
 
-		public function get popupManager():PopupManager
+		public function get popupManager():PopUpManager
 		{
 			return GameUI.popupManager;
 		}
 
 		public function get mainContainer():IContainer
 		{
-			return GameUI.uiManager.mainContainer;
+			return GameUI.uiManager.stage;
 		}
 
 

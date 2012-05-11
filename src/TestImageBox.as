@@ -33,7 +33,7 @@ package
 			
 			
 //			var b:ImageBox = new ImageBox(new ShapeExample(), false);
-			var b:BackgroundPanel = new BackgroundPanel(new ShapeExample(), false);
+			var b:BackgroundPanel = new BackgroundPanel(100, 100, new ShapeExample(), false);
 			b.align = LayoutAlign.CENTER | LayoutAlign.MIDDLE;
 			b.backgroundColor = 0x66FF0000;
 //			b.margin = new Rectangle(10, 10);

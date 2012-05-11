@@ -89,7 +89,7 @@ package
 			GameUI.skinManager.setSkin(SkinDef.WINDOW_CLOSE_BUTTON_DOWN, Bitmap(new close_down()).bitmapData);
 			
 			
-			c = new Window("测试窗口", Window.BUTTON_VISIBLE_MAXIMIZ_CLOSE, Window.BUTTON_LAYOUT_CHROME);
+			c = new Window(100, 100, "测试窗口", Window.BUTTON_VISIBLE_MAXIMIZ_CLOSE, Window.BUTTON_LAYOUT_CHROME);
 			c.align = LayoutAlign.LEFT | LayoutAlign.MIDDLE;
 			
 			var l:Label = new Label();
