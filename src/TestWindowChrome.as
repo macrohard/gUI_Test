@@ -72,21 +72,21 @@ package
 			var ui:UISettings = new UISettings(stage);
 			
 			
-			GameUI.skinManager.setSkin(SkinDef.WINDOW_BG, Bitmap(new bg()).bitmapData, new Rectangle(5, 77, 825, 501));
+			GameUI.skinManager.createSkin(SkinDef.WINDOW_BG, Bitmap(new bg()).bitmapData, new Rectangle(5, 77, 825, 501));
 			
-			GameUI.skinManager.setSkin(SkinDef.WINDOW_MINIMIZE_BUTTON, Bitmap(new min()).bitmapData);
-			GameUI.skinManager.setSkin(SkinDef.WINDOW_MINIMIZE_BUTTON_OVER, Bitmap(new min_over()).bitmapData);
-			GameUI.skinManager.setSkin(SkinDef.WINDOW_MINIMIZE_BUTTON_DOWN, Bitmap(new min_down()).bitmapData);
-			GameUI.skinManager.setSkin(SkinDef.WINDOW_MINIMIZE_BUTTON_DISABLE, Bitmap(new min_disable()).bitmapData);
+			GameUI.skinManager.createSkin(SkinDef.WINDOW_MINIMIZE_BUTTON, Bitmap(new min()).bitmapData);
+			GameUI.skinManager.createSkin(SkinDef.WINDOW_MINIMIZE_BUTTON_OVER, Bitmap(new min_over()).bitmapData);
+			GameUI.skinManager.createSkin(SkinDef.WINDOW_MINIMIZE_BUTTON_DOWN, Bitmap(new min_down()).bitmapData);
+			GameUI.skinManager.createSkin(SkinDef.WINDOW_MINIMIZE_BUTTON_DISABLE, Bitmap(new min_disable()).bitmapData);
 			
-			GameUI.skinManager.setSkin(SkinDef.WINDOW_MAXIMIZE_BUTTON, Bitmap(new max()).bitmapData);
-			GameUI.skinManager.setSkin(SkinDef.WINDOW_MAXIMIZE_BUTTON_OVER, Bitmap(new max_over()).bitmapData);
-			GameUI.skinManager.setSkin(SkinDef.WINDOW_MAXIMIZE_BUTTON_DOWN, Bitmap(new max_down()).bitmapData);
-			GameUI.skinManager.setSkin(SkinDef.WINDOW_MAXIMIZE_BUTTON_DISABLE, Bitmap(new max_disable()).bitmapData);
+			GameUI.skinManager.createSkin(SkinDef.WINDOW_MAXIMIZE_BUTTON, Bitmap(new max()).bitmapData);
+			GameUI.skinManager.createSkin(SkinDef.WINDOW_MAXIMIZE_BUTTON_OVER, Bitmap(new max_over()).bitmapData);
+			GameUI.skinManager.createSkin(SkinDef.WINDOW_MAXIMIZE_BUTTON_DOWN, Bitmap(new max_down()).bitmapData);
+			GameUI.skinManager.createSkin(SkinDef.WINDOW_MAXIMIZE_BUTTON_DISABLE, Bitmap(new max_disable()).bitmapData);
 			
-			GameUI.skinManager.setSkin(SkinDef.WINDOW_CLOSE_BUTTON, Bitmap(new close()).bitmapData);
-			GameUI.skinManager.setSkin(SkinDef.WINDOW_CLOSE_BUTTON_OVER, Bitmap(new close_over()).bitmapData);
-			GameUI.skinManager.setSkin(SkinDef.WINDOW_CLOSE_BUTTON_DOWN, Bitmap(new close_down()).bitmapData);
+			GameUI.skinManager.createSkin(SkinDef.WINDOW_CLOSE_BUTTON, Bitmap(new close()).bitmapData);
+			GameUI.skinManager.createSkin(SkinDef.WINDOW_CLOSE_BUTTON_OVER, Bitmap(new close_over()).bitmapData);
+			GameUI.skinManager.createSkin(SkinDef.WINDOW_CLOSE_BUTTON_DOWN, Bitmap(new close_down()).bitmapData);
 			
 			
 			c = new Window(100, 100, "测试窗口", Window.BUTTON_VISIBLE_MAXIMIZ_CLOSE, Window.BUTTON_LAYOUT_CHROME);
