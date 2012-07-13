@@ -1,10 +1,11 @@
 package
 {
 	import com.macro.gUI.assist.LayoutAlign;
+	import com.macro.gUI.containers.Panel;
 	import com.macro.gUI.containers.Window;
 	import com.macro.gUI.controls.Button;
 	import com.macro.gUI.controls.Label;
-	import com.macro.gUI.events.ButtonEvent;
+	import com.macro.gUI.events.TouchEvent;
 	import com.macro.gUI.events.WindowEvent;
 	
 	import flash.display.Sprite;
@@ -21,6 +22,8 @@ package
 
 
 		private var c:Window;
+		
+		private var cc:Window;
 
 		private var d:Sprite;
 
@@ -34,7 +37,7 @@ package
 
 
 
-			c = new Window(100, 100, "测试窗口", Window.BUTTON_VISIBLE_MINIMIZE_CLOSE);
+			c = new Window(400, 400, "测试窗口", Window.BUTTON_VISIBLE_MINIMIZE_CLOSE);
 			c.align = LayoutAlign.LEFT | LayoutAlign.MIDDLE;
 			c.addEventListener(WindowEvent.CLOSE_BUTTON_CLICK, closeButtonClickHandler);
 
@@ -47,15 +50,24 @@ package
 					"当调整舞台大小时，便可运行 resizeHandler() 方法。";
 			l.alpha = 0.5;
 			c.addChild(l);
-
+			
+			var t:Panel = new Panel(200, 200);
+			t.x = t.y = 50;
+//			t.visible = false;
+			
+			l = new Label("当调整舞台大小时，便可运行 resizeHandler() 方法。");
+			l.x = l.y = 10;
+			t.addChild(l);
+			
+			c.addChild(t);
 
 			var b:Button = new Button("test");
 			b.x = 400;
 			b.y = 100;
-			b.addEventListener(ButtonEvent.MOUSE_DOWN, mouseUpHandler);
+			b.addEventListener(TouchEvent.MOUSE_DOWN, mouseUpHandler);
 			ui.mainContainer.addChild(b);
 
-			
+			cc = new Window(200, 200);
 			
 
 //			addChild(new Stats());
@@ -63,13 +75,14 @@ package
 		
 		protected function closeButtonClickHandler(e:Event):void
 		{
-			ui.popupManager.removePopupWindow(c);
+			ui.popupManager.removeAll();
 		}
 		
 		protected function mouseUpHandler(e:Event):void
 		{
-			ui.popupManager.addPopupWindow(c, true, true);
+			ui.popupManager.addPopupWindow(c);
 //			c.alpha = 0.5;
+			ui.popupManager.addPopupWindow(cc);
 		}
 		
 	}

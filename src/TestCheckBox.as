@@ -40,7 +40,7 @@ package
             ts.size = 18;
             ts.bold = true;
             ts.font = "Microsoft YaHei";
-            control.setLabelStyle(ts);
+            control.labelStyle = ts;
 //			control.text = "test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它";
 //			control.selected = true;
 //			control.enabled = false;

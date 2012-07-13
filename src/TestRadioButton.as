@@ -46,7 +46,7 @@ package
 			ts.bold = true;
 			ts.font = "Microsoft YaHei";
 			ts.color = 0xffffffff;
-			control.setLabelStyle(ts);
+			control.labelStyle = ts;
 //			control.text = "test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它";
 //			control.selected = true;
 //			control.enabled = false;
@@ -56,7 +56,7 @@ package
 
 			var r:RadioButton = new RadioButton("kkkkk");
 			r.radioGroup = "1";
-			r.setLabelStyle(ts);
+			r.labelStyle = ts;
 			r.x = 50;
 			r.y = 300;
 			c.addChild(r);

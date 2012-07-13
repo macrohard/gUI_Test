@@ -27,20 +27,20 @@ package
 			
 			var ts:TextStyle = new TextStyle();
 //			ts.align = TextFormatAlign.CENTER;
-//			ts.bold = true;
-			ts.multiline = true;
-			ts.wordWrap = true;
+			ts.bold = true;
+//			ts.multiline = true;
+//			ts.wordWrap = true;
 			ts.color = 0xffffff;
-//			ts.leftMargin = 20;
-//			ts.displayAsPassword = true;
+			ts.leftMargin = 20;
 			
-			l = new Label("test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它\ntst");
-//			l = new Label(null);
-			l.style = ts;
+//			l = new Label("test aaa 看直fdafdafdsa dsa fdsa \n第2行内容，multiline为false时，不应看到它\ntst");
+			l = new Label();
+//			l.style = ts;
+			l.htmlText = "<font color='#ff0000'>test</font>";
 //			l.autoSize = false;
 //			l.align = LayoutAlign.RIGHT | LayoutAlign.MIDDLE;
 			l.backgroundColor = 0xff999999;
-			l.padding = new Margin(10, 10);
+//			l.padding = new Margin(10, 10);
 			
 			
 			

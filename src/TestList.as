@@ -1,8 +1,9 @@
 package
 {
     import com.macro.gUI.composite.List;
+    import com.macro.gUI.controls.Button;
+    import com.macro.gUI.events.TouchEvent;
     
-    import flash.display.Bitmap;
     import flash.display.Sprite;
     import flash.events.Event;
     
@@ -44,6 +45,12 @@ package
 			ui.mainContainer.addChild(list);
 			
 			
+			var b:Button = new Button("test");
+			b.x = 400;
+			b.y = 100;
+			b.addEventListener(TouchEvent.MOUSE_DOWN, mouseUpHandler);
+			ui.mainContainer.addChild(b);
+			
 			
 
             CP1 = new CPoint();
@@ -74,6 +81,11 @@ package
         {
             list.resize(Math.abs(CP2.x - CP1.x), Math.abs(CP2.y - CP1.y));
         }
+		
+		protected function mouseUpHandler(e:TouchEvent):void
+		{
+			list.selectedIndex = -1;
+		}
 
     }
 }
